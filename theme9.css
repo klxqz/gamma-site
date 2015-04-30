@@ -1,0 +1,145 @@
+/* ------- FONTS ------- */
+/* ------- BORDERS ------- */
+/* ------- BACKGROUNDS ------- */
+/* ------- COLORS ------- */
+/* ------- Indents ------- */
+/* ------- Product Elements ------- */
+/* ------- Buttons ------- */
+/* ------- Buttons +/- ------ */
+/* ------- Button Small ------- */
+/* ------- Button exclusive-medium ------- */
+/* ------- My Account List bg ------- */
+/* ------- Product Listing ------- */
+/* ------- Grid/List vars ------- */
+/* ------- Pagination vars ------- */
+/* ------- Product Info ------- */
+/* ------- Cart Steps ------- */
+/* ------- sub heading (h2,h3) define ------- */
+/* ------- Image vars ------- */
+header .nav .container {
+  background: #4b5f6d; }
+
+.nav ul#header_links li a {
+  color: #69869b; }
+
+.shopping_cart > a:first-child:before,
+.header_user_info a {
+  background: #92cdcf; }
+
+#header .shopping_cart > a:first-child:hover,
+#phone-block-top ul,
+#currencies-block-top ul {
+  background: #4b5f6d; }
+
+#htmlcontent_top ul.htmlcontent-home li,
+#phone-block-top ul li.selected,
+#phone-block-top ul li:hover a,
+#currencies-block-top ul li.selected,
+#currencies-block-top ul li:hover a {
+  background: #92cdcf; }
+
+.footer-container:before,
+ul.product_list.grid > li .product-container .button-container a:hover,
+#htmlcontent_top ul.htmlcontent-home li + li {
+  background: #4b5f6d; }
+
+.header_user_info a:hover {
+  background: #69869b; }
+
+.content_scene_cat span.category-name,
+.footer-container #footer .bottom-footer div a:hover,
+.footer-container #footer #block_contact_infos > div ul li > span,
+.footer-container #footer #block_contact_infos > div ul li i,
+.footer-container #footer h4 a,
+.footer-container #footer a:hover,
+.footer-container #footer h4,
+.footer-container #footer #social_block ul li a:hover,
+.footer-container #footer #social_block h4,
+#cmsinfo_block ul.links li a:hover,
+#cmsinfo_block ul.links li:before,
+.price.product-price,
+#center_column ul.htmlcontent-home li .item-html h3,
+#currencies-block-top div.current:hover,
+#currencies-block-top div.current.active,
+#currencies-block-top div.current:hover:after,
+#phone-block-top div.current:hover:after,
+#phone-block-top div.current:hover,
+#phone-block-top div.current.active {
+  color: #92cdcf; }
+
+.footer-container #footer .bottom-footer div,
+.footer-container #footer .bottom-footer div a,
+#currencies-block-top div.current:after
+#phone-block-top div.current:after {
+  color: #69869b; }
+
+.button.ajax_add_to_cart_button,
+#cmsinfo_block em,
+ul.product_list.grid > li .product-container .button-container a,
+#home-page-tabs > li a:hover,
+#home-page-tabs > li.active a,
+#block_top_menu .sf-menu:before,
+#block_top_menu .sf-menu > li.sfHover > a,
+#block_top_menu .sf-menu > li > a:hover,
+#block_top_menu .sf-menu > li.selected > a {
+  background: #92cdcf; }
+
+#homepage-slider .homeslider-description .p1 span,
+#homepage-slider .homeslider-description h2 {
+  color: #92cdcf; }
+
+.button.ajax_add_to_cart_button:hover,
+#home-page-tabs > li a,
+#center_column ul.htmlcontent-home li .item-html span,
+#homepage-slider .homeslider-description .a {
+  background: #3d4d58; }
+
+.price-percent-reduction {
+  background: #3d4d58;
+  border-color: #3d4d58; }
+
+.block .title_block, .block h4 {
+  border-color: #92cdcf; }
+
+#category_description_short p strong {
+  color: #4b5f6d; }
+
+.content_scene_cat a.lnk_more {
+  color: #92cdcf; }
+
+#header .cart_block {
+  background: #4b5f6d; }
+  #header .cart_block .cart-buttons {
+    background-color: #3d4d58; }
+    #header .cart_block .cart-buttons a:hover {
+      background: #92cdcf; }
+      #header .cart_block .cart-buttons a:hover span {
+        color: #fff; }
+
+ul.product_list .functional-buttons div a,
+ul.product_list .functional-buttons div label {
+  color: #4b5f6d; }
+  ul.product_list .functional-buttons div a:hover,
+  ul.product_list .functional-buttons div label:hover {
+    color: #92cdcf; }
+
+#phone-block-top div.current:after,
+#currencies-block-top div.current:after {
+  color: #69869b; }
+
+#block_top_menu .cat-title {
+  background: #4b5f6d;
+  border-color: #4b5f6d; }
+  #block_top_menu .cat-title:hover {
+    background: #92cdcf; }
+
+#block_top_menu .sf-menu > li > ul > li > a:hover {
+  color: #92cdcf; }
+
+#center_column #htmlcontent_home ul.htmlcontent-home a span {
+  background: #4b5f6d; }
+#center_column #htmlcontent_home ul.htmlcontent-home a:hover span {
+  background: #92cdcf; }
+
+#block_top_menu .sf-menu > li:last-child:before {
+  background: #92cdcf; }

@@ -1,0 +1,9 @@
+
+{if !empty($contact)}
+    <h1 class="page-heading">[`Thank you!`]</h1>
+    <p>[`You have successfully signed up.`]</p>
+{else}
+    <h1 class="page-heading">[`Sign up`]</h1>
+    {$wa->authAdapters()}
+    {$wa->signupForm($errors)}
+{/if}

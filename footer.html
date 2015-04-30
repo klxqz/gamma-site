@@ -1,0 +1,155 @@
+{if !empty($theme_settings.social_block_footer)}
+    <section id="social_block">
+        <h4>[`Follow us`]:</h4>
+        <ul>
+            {if !empty($theme_settings.footer_twitter)}
+                <li class="twitter">
+                    <a target="_blank" href="{$theme_settings.footer_twitter}"  title="[`Twitter`]">
+                        <span>[`Twitter`]</span>
+                    </a>
+                </li>
+            {/if}
+            {if !empty($theme_settings.footer_facebook)}
+                <li class="facebook">
+                    <a target="_blank" href="{$theme_settings.footer_facebook}"  title="[`Facebook`]">
+                        <span>[`Facebook`]</span>
+                    </a>
+                </li>
+            {/if}
+            {if !empty($theme_settings.footer_vk)}
+                <li class="vk">
+                    <a target="_blank" href="{$theme_settings.footer_vk}"  title="[`Vkontakte`]">
+                        <span>[`Vkontakte`]</span>
+                    </a>
+                </li>
+            {/if}
+            {if $wa->blog}
+                <li class="rss">
+                    <a target="_blank" href="{$wa->getUrl('blog/frontend/rss')}"  title="RSS">
+                        <span>RSS</span>
+                    </a>
+                </li>
+            {/if}
+        </ul>
+    </section>
+    <div class="clearfix"></div>
+{/if}
+
+{if $theme_settings.footer_newsletter && $wa->mailer}
+    <div id="newsletter_block_left" class="footer-block col-xs-12 col-sm-3">
+        <h4>[`Newsletter`]</h4>
+        <div class="block_content toggle-footer">
+            {$wa->mailer->form({$theme_settings.newsletter_form_number})}
+        </div>
+    </div>
+{/if}
+
+
+{if $theme_settings.source_footer_info != 'none'}
+    <section class="footer-block col-xs-12 col-sm-3" id="block_various_links_footer">
+        <h4>[`Information`]</h4>
+        {if $theme_settings.source_footer_info == 'shop_pages' && $wa->shop}
+            {$footer_pages = $wa->shop->pages()}
+            {wa_print_tree  unfolded=false tree=$footer_pages class="toggle-footer" elem ='<a href=":url" title=":title">:name</a>' selected=$wa->param('page_id')}
+        {elseif $theme_settings.source_footer_info == 'site_pages'}
+            {$footer_pages = $wa->site->pages()}
+            {wa_print_tree  unfolded=false tree=$footer_pages class="toggle-footer" elem ='<a href=":url" title=":title">:name</a>' selected=$wa->param('page_id')}
+        {/if}
+    </section>
+{/if}
+
+
+<section class="bottom-footer col-xs-12">
+    <div>
+        &copy; {time()|wa_datetime:"Y"} <a href="{$wa_url}">{$wa->accountName()}</a>
+        &copy; [`Site design`] <a href="http://wa-plugins.ru/" title="[`Designing and developing websites`]">wa-plugins.ru</a>
+    </div>
+</section>
+
+
+{if $wa->isAuthEnabled()}
+    <section class="footer-block col-xs-12 col-sm-3">
+        <h4>
+            [`My account`]
+        </h4>
+        <div class="block_content toggle-footer">
+            <ul class="bullet">
+                {if $wa->user()->isAuth()}
+                    {if $wa->shop}
+                        <li>
+                            <a href="{$wa->getUrl('shop/frontend/myProfile')}">[s`My account`]</a>
+                        </li>
+                        <li>
+                            <a href="{$wa->getUrl('shop/frontend/myOrders')}" >[`My orders`]</a>
+                        </li>
+                        {if shopAffiliate::isEnabled()}
+                            <li>
+                                <a href="{$wa->getUrl('/frontend/myAffiliate')}">[`Affiliate program`]</a>
+                            </li>
+                        {/if}
+                    {else}
+                        <li>
+                            {$wa->user('name')}
+                        </li>
+                    {/if}
+                    <li>
+                        <a href="?logout"  title="[s`Log out`]">[s`Log out`]</a>
+                    </li>
+                    <li>
+                        <a href="{$wa->getUrl('shop/frontend/search')}?list=wishlist">[`Favorites`]</a>
+                    </li>
+                {else}
+                    <li>
+                        <a href="{$wa->loginUrl()}">[s`Log in`]</a>
+                    </li>
+                    <li>
+                        <a href="{$wa->signupUrl()}">[s`Sign up`]</a>
+                    </li>
+                    <li>
+                        <a href="{$wa->getUrl('shop/frontend/search')}?list=wishlist">[`Favorites`]</a>
+                    </li>
+                {/if}
+            </ul>
+        </div>
+    </section>
+{/if}
+
+{if !empty($theme_settings.footer_contact_details)}
+    <section id="block_contact_infos" class="footer-block col-xs-12 col-sm-3">
+        <div>
+            <h4>[`Store Information`]</h4>
+            <ul class="toggle-footer">
+                {if $theme_settings.store_address}
+                    <li>
+                        <i class="icon-map-marker"></i>
+                        {$theme_settings.store_address}
+                    </li>
+                {/if}
+                {if $theme_settings.source_footer_phone == 'shop' && $wa->shop}
+                    <li>
+                        <i class="icon-phone"></i>
+                        <span>{$wa->shop->settings('phone')}</span>
+                    </li>
+                {elseif $theme_settings.source_footer_phone == 'manually'}
+                    <li>
+                        <i class="icon-phone"></i>
+                        <span>{$theme_settings.footer_phone}</span>
+                    </li>
+                {/if}
+                {if $theme_settings.source_footer_email == 'shop' && $wa->shop}
+                    <li>
+                        <i class="icon-envelope-alt"></i>
+                        <span>
+                            <a href="mailto:{$wa->shop->settings('email')}">{$wa->shop->settings('email')}</a>
+                        </span>
+                    </li>
+                {elseif $theme_settings.source_footer_email == 'manually'}
+                    <li>
+                        <i class="icon-envelope-alt"></i>
+                        <a href="mailto:{$theme_settings.footer_email}">{$theme_settings.footer_email}</a>
+                    </li>
+                {/if}
+            </ul>
+        </div>
+    </section>
+{/if}

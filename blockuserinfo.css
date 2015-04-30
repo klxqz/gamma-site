@@ -1,0 +1,46 @@
+/* ------- FONTS ------- */
+/* ------- BORDERS ------- */
+/* ------- BACKGROUNDS ------- */
+/* ------- COLORS ------- */
+/* ------- Indents ------- */
+/* ------- Product Elements ------- */
+/* ------- Buttons ------- */
+/* ------- Buttons +/- ------ */
+/* ------- Button Small ------- */
+/* ------- Button exclusive-medium ------- */
+/* ------- My Account List bg ------- */
+/* ------- Product Listing ------- */
+/* ------- Grid/List vars ------- */
+/* ------- Pagination vars ------- */
+/* ------- Product Info ------- */
+/* ------- Cart Steps ------- */
+/* ------- sub heading (h2,h3) define ------- */
+/* ------- Image vars ------- */
+.header_user_info {
+  float: right; }
+  .header_user_info a {
+    color: white;
+    font-weight: bold;
+    font-size: 29px;
+    display: block;
+    padding: 12px 17px 10px;
+    cursor: pointer;
+    background: #3498db; }
+    @media (max-width: 479px) {
+      .header_user_info a {
+        font-size: 22px; } }
+    .header_user_info a:hover, .header_user_info a.active {
+      background: #505765; }
+  .header_user_info + .header_user_info {
+    border-right: none; }
+
+.user_info {
+  text-align: right;
+  margin: 20px 0 0 0; }
+  .user_info li {
+    display: inline-block;
+    padding-right: 15px; }
+    .user_info li a {
+      text-decoration: none; }
+      .user_info li a:hover {
+        text-decoration: underline; }

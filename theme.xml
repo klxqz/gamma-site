@@ -1,0 +1,1371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE theme PUBLIC "wa-app-theme" "http://www.webasyst.com/wa-content/xml/wa-app-theme.dtd">
+<theme id="gamma" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="1.0.0">
+    <name locale="en_US">Gamma</name>
+    <name locale="ru_RU">Гамма</name>
+    <description locale="ru_RU">Семейство адаптивных тем дизайна.</description>
+    <files>
+        <file path="index.html">
+            <description locale="en_US">Core layout of the CUSTOM theme family</description>
+            <description locale="ru_RU">Основной макет тем дизайна семейства CUSTOM</description>
+        </file>
+        <file path="custom.css">
+            <description locale="en_US">Core CSS of the CUSTOM theme family</description>
+            <description locale="ru_RU">Основной файл CSS-стилей семейства тем дизайна CUSTOM</description>
+        </file>
+        <file path="content.html" custom="0">
+            <description locale="en_US">Main layout for the Site app content</description>
+            <description locale="ru_RU">Основной вывод приложения «Сайт»</description>
+        </file>
+        <file path="head.html" custom="0">
+            <description locale="en_US">Site app's &lt;head&gt; instructions</description>
+            <description locale="ru_RU">Блок &lt;head&gt; приложения «Сайт»</description>
+        </file>
+        <file path="page.html">
+            <description locale="en_US">Static page content and navigation</description>
+            <description locale="ru_RU">Содержимое открытой страницы и навигация по страницам</description>
+        </file>
+        <file path="login.html" custom="0">
+            <description locale="en_US">Login page</description>
+            <description locale="ru_RU">Страница входа для пользователей</description>
+        </file>
+        <file path="signup.html" custom="0">
+            <description locale="en_US">Sign up page</description>
+            <description locale="ru_RU">Страница регистрации пользователей</description>
+        </file>
+        <file path="forgotpassword.html" custom="0">
+            <description locale="en_US">Forgot password page</description>
+            <description locale="ru_RU">Страница сброса пароля</description>
+        </file>
+        <file path="my.profile.html">
+            <description locale="en_US">My profile: contact info editing form</description>
+            <description locale="ru_RU">Мой профиль: редактирование контактной информации</description>
+        </file>
+        <file path="my.nav.html">
+            <description locale="en_US">My profile navigation</description>
+            <description locale="ru_RU">Навигационное меню внутри личного кабинета</description>
+        </file>
+        <file path="error.html">
+            <description locale="en_US">404 and other errors</description>
+            <description locale="ru_RU">404 и другие ошибки</description>
+        </file>
+        <file path="custom.js" custom="0">
+            <description locale="en_US">JS</description>
+            <description locale="ru_RU">JS</description>
+        </file>
+    </files>
+    <about locale="en_US">
+<![CDATA[
+<p><b>CUSTOM</b> is a universal design theme family for all basic Webasyst apps: Site, Blog, Photos, Shop-Script, and others. The parent (main) theme of the family, which includes the basic set of CSS rules and the common layout template index.html, is the CUSTOM (i.e. this) theme for the Site application. All CUSTOM design themes used in other applications (e.g., Blog or Photos) utilize common CSS rules and file index.html of the parent (main) theme.</p>
+<p>CUSTOM design themes are optimized for all modern web browsers, including iOS and Android based mobile devices.</p>
+]]>
+    </about>
+    <about locale="ru_RU">
+<![CDATA[
+<p><b>CUSTOM</b> — это универсальное семейство тем дизайна для всех базовых приложений фреймворка Вебасист: Сайт, Блог, Фото, Shop-Script и других. Родительской (основной) темой семейства, включающей в себя базовый набор CSS-стилей и общий макет дизайна index.html, является тема CUSTOM для приложения «Сайт» (данная тема). Все темы дизайна CUSTOM для других приложений (Блог, Фото и других) используют базовый CSS и index.html из родительской (основной) темы.</p>
+<p>Темы дизайна семейства CUSTOM оптимизированы для всех современных браузеров и мобильных устройств на основе iOS и Android.</p>
+
+
+]]>
+    </about>
+    <settings>
+        <setting var="main_come" control_type="text">
+            <value></value>
+            <name locale="en_US">
+                <![CDATA[
+                <script>
+                    $(function(){
+                        $('.p-title').closest('.field').addClass('custom-field');
+                    });
+             
+                </script>
+                <style>
+                .field .name b{
+                    color: #000;
+                }
+                .field.custom-field .name{
+                    float:none;width: auto;
+                }
+                .field.custom-field .value{
+                    display:none;
+                }
+                .p-title{
+                    font-weight: bold;color: #000;
+                }
+                .wa-theme-image-select{
+                    max-width: 750px;
+                }
+                .wa-theme-image-select a{
+                    height: 70px; width: 70px;
+                }
+                .wa-theme-image-select a img{
+                    height: 70px; width: 70px;
+                }
+                </style>
+                <p class="p-title"></p>	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <script>
+                    $(function(){
+                        $('.p-title').closest('.field').addClass('custom-field');
+                    });
+                </script>
+                <style>
+                .field .name b{
+                    color: #000;
+                }
+                .field.custom-field .name{
+                    float:none;width: auto;
+                }
+                .field.custom-field .value{
+                    display:none;
+                }
+                .p-title{
+                    font-size:120%;font-weight: bold;color: #000;
+                }
+                .wa-theme-image-select{
+                    max-width: 750px;
+                }
+                .wa-theme-image-select a{
+                    height: 70px; width: 70px;
+                }
+                .wa-theme-image-select a img{
+                    height: 70px; width: 70px;
+                }
+                </style>
+                <p class="p-title"></p>		
+                ]]>
+            </name>
+        </setting>
+        
+        
+        <setting var="customization_title" control_type="text">
+            <value></value>
+            <name locale="en_US">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Customization</p>	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Кастомизация</p>	
+                ]]>
+            </name>
+        </setting>        
+        
+        <setting var="logo" control_type="image">
+            <value>img/logo.png</value>
+            <filename>img/logo.*</filename>
+            <name locale="en_US">Company Logo</name>
+            <name locale="ru_RU">Логотип компании</name>
+        </setting>
+        
+        <setting var="color_scheme" control_type="select">
+            <value></value>
+            <name locale="en_US">
+                Color scheme
+                <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                Цветовая схема
+            <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+            <options>
+                <option value="">
+                    <name locale="en_US">theme1</name>
+                    <name locale="ru_RU">theme1</name>
+                </option>
+                <option value="theme2">
+                    <name locale="en_US">theme2</name>
+                    <name locale="ru_RU">theme2</name>
+                </option>
+                <option value="theme3">
+                    <name locale="en_US">theme3</name>
+                    <name locale="ru_RU">theme3</name>
+                </option>
+                <option value="theme4">
+                    <name locale="en_US">theme4</name>
+                    <name locale="ru_RU">theme4</name>
+                </option>
+                <option value="theme5">
+                    <name locale="en_US">theme5</name>
+                    <name locale="ru_RU">theme5</name>
+                </option>
+                <option value="theme6">
+                    <name locale="en_US">theme6</name>
+                    <name locale="ru_RU">theme6</name>
+                </option>
+                <option value="theme7">
+                    <name locale="en_US">theme7</name>
+                    <name locale="ru_RU">theme7</name>
+                </option>
+                <option value="theme8">
+                    <name locale="en_US">theme8</name>
+                    <name locale="ru_RU">theme8</name>
+                </option>
+                <option value="theme9">
+                    <name locale="en_US">theme9</name>
+                    <name locale="ru_RU">theme9</name>
+                </option>
+                <option value="custom_color_scheme">
+                    <name locale="en_US">Custom color scheme</name>
+                    <name locale="ru_RU">Пользовательская цветовая схема</name>
+                </option>
+                
+                
+            </options>
+        </setting>
+        
+        <setting var="custom_color_scheme_color1" control_type="color">
+            <value>#fcaf17</value>
+            <name locale="en_US">Custom color scheme. Color 1</name>
+            <name locale="ru_RU">Пользовательская цветовая схема. Цвет 1</name>
+        </setting>
+        <setting var="custom_color_scheme_color2" control_type="color">
+            <value>#405952</value>
+            <name locale="en_US">Custom color scheme. Color 2</name>
+            <name locale="ru_RU">Пользовательская цветовая схема. Цвет 2</name>
+        </setting>
+        <setting var="custom_color_scheme_color3" control_type="color">
+            <value>#2b3b36</value>
+            <name locale="en_US">
+                Custom color scheme. Color 3
+            <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                Пользовательская цветовая схема. Цвет 3
+            <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+        </setting>
+        
+        
+        <setting var="bg_color" control_type="color">
+            <value>#ffffff</value>
+            <name locale="en_US">background color</name>
+            <name locale="ru_RU">Фоновый цвет</name>
+        </setting>
+
+        
+        <setting var="bg_texture" control_type="image_select">
+            <value>img/bg/no_bg.png</value>
+            <name locale="en_US">background texture</name>
+            <name locale="ru_RU">Фоновая текстура</name>
+            <options>
+                <option value="img/bg/no_bg.png"></option>
+                <option value="img/bg/water.jpg"></option>
+                <option value="img/bg/lava3.jpg"></option>
+                <option value="img/bg/lava2.jpg"></option>
+                <option value="img/bg/lava.jpg"></option>
+                <option value="img/bg/stars2.jpg"></option>
+                <option value="img/bg/stars.jpg"></option>
+                <option value="img/bg/gravel4.jpg"></option>
+                <option value="img/bg/gravel3.jpg"></option>
+                <option value="img/bg/gravel2.jpg"></option>
+                <option value="img/bg/gravel.jpg"></option>
+                <option value="img/bg/rose.jpg"></option>
+                <option value="img/bg/graffiti2.jpg"></option>
+                <option value="img/bg/graffiti.jpg"></option>
+                <option value="img/bg/protector.jpg"></option>
+                <option value="img/bg/parket.jpg"></option>
+                <option value="img/bg/wood.jpg"></option>
+                <option value="img/bg/carbon2.jpg"></option>
+                <option value="img/bg/carbon.jpg"></option>
+                <option value="img/bg/bg-style2.gif"></option>
+                <option value="img/bg/bg-style3.jpg"></option>
+                <option value="img/bg/bg-style4.jpg"></option>
+                <option value="img/bg/bg-style5.jpg"></option>
+                <option value="img/bg/cloth.jpg"></option>
+                <option value="img/bg/grey.jpg"></option>
+                <option value="img/bg/red.jpg"></option>
+                <option value="img/bg/blue.jpg"></option>
+                <option value="img/bg/green.jpg"></option>
+                <option value="img/bg/purple.jpg"></option>
+                <option value="img/bg/yellow.jpg"></option>
+            </options>
+        </setting>
+        
+        
+        <setting var="bg_image" control_type="image_select">
+            <value>img/bg/no_bg.png</value>
+            <name locale="en_US">background image</name>
+            <name locale="ru_RU">Фоновое изображение</name>
+            <options>
+                <option value="img/bg/no_bg.png"></option>
+                <option value="img/bg/winter.jpg"></option>
+                <option value="img/bg/beautiful-blue.jpg"></option>
+                <option value="img/bg/windows.jpg"></option>
+                <option value="img/bg/sky.jpg"></option>
+                <option value="img/bg/tulips.jpg"></option>
+                <option value="img/bg/abstract-colors.jpg"></option>
+                <option value="img/bg/rainbow_color_swirl.jpg"></option>
+                <option value="img/bg/wwalls.ru-60950.jpg"></option>
+                <option value="img/bg/maxresdefault13.jpg"></option>
+                <option value="img/bg/anypics.ru-29910.jpg"></option>
+                <option value="img/bg/look.com.ua-31155.jpg"></option>
+                <option value="img/bg/bg3.jpg"></option>
+                <option value="img/bg/motto.net.ua-9597.jpg"></option>
+                <option value="img/bg/abstraction3d_14998.jpg"></option>
+                <option value="img/bg/poverhnost_svetlyy_tekstura.jpg"></option>
+                <option value="img/bg/1282497095_0037.jpg"></option>
+                <option value="img/bg/reWalls.com-5145.jpg"></option>
+                <option value="img/bg/niceimage.ru-11104.jpg"></option>
+                <option value="img/bg/nastol.com.ua-2213.jpg"></option>
+                <option value="img/bg/race-driver-grid.jpg"></option>
+                <option value="img/bg/cartoon-design.jpg"></option>
+                <option value="img/bg/motto.net.ua-8881.jpg"></option>
+                <option value="img/bg/abstraction3d_60596.jpg"></option>
+                <option value="img/bg/1306093318_E4EEF0EEE3E0.jpg"></option>
+                <option value="img/bg/texture4.jpg"></option>
+                <option value="img/bg/wwalls.ru-60245.jpg"></option>
+                <option value="img/bg/1354035175_1-10.jpg"></option>
+                <option value="img/bg/reWalls.com-25905.jpg"></option>
+                <option value="img/bg/reWalls.com-8867.jpg"></option>
+                <option value="img/bg/zwalls.ru-18631.jpg"></option>
+                <option value="img/bg/1263279.jpg"></option>
+            </options>
+        </setting>
+        
+       
+        <setting var="custom_bg_image" control_type="image">
+            <value></value>
+            <filename>img/bg/*</filename>
+            <name locale="en_US">Custom background image</name>
+            <name locale="ru_RU">Пользовательское фоновое изображение</name>
+        </setting>
+        
+        
+        <setting var="fixed_bg_image" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">Fixed background image</name>
+            <name locale="ru_RU">Фиксировать фоновое изображение</name>
+        </setting>
+        
+        <setting var="size_bg_image" control_type="checkbox">
+            <value>0</value>
+            <name locale="en_US">scale background image</name>
+            <name locale="ru_RU">Масштабировать фоновое изображение</name>
+        </setting>
+        
+        <setting var="repeat_bg_image" control_type="select">
+            <value>no-repeat</value>
+            <name locale="en_US">repeat background image</name>
+            <name locale="ru_RU">Повторять фоновое изображение</name>
+            <options>
+                <option value="repeat">
+                    <name locale="en_US">Repeat X and Y</name>
+                    <name locale="ru_RU">Повторять по X и Y</name>
+                </option>
+                <option value="repeat-x">
+                    <name locale="en_US">Repeat X</name>
+                    <name locale="ru_RU">Повторять по X</name>
+                </option>
+                <option value="repeat-y">
+                    <name locale="en_US">Repeat Y</name>
+                    <name locale="ru_RU">Повторять по Y</name>
+                </option>
+                <option value="no-repeat">
+                    <name locale="en_US">no repeat</name>
+                    <name locale="ru_RU">Не повторять</name>
+                </option>
+            </options>
+        </setting>
+        
+        <setting var="bg_position" control_type="text">
+            <value>left top</value>
+            <name locale="en_US">background position</name>
+            <name locale="ru_RU">Положение фонового изображения. Формат: Значение по X, Значение по Y. Возможные значения: [left | center | right], [top | center | bottom]</name>
+        </setting>
+        
+
+        
+        
+        <setting var="basic_title" control_type="text">
+            <value></value>
+            <name locale="en_US">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Setting basic elements</p>	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Настройка основных элементов.</p>	
+                ]]>
+            </name>
+        </setting> 
+        
+        <setting var="ruble_symbol" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">The symbol of the ruble</name>
+            <name locale="ru_RU">Символ рубля. Необходимо приложение «Магазин»</name>
+        </setting>
+        
+        <setting var="header_banner_text" control_type="text">
+            <value></value>
+            <name locale="en_US">Text information banner at the top of the site(Header)</name>
+            <name locale="ru_RU">Текст информационного баннера в верхней части сайта(Header)</name>
+        </setting>
+        
+        
+        <setting var="source_header_links" control_type="select">
+            <value>apps</value>
+            <name locale="en_US">Source links for the top(Header)</name>
+            <name locale="ru_RU">Источник для ссылок сверху(Header)</name>
+            <options>
+                <option value="apps">
+                    <name locale="en_US">Links to applications</name>
+                    <name locale="ru_RU">Ссылки на приложения</name>
+                </option>
+                <option value="site_pages">
+                    <name locale="en_US">Application «Site» - pages</name>
+                    <name locale="ru_RU">Приложение «Сайт» - страницы</name>
+                </option>
+                <option value="shop_pages">
+                    <name locale="en_US">Application «Shop» - pages</name>
+                    <name locale="ru_RU">Приложение «Магазин» - страницы</name>
+                </option>
+                <option value="shop_categories">
+                    <name locale="en_US">Application «Shop» - categories</name>
+                    <name locale="ru_RU">Приложение «Магазин» - категории</name>
+                </option>
+                <option value="user_links">
+                    <name locale="en_US">User links</name>
+                    <name locale="ru_RU">Пользовательские ссылки</name>
+                </option>
+                <option value="none">
+                    <name locale="en_US">Do not show</name>
+                    <name locale="ru_RU">Не показывать</name>
+                </option>
+            </options>
+        </setting>
+        
+        <setting var="header_links_user_links" control_type="text">
+            <value><![CDATA[
+/ ; Главная
+/blog/ ; Блог
+/photos/ ; Фото
+                ]]>
+            </value>
+            <name locale="en_US">
+                User links for Header.
+            <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                Пользовательские ссылки для Header.
+            <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+        </setting>
+        
+        
+        <setting var="source_main_menu" control_type="select">
+            <value>shop_categories</value>
+            <name locale="en_US">Source for the main top menu</name>
+            <name locale="ru_RU">Источник для главного верхнего меню</name>
+            <options>
+                <option value="site_pages">
+                    <name locale="en_US">Application «Site» - pages</name>
+                    <name locale="ru_RU">Приложение «Сайт» - страницы</name>
+                </option>
+                <option value="shop_pages">
+                    <name locale="en_US">Application «Shop» - pages</name>
+                    <name locale="ru_RU">Приложение «Магазин» - страницы</name>
+                </option>
+                <option value="shop_categories">
+                    <name locale="en_US">Application «Shop» - categories</name>
+                    <name locale="ru_RU">Приложение «Магазин» - категории</name>
+                </option>
+                <option value="user_links">
+                    <name locale="en_US">User links</name>
+                    <name locale="ru_RU">Пользовательские ссылки</name>
+                </option>
+            </options>
+        </setting>
+        
+        <setting var="main_menu_user_links" control_type="text">
+            <value><![CDATA[
+/ ; Главная
+/blog/ ; Блог
+/photos/ ; Фото
+                ]]>
+            </value>
+            <name locale="en_US">
+                User links for the main top menu
+            <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                Пользовательские ссылки для главного верхнего меню.
+            <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+        </setting>
+        
+        <setting var="vk_widget_title" control_type="text">
+            <value></value>
+            <name locale="en_US">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">VK widget</p>	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Виджет Вконтакте.</p>	
+                ]]>
+            </name>
+        </setting>
+
+        <setting var="vk_id" control_type="text">
+            <value>62260728</value>
+            <name locale="en_US">VK group id</name>
+            <name locale="ru_RU">Идентификатор группы ВКонтакте</name>
+        </setting>
+        <setting var="vk_width" control_type="text">
+            <value>220</value>
+            <name locale="en_US">width</name>
+            <name locale="ru_RU">Ширина</name>
+        </setting>
+        <setting var="vk_height" control_type="text">
+            <value>260</value>
+            <name locale="en_US">height</name>
+            <name locale="ru_RU">Высота</name>
+        </setting>
+        
+        <setting var="vk_mode" control_type="select">
+            <value>0</value>
+            <name locale="en_US">view</name>
+            <name locale="ru_RU">Вид</name>
+            <options>
+                <option value="0">
+                    <name locale="en_US">participants</name>
+                    <name locale="ru_RU">Участники</name>
+                </option>
+                <option value="1">
+                    <name locale="en_US">title only</name>
+                    <name locale="ru_RU">Только название</name>
+                </option>
+                <option value="2">
+                    <name locale="en_US">News</name>
+                    <name locale="ru_RU">Новости</name>
+                </option>
+            </options>
+        </setting>
+        <setting var="vk_color1" control_type="color">
+            <value>#FFFFFF</value>
+            <name locale="en_US">background Color</name>
+            <name locale="ru_RU">Цвет фона</name>
+        </setting>
+        <setting var="vk_color2" control_type="color">
+            <value>#2B587A</value>
+            <name locale="en_US">text Color</name>
+            <name locale="ru_RU">Цвет текста</name>
+        </setting>
+        <setting var="vk_color3" control_type="color">
+            <value>#5B7FA6</value>
+            <name locale="en_US">color buttons</name>
+            <name locale="ru_RU">Цвет кнопок</name>
+        </setting>
+        <setting var="facebook_widget_title" control_type="text">
+            <value></value>
+            <name locale="en_US">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Facebook widget</p>	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Виджет Facebook.</p>	
+                ]]>
+            </name>
+        </setting>
+
+        <setting var="facebook_href" control_type="text">
+            <value>https://www.facebook.com/FacebookDevelopers</value>
+            <name locale="ru_RU">URL страницы/группы Facebook(абсолютный)</name>
+            <name locale="en_US">URL of the page/ Facebook  group (absolute)</name>
+        </setting>
+        
+        <setting var="facebook_width" control_type="text">
+            <value></value>
+            <name locale="ru_RU">Ширина блока в пикселах</name>
+            <name locale="en_US">Block width in pixels</name>
+        </setting>
+        <setting var="facebook_height" control_type="text">
+            <value></value>
+            <name locale="ru_RU">Высота блока в пикселах</name>
+            <name locale="en_US">Block height in pixels</name>
+        </setting>
+        <setting var="facebook_colorscheme" control_type="select">
+            <value>light</value>
+            <name locale="en_US">The color scheme</name>
+            <name locale="ru_RU">Цветовая схема</name>
+            <options>
+                <option value="light">
+                    <name locale="en_US">light</name>
+                    <name locale="ru_RU">light</name>
+                </option>
+                <option value="dark">
+                    <name locale="en_US">dark</name>
+                    <name locale="ru_RU">dark</name>
+                </option>
+            </options>
+        </setting>
+        <setting var="facebook_show_faces" control_type="checkbox">
+            <value>1</value>
+            <name locale="ru_RU">Показать список участников</name>
+            <name locale="en_US">Show the list of participants</name>
+        </setting>
+        <setting var="facebook_stream" control_type="checkbox">
+            <value></value>
+            <name locale="ru_RU">Показать новости группы</name>
+            <name locale="en_US">Show the news of the group</name>
+        </setting>
+        <setting var="facebook_header" control_type="checkbox">
+            <value>1</value>
+            <name locale="ru_RU">Показать надпись "Найдите нас на Facebook"</name>
+            <name locale="en_US">Show the inscription "Find us on Facebook"</name>
+        </setting>		
+        <setting var="facebook_show_border" control_type="checkbox">
+            <value>1</value>
+            <name locale="ru_RU">Объвести рамкой блок "группа Facebook"</name>
+            <name locale="en_US">Add a border to block "Facebook group"</name>
+        </setting>
+        
+        
+        <setting var="sidebar_settings_title" control_type="text">
+            <value></value>
+            <name locale="en_US">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Setting up the side of the page(SideBar)</p>	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Настройка боковой части страницы(SideBar).</p>	
+                ]]>
+            </name>
+        </setting>
+        
+        <setting var="sidebar_position" control_type="select">
+            <value>left_sidebar</value>
+            <name locale="en_US">
+                Sidebar position
+            </name>
+            <name locale="ru_RU">
+                Положение sidebar
+            </name>
+            <options>
+                <option value="left_sidebar">
+                    <name locale="en_US">Left</name>
+                    <name locale="ru_RU">Левое</name>
+                </option>
+                <option value="right_sidebar">
+                    <name locale="en_US">right</name>
+                    <name locale="ru_RU">Правое</name>
+                </option>
+                <option value="none">
+                    <name locale="en_US">Do not show</name>
+                    <name locale="ru_RU">Не показывать</name>
+                </option>
+            </options>
+        </setting>
+        
+        <setting var="sidebar_blocks" control_type="text">
+            <value><![CDATA[
+filter_block
+catalog_block
+information_block
+manufacturer_block
+bestsellers_block
+viewed_products_block
+tags_block
+vk_block
+facebook_block
+news_block
+photos_block]]></value>
+            <name locale="en_US">
+                Добавляйте и перемещайте строки в этом списке, чтобы изменить набор блоков sidebar и их последовательность.
+            </name>
+            <name locale="ru_RU">
+                Добавляйте и перемещайте строки в этом списке, чтобы изменить набор блоков sidebar и их последовательность.
+            </name>
+        </setting>
+        
+        
+        <setting var="sidebar_filter_block_title" control_type="text">
+            <value locale="en_US">Filter</value>
+            <value locale="ru_RU">Фильтр</value>
+            <name locale="en_US">
+                <![CDATA[
+                <b>filter_block</b>	
+                ]]>
+                - Block filter products. Block title.</name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <b>filter_block</b>	
+                ]]> - Блок фильтра товаров. Заголовок блока.</name>
+        </setting>
+        
+        
+        <setting var="sidebar_information_block_title" control_type="text">
+            <value locale="en_US">Information</value>
+            <value locale="ru_RU">Информация</value>
+            <name locale="en_US">
+                <![CDATA[
+                <b>information_block</b>	
+                ]]>
+                - Block information. Block title.</name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <b>information_block</b>	
+                ]]> - Блок вывода информации. Заголовок блока.</name>
+        </setting>
+        
+        <setting var="sidebar_information_block_source" control_type="select">
+            <value>shop_pages</value>
+            <name locale="en_US">information_block. Select the source.</name>
+            <name locale="ru_RU">information_block. Выбирите источник.</name>
+            <options>
+                <option value="site_pages">
+                    <name locale="en_US">Application «Site» - pages</name>
+                    <name locale="ru_RU">Приложение «Сайт» - страницы</name>
+                </option>
+                <option value="shop_pages">
+                    <name locale="en_US">Application «Shop» - pages</name>
+                    <name locale="ru_RU">Приложение «Магазин» - страницы</name>
+                </option>
+                <option value="none">
+                    <name locale="en_US">Do not show</name>
+                    <name locale="ru_RU">Не показывать</name>
+                </option>
+            </options>
+        </setting>
+        
+        
+        <setting var="sidebar_manufacturer_block_title" control_type="text">
+            <value locale="en_US">Manufacturer</value>
+            <value locale="ru_RU">Производители</value>
+            <name locale="en_US">
+                <![CDATA[
+                <b>manufacturer_block</b>	
+                ]]>
+                - Block of manufacturer. plugin<![CDATA[<a href="http://www.webasyst.ru/store/plugin/shop/brands/">"Brands"</a>]]>. Block title.</name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <b>manufacturer_block</b>	
+                ]]> - Блок производителей. Необходим плагин <![CDATA[<a href="http://www.webasyst.ru/store/plugin/shop/brands/">"Бренды"</a>]]>. Заголовок блока.</name>
+        </setting>
+        
+        
+        <setting var="sidebar_catalog_block_title" control_type="text">
+            <value locale="en_US">Catalog</value>
+            <value locale="ru_RU">Каталог</value>
+            <name locale="en_US">
+                <![CDATA[
+                <b>catalog_block</b>	
+                ]]>
+                - Block output categories or subcategories. Block title.</name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <b>catalog_block</b>	
+                ]]> - Блок вывода категорий или подкатегорий. Заголовок блока.</name>
+        </setting>        
+        <setting var="sidebar_catalog_block_source" control_type="select">
+            <value>categories</value>
+            <name locale="en_US">
+                catalog_block. Select the source.
+            </name>
+            <name locale="ru_RU">
+                catalog_block. Выбирите источник. 
+            </name>
+            <options>
+                <option value="categories">
+                    <name locale="en_US">All categories</name>
+                    <name locale="ru_RU">Все категории</name>
+                </option>
+                <option value="subcategories">
+                    <name locale="en_US">subcategories current category</name>
+                    <name locale="ru_RU">Подкатегории текущей категории</name>
+                </option>
+                <option value="none">
+                    <name locale="en_US">Do not show</name>
+                    <name locale="ru_RU">Не показывать</name>
+                </option>
+            </options>
+        </setting>
+        
+        
+        <setting var="sidebar_bestsellers_block_title" control_type="text">
+            <value locale="en_US">Bestsellers</value>
+            <value locale="ru_RU">Хиты продаж</value>
+            <name locale="en_US">
+                <![CDATA[
+                <b>bestsellers_block</b>	
+                ]]> - Block "Hits of sales" from a specified list of products. Block title.</name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <b>bestsellers_block</b>	
+                ]]> - Блок вывода "Хитов продаж" из указанного списка товаров. Заголовок блока.</name>
+        </setting> 
+        <setting var="sidebar_bestsellers_block_source" control_type="text">
+            <value>bestsellers</value>
+            <name locale="en_US">
+                bestsellers_block. Specify a list of products
+            </name>
+            <name locale="ru_RU">
+                bestsellers_block. Укажите список товаров. 
+            </name>
+        </setting>
+        
+        <setting var="sidebar_bestsellers_block_count" control_type="text">
+            <value>3</value>
+            <name locale="en_US">
+                bestsellers_block. Specify the maximum number of items in the list. If 0 - the block is not displayed.
+            </name>
+            <name locale="ru_RU">
+                bestsellers_block. Укажите максимальное количество товаров в списке. Если 0 - блок не выводится.
+            </name>
+        </setting>
+        
+        
+        <setting var="sidebar_viewed_products_block_title" control_type="text">
+            <value locale="en_US">Viewed products</value>
+            <value locale="ru_RU">Просмотренных товаров</value>
+            <name locale="en_US">
+                <![CDATA[
+                <b>viewed_products_block</b>	
+                ]]>  - Block "viewed products". Block title.</name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <b>viewed_products_block</b>	
+                ]]>  - Блок вывода "Просмотренных товаров". Заголовок блока.</name>
+        </setting>
+        <setting var="sidebar_viewed_products_block_count" control_type="text">
+            <value>3</value>
+            <name locale="en_US">
+                viewed_products_block. Specify the maximum number of items in the list. If 0 - the block is not displayed.
+            </name>
+            <name locale="ru_RU">
+                viewed_products_block. Укажите максимальное количество товаров в списке. Если 0 - блок не выводится.
+            </name>
+        </setting>
+        
+        
+        <setting var="sidebar_tags_block_title" control_type="text">
+            <value locale="en_US">Tags</value>
+            <value locale="ru_RU">Теги</value>
+            <name locale="en_US">
+                <![CDATA[
+                <b>tags_block</b>	
+                ]]> - Output block tags. Block title.</name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <b>tags_block</b>	
+                ]]> - Блок вывода тегов. Заголовок блока.</name>
+        </setting>
+        <setting var="sidebar_tags_block_type" control_type="select">
+            <value>3d</value>
+            <name locale="en_US">tags_block. Select the type of block.</name>
+            <name locale="ru_RU">tags_block. Выбирите тип блока.</name>
+            <options>
+                <option value="3d">
+                    <name locale="en_US">3d - three-dimensional cloud</name>
+                    <name locale="ru_RU">3d - трехмерное облако</name>
+                </option>
+                <option value="simple">
+                    <name locale="en_US">simple</name>
+                    <name locale="ru_RU">простое</name>
+                </option>
+                <option value="none">
+                    <name locale="en_US">Do not show</name>
+                    <name locale="ru_RU">Не показывать</name>
+                </option>
+            </options>
+        </setting>
+        
+        <setting var="sidebar_tags_block_count" control_type="text">
+            <value>15</value>
+            <name locale="en_US">
+                tags_block - The maximum number of tags.
+            </name>
+            <name locale="ru_RU">
+                tags_block. Максимальное количество тегов.
+            </name>
+        </setting>
+        
+        <setting var="sidebar_vk_block_title" control_type="text">
+            <value locale="en_US">We VKontakte</value>
+            <value locale="ru_RU">Мы Вконтакте</value>
+            <name locale="en_US">
+                <![CDATA[
+                <b>vk_block</b>	
+                ]]> - output block of VK widget. Block title.</name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <b>vk_block</b>	
+                ]]> - блок вывода группы Вконтакте. Заголовок блока.</name>
+        </setting>
+        
+        <setting var="sidebar_facebook_block_title" control_type="text">
+            <value locale="en_US">Follow us on facebook</value>
+            <value locale="ru_RU">Мы в Facebook</value>
+            <name locale="en_US">
+                <![CDATA[
+                <b>facebook_block</b>	
+                ]]> - output block of Facebook widget. Block title.</name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <b>facebook_block</b>	
+                ]]> - блок вывода группы Facebook. Заголовок блока.</name>
+        </setting>
+        
+        
+        
+        
+        <setting var="sidebar_news_block_title" control_type="text">
+            <value locale="en_US">News</value>
+            <value locale="ru_RU">Новости</value>
+            <name locale="en_US">
+                <![CDATA[
+                <b>news_block</b>	
+                ]]> - output block of posts from "Blog" app. Block title.</name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <b>news_block</b>	
+                ]]> - блок вывода новостей из приложения "Блог". Заголовок блока.</name>
+        </setting>
+        <setting var="sidebar_news_block_count" control_type="text">
+            <value>3</value>
+            <name locale="en_US">
+                news_block. Specify the maximum number of posts.
+            </name>
+            <name locale="ru_RU">
+                news_block. Укажите максимальное количество новостей.
+            </name>
+        </setting>
+        <setting var="sidebar_news_block_length" control_type="text">
+            <value>200</value>
+            <name locale="en_US">
+                news_block. Specify the maximum length in characters post.
+            </name>
+            <name locale="ru_RU">
+                news_block. Укажите максимальную длинну новости в символах.
+            </name>
+        </setting>
+        
+        
+        <setting var="sidebar_photos_block_title" control_type="text">
+            <value locale="en_US">Photos</value>
+            <value locale="ru_RU">Фото</value>
+            <name locale="en_US">
+                <![CDATA[
+                <b>photos_block</b>	
+                ]]> - output block of photos from "Photos" app. Block title.</name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <b>photos_block</b>	
+                ]]> - блок вывода фотографий из приложения "ФОТО". Заголовок блока.</name>
+        </setting>
+        <setting var="sidebar_photos_block_count" control_type="text">
+            <value>3</value>
+            <name locale="en_US">
+                photos_block. Specify the maximum number of photos.
+            </name>
+            <name locale="ru_RU">
+                photos_block. Укажите максимальное количество фотографий.
+            </name>
+        </setting>
+        
+        
+        
+
+        <setting var="contact_details_title" control_type="text">
+            <value></value>
+            <name locale="en_US">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Setting the bottom of the page(Footer)</p>	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Настройка нижней части страницы(Footer).</p>	
+                ]]>
+            </name>
+        </setting> 
+        
+        <setting var="social_block_footer" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">social block footer</name>
+            <name locale="ru_RU">Блок "Подпишитесь" социальные сети в нижней части сайта</name>
+        </setting>
+        
+        <setting var="footer_facebook" control_type="text">
+            <value>https://www.facebook.com/</value>
+            <name locale="en_US">Link to facebook</name>
+            <name locale="ru_RU">Ссылка на facebook</name>
+        </setting>
+        <setting var="footer_twitter" control_type="text">
+            <value>http://twiter.ru/</value>
+            <name locale="en_US">Link to twitter</name>
+            <name locale="ru_RU">Ссылка на twitter</name>
+        </setting>
+        <setting var="footer_vk" control_type="text">
+            <value>http://vk.com/</value>
+            <name locale="en_US">
+                Link to vk
+                <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                Ссылка на ВКонтакте
+            <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+        </setting>
+        
+        
+        <setting var="footer_newsletter" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">
+                Show block "Newsletter" at the bottom of the page
+            </name>
+            <name locale="ru_RU">
+                Вывод блока "Подписка на новости" внизу страницы. Необходимо приложение "Рассылки"
+            </name>
+        </setting>
+        
+        <setting var="newsletter_form_number" control_type="text">
+            <value>1</value>
+            <name locale="en_US">
+                Form Number "Newsletter"
+                <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                НОМЕР ФОРМЫ "Подписка на новости"
+                Для публикации формы "Подписка на новости" на сайте используйте этот код вида: {$wa->mailer->form("НОМЕР ФОРМЫ")}.
+            <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+        </setting>
+
+        
+        <setting var="source_footer_info" control_type="select">
+            <value>shop_pages</value>
+            <name locale="en_US">
+                Source for block «Information» at the bottom of the page
+            <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                Источник для блока «Информация» в нижней части страницы
+            <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+            <options>
+                <option value="site_pages">
+                    <name locale="en_US">Application «Site» - pages</name>
+                    <name locale="ru_RU">Приложение «Сайт» - страницы</name>
+                </option>
+                <option value="shop_pages">
+                    <name locale="en_US">Application «Shop» - pages</name>
+                    <name locale="ru_RU">Приложение «Магазин» - страницы</name>
+                </option>
+                <option value="none">
+                    <name locale="en_US">Do not show</name>
+                    <name locale="ru_RU">Не показывать</name>
+                </option>
+            </options>
+        </setting>
+        
+        
+        
+        <setting var="footer_contact_details" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">Show block "Shop information" at the bottom of the page</name>
+            <name locale="ru_RU">Вывод блока "Информация о магазине" внизу страницы</name>
+        </setting>
+        
+      
+        <setting var="store_address" control_type="text">
+            <value>My Company, 312342 Москва,&lt;br&gt; ул. Ленина, д. 1</value>
+            <name locale="en_US">Address</name>
+            <name locale="ru_RU">Адрес</name>
+        </setting>
+        
+        <setting var="source_footer_phone" control_type="select">
+            <value>manually</value>
+            <name locale="en_US">Source the phone number</name>
+            <name locale="ru_RU">Источник для вывода номера телефона</name>
+            <options>
+                <option value="shop">
+                    <name locale="en_US">From the application settings "Shop"</name>
+                    <name locale="ru_RU">Из настроек приложения "Магазин"</name>
+                </option>
+                <option value="manually">
+                    <name locale="en_US">specified manually</name>
+                    <name locale="ru_RU">Указывается вручную</name>
+                </option>
+                <option value="none">
+                    <name locale="en_US">Do not show</name>
+                    <name locale="ru_RU">Не показывать</name>
+                </option>
+            </options>
+        </setting>
+        <setting var="footer_phone" control_type="text">
+            <value>+7 999 999 99 99</value>
+            <name locale="en_US">Phone number</name>
+            <name locale="ru_RU">Номер телефона</name>
+        </setting>
+        
+        <setting var="source_footer_email" control_type="select">
+            <value>manually</value>
+            <name locale="en_US">Source the email</name>
+            <name locale="ru_RU">Источник для вывода email</name>
+            <options>
+                <option value="shop">
+                    <name locale="en_US">From the application settings "Shop"</name>
+                    <name locale="ru_RU">Из настроек приложения "Магазин"</name>
+                </option>
+                <option value="manually">
+                    <name locale="en_US">specified manually</name>
+                    <name locale="ru_RU">Указывается вручную</name>
+                </option>
+                <option value="none">
+                    <name locale="en_US">Do not show</name>
+                    <name locale="ru_RU">Не показывать</name>
+                </option>
+            </options>
+        </setting>
+        
+        <setting var="footer_email" control_type="text">
+            <value>my_mail@my_store.ru</value>
+            <name locale="en_US">Email</name>
+            <name locale="ru_RU">Email</name>
+        </setting>
+
+        
+        
+        
+        
+        
+        <setting var="Additional_functionality_title" control_type="text">
+            <value></value>
+            <name locale="en_US">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Additional functionality</p>	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Дополнительный функционал.</p>	
+                ]]>
+            </name>
+        </setting> 
+        
+        
+        <setting var="ajax_auth" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">Ajax-authorization. When you press the "Enter" pops up a window where a user logs. Without going to the login page.</name>
+            <name locale="ru_RU">Ajax-авторизация. При нажатие кнопки "Войти" появляется всплывающее окно, в котором пользователь авторизируется. Без перехода на страницу авторизации.</name>
+        </setting>
+        
+        <setting var="is_autocomplete" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">Auto Search products</name>
+            <name locale="ru_RU">Автопоиск товаров (выпадающий список товаров появляется при вводе первых символов). Необходимо приложение «Магазин»</name>
+        </setting>
+        
+        <setting var="scroll_up" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">Scroll up</name>
+            <name locale="ru_RU">Прокрутка вверху</name>
+        </setting>
+        
+        <setting var="floating_shopping_cart" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">floating shopping cart</name>
+            <name locale="ru_RU">Плавающая корзина. Необходимо приложение «Магазин»</name>
+        </setting>
+        
+        <setting var="addon_panel" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">Addon panel</name>
+            <name locale="ru_RU">Дополнительная панель внизу экрана. Необходимо приложение «Магазин»</name>
+        </setting>
+
+    </settings>
+    <locales>
+        <locale>
+            <msgid>To home</msgid>
+            <msgstr locale="ru_RU">На главную</msgstr>
+        </locale>
+        <locale>
+            <msgid>To home</msgid>
+            <msgstr locale="ru_RU">На главную</msgstr>
+        </locale>
+        <locale>
+            <msgid>Information</msgid>
+            <msgstr locale="ru_RU">Информация</msgstr>
+        </locale>
+        <locale>
+            <msgid>My Account</msgid>
+            <msgstr locale="ru_RU">Учетная запись</msgstr>
+        </locale>
+        <locale>
+            <msgid>My orders</msgid>
+            <msgstr locale="ru_RU">Мои заказы</msgstr>
+        </locale> 
+        <locale>
+            <msgid>No products</msgid>
+            <msgstr locale="ru_RU">Нет товаров</msgstr>
+        </locale>
+        <locale>
+            <msgid>Search</msgid>
+            <msgstr locale="ru_RU">Поиск</msgstr>
+        </locale>
+        <locale>
+            <msgid>Vkontakte</msgid>
+            <msgstr locale="ru_RU">Вконтакте</msgstr>
+        </locale> 
+        <locale>
+            <msgid>Facebook</msgid>
+            <msgstr locale="ru_RU">Facebook</msgstr>
+        </locale>
+        <locale>
+            <msgid>Twitter</msgid>
+            <msgstr locale="ru_RU">Twitter</msgstr>
+        </locale> 
+        <locale>
+            <msgid>Follow us</msgid>
+            <msgstr locale="ru_RU">Подпишитесь</msgstr>
+        </locale>
+        <locale>
+            <msgid>Site design</msgid>
+            <msgstr locale="ru_RU">Дизайн сайта</msgstr>
+        </locale> 
+        <locale>
+            <msgid>Designing and developing websites</msgid>
+            <msgstr locale="ru_RU">Создание и разработка сайтов</msgstr>
+        </locale> 
+        <locale>
+            <msgid>Categories</msgid>
+            <msgstr locale="ru_RU">Категории</msgstr>
+        </locale>
+        <locale>
+            <msgid>Checkout</msgid>
+            <msgstr locale="ru_RU">Оформление заказа</msgstr>
+        </locale>
+        <locale>
+            <msgid>Total</msgid>
+            <msgstr locale="ru_RU">Итого</msgstr>
+        </locale>
+        <locale>
+            <msgid>Discount</msgid>
+            <msgstr locale="ru_RU">Скидка</msgstr>
+        </locale>
+        <locale>
+            <msgid>(empty)</msgid>
+            <msgstr locale="ru_RU">(пусто)</msgstr>
+        </locale>
+        <locale>
+            <msgid>Goods</msgid>
+            <msgstr locale="ru_RU">Товаров</msgstr>
+        </locale>
+        <locale>
+            <msgid>No products</msgid>
+            <msgstr locale="ru_RU">Нет товаров</msgstr>
+        </locale>
+        <locale>
+            <msgid>Cart</msgid>
+            <msgstr locale="ru_RU">Корзина</msgstr>
+        </locale>
+        <locale>
+            <msgid>Catalog</msgid>
+            <msgstr locale="ru_RU">Каталог</msgstr>
+        </locale>
+        <locale>
+            <msgid>Favorites</msgid>
+            <msgstr locale="ru_RU">Избранное</msgstr>
+        </locale>
+        <locale>
+            <msgid>Store Information</msgid>
+            <msgstr locale="ru_RU">Информация о магазине</msgstr>
+        </locale>
+        <locale>
+            <msgid>Newsletter</msgid>
+            <msgstr locale="ru_RU">Подписка на новости</msgstr>
+        </locale>
+        <locale>
+            <msgid>Find products</msgid>
+            <msgstr locale="ru_RU">Поиск товаров</msgstr>
+        </locale>
+        <locale>
+            <msgid>Viewed products</msgid>
+            <msgstr locale="ru_RU">Просмотренные товары</msgstr>
+        </locale>
+        <locale>
+            <msgid>Compare products</msgid>
+            <msgstr locale="ru_RU">Товары для сравнения</msgstr>
+        </locale>
+        
+        <locale>
+            <msgid>Favorites products</msgid>
+            <msgstr locale="ru_RU">Избранные товары</msgstr>
+        </locale>
+        <locale>
+            <msgid>Tags</msgid>
+            <msgstr locale="ru_RU">Теги</msgstr>
+        </locale>
+        <locale>
+            <msgid>We VKontakte</msgid>
+            <msgstr locale="ru_RU">Мы вконтакте</msgstr>
+        </locale>
+        <locale>
+            <msgid>Follow us on facebook</msgid>
+            <msgstr locale="ru_RU">Мы в Facebook</msgstr>
+        </locale>
+        <locale>
+            <msgid>News</msgid>
+            <msgstr locale="ru_RU">Новости</msgstr>
+        </locale>
+        <locale>
+            <msgid>Photos</msgid>
+            <msgstr locale="ru_RU">Фото</msgstr>
+        </locale>
+    </locales>
+</theme>

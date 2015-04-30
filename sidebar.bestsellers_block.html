@@ -1,0 +1,17 @@
+{if $wa->shop && $wa->shop->productSet($theme_settings.sidebar_bestsellers_block_source) && !empty($theme_settings.sidebar_bestsellers_block_count)}
+    {$products = array()}
+    {foreach $wa->shop->productSet($theme_settings.sidebar_bestsellers_block_source) as $b_product}
+        {$count = array_push($products, $b_product)}
+        {if $count >= $theme_settings.sidebar_bestsellers_block_count}
+            {break}
+        {/if}
+    {/foreach}
+    <div id="special_block_right" class="block">
+        <p class="title_block">
+            {$theme_settings.sidebar_bestsellers_block_title}
+        </p>
+        <div class="block_content products-block">
+            {include file="`$wa_active_theme_path`/list-thumbs-sidebar.html" products=$products inline}
+        </div>
+    </div>
+{/if}

@@ -1,0 +1,21 @@
+{$viewed_products_ids = waRequest::cookie('viewed_products')}
+{if $wa->shop && !empty($theme_settings.sidebar_viewed_products_block_count) && !empty($viewed_products_ids)}
+    {$viewed_products_ids = explode(',', $viewed_products_ids)}
+    {$viewed_products = array()}
+    {foreach $viewed_products_ids as $viewed_product_id}
+        {$product = $wa->shop->product($viewed_product_id)}
+        {$number = array_push($viewed_products, $product)}
+        {if $number >= $theme_settings.sidebar_viewed_products_block_count}
+            {break}
+        {/if}
+    {/foreach}
+    <!-- Block Viewed products -->
+    <div id="viewed-products_block_left" class="block">
+        <p class="title_block">
+            {$theme_settings.sidebar_viewed_products_block_title}
+        </p>
+        <div class="block_content products-block">
+            {include file="`$wa_active_theme_path`/list-thumbs-sidebar.html" products=$viewed_products inline}
+        </div>
+    </div>
+{/if}

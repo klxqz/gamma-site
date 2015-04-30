@@ -1,0 +1,43 @@
+{if $theme_settings.source_main_menu == 'shop_categories' && $wa->shop}
+
+    <div class="cat-title">[`Catalog`]</div>
+    {if !empty($category)}
+        {$selected_category = $category.id}
+    {else}
+        {$selected_category = null}
+    {/if}
+    {wa_print_tree tree=$wa->shop->categories(0, null, true) selected=$selected_category unfolded=true class="sf-menu clearfix menu-content" elem ='<a href=":url" title=":name">:name</a>'}
+
+{elseif $theme_settings.source_main_menu == 'shop_pages' && $wa->shop}
+
+    <div class="cat-title">[`Information`]</div>
+    {if isset($page.id)}
+        {$selected_page=$page.id}
+    {else}
+        {$selected_page=null}
+    {/if}
+    {wa_print_tree tree=$wa->site->pages() selected=$selected_page unfolded=true class="sf-menu clearfix menu-content" elem ='<a href=":url" title=":name">:name</a>'}
+{elseif $theme_settings.source_main_menu == 'user_links'}
+    {$s_links = explode("\n", $theme_settings.main_menu_user_links)}
+    {$user_links = array()}
+    {foreach $s_links as $s_link}
+        {if !empty($s_link)}
+            {$arr = explode(';', $s_link)}
+            {if !empty($arr[0]) && !empty($arr[1])}
+                {$user_link = ['url' => trim($arr[0]), 'name' => trim($arr[1])]}
+                {$num = array_push($user_links, $user_link)}
+            {/if}
+        {/if}
+    {/foreach}
+    <div class="cat-title">[`Information`]</div>
+
+    {wa_print_tree tree=$user_links unfolded=false class="sf-menu clearfix menu-content" elem ='<a href=":url" title=":name">:name</a>'}
+{else}
+    <div class="cat-title">[`Information`]</div>
+    {if isset($page.id)}
+        {$selected_page=$page.id}
+    {else}
+        {$selected_page=null}
+    {/if}
+    {wa_print_tree tree=$wa->site->pages() selected=$selected_page unfolded=true class="sf-menu clearfix menu-content" elem ='<a href=":url" title=":name">:name</a>'}
+{/if}

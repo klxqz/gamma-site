@@ -1,0 +1,24 @@
+{if !empty($category)}
+    {$selected_category = $category.id}
+{else}
+    {$selected_category = null}
+{/if}
+
+{if $theme_settings.sidebar_catalog_block_source == 'categories' && $wa->shop}
+    {$categories = $wa->shop->categories(0, null, true)}
+{elseif $theme_settings.sidebar_catalog_block_source == 'subcategories' && $wa->shop}
+    {$categories = $wa->shop->categories($selected_category, null, true)}
+{/if}
+
+{if !empty($categories) && $wa->shop}
+    <!-- Block categories -->
+    <div class="block" id="categories_block_left">
+        <h2 class="title_block">
+            {$theme_settings.sidebar_catalog_block_title}
+        </h2>
+        <div class="block_content">
+            {wa_print_tree tree=$categories selected=$selected_category unfolded=true class="tree dhtml" elem ='<a href=":url" title=":name">:name</a>'}
+        </div>
+    </div>
+    <!-- /Block categories -->
+{/if}

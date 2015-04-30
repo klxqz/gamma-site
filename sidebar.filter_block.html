@@ -1,0 +1,120 @@
+{if !empty($filters)}
+    <div id="layered_block_left" class="block">
+        <p class="title_block">
+            {$theme_settings.sidebar_filter_block_title}
+        </p>
+        <div class="block_content">
+            <div class="filters{if !empty($theme_settings.ajax_filters)} ajax{/if}">
+                <form id="layered_form" method="get" action="{$wa->currentUrl(0,1)}">
+                    {foreach $filters as $fid => $filter}
+                        <div class="layered_filter">
+                            {if $fid == 'price'}
+                                {$c = $wa->shop->currency(true)}
+                                <div class="layered_subtitle_heading">
+                                    <span class="layered_subtitle">[`Price`]</span>
+                                </div>
+                                <ul class="col-lg-12 layered_filter_ul">
+                                    <li class="nomargin hiddable col-lg-12">
+                                        <label>
+                                            [`from`]
+                                        </label>
+                                        <input autocomplete="off" class="form-control" type="text" name="price_min" {if $wa->get('price_min')}value="{(int)$wa->get('price_min')}"{/if} placeholder="{floor($filter.min)}"> {$c.sign}
+                                    </li>
+                                    <li class="nomargin hiddable col-lg-12">
+                                        <label>
+                                            [`to`]
+                                        </label>
+                                        <input autocomplete="off" class="form-control" type="text" name="price_max" {if $wa->get('price_max')}value="{(int)$wa->get('price_max')}"{/if} placeholder="{ceil($filter.max)}"> {$c.sign}
+                                    </li>
+
+                                    {if !empty($theme_settings.filter_slider)}
+                                        <li>
+                                            <div id="filter-slider"></div>
+                                        </li>
+                                    {/if}
+                                </ul>
+                                {if !empty($theme_settings.filter_slider)}
+                                    <script type="text/javascript">
+                                    var filter_slider_min_value = {floor($filter.min)};
+                                    var filter_slider_max_value = {ceil($filter.max)};
+                                    var filter_slider_min_price = {if $wa->get('price_min')}{(int)$wa->get('price_min')}{else}{floor($filter.min)}{/if};
+                                    var filter_slider_max_price = {if $wa->get('price_max')}{(int)$wa->get('price_max')}{else}{ceil($filter.max)}{/if};
+                                    </script>
+                                {/if}
+
+
+
+
+                            {else}
+                                <div class="layered_subtitle_heading">
+                                    <span class="layered_subtitle">{$filter.name|escape}</span>
+                                </div>
+                                {if $filter.type == 'boolean'}
+                                    <ul class="col-lg-12 layered_filter_ul">
+
+                                        <li class="nomargin hiddable col-lg-12">
+                                            <input autocomplete="off" type="radio" name="{$filter.code}"{if $wa->get($filter.code)} checked{/if} value="1"> 
+                                            <label>
+                                                [`Yes`]
+                                            </label>
+                                        </li>
+                                        <li class="nomargin hiddable col-lg-12">
+                                            <input autocomplete="off" type="radio" name="{$filter.code}"{if $wa->get($filter.code) === '0'} checked{/if} value="0"> 
+                                            <label>
+                                                [`No`]
+                                            </label>
+                                        </li>
+                                        <li class="nomargin hiddable col-lg-12">
+                                            <input autocomplete="off" type="radio" name="{$filter.code}"{if $wa->get($filter.code, '') === ''} checked{/if} value=""> 
+                                            <label>
+                                                [`Any`]
+                                            </label>
+                                        </li>
+
+                                    </ul>
+                                {elseif isset($filter.min)}
+                                    {$_v = $wa->get($filter.code)}
+                                    <ul class="col-lg-12 layered_filter_ul">
+                                        <li class="nomargin hiddable col-lg-12">[`from`] <input autocomplete="off" type="text" name="{$filter.code}[min]" placeholder="{$filter.min}" {if !empty($_v.min)}value="{$_v.min}"{/if}></li>
+                                        <li class="nomargin hiddable col-lg-12">
+                                            [`to`] <input autocomplete="off" type="text" name="{$filter.code}[max]" placeholder="{$filter.max}" {if !empty($_v.max)}value="{$_v.max}"{/if}>
+                                            {if !empty($filter.unit)}
+                                                {$filter.unit.title}
+                                                {if $filter.unit.value != $filter.base_unit.value}<input type="hidden" name="{$filter.code}[unit]" value="{$filter.unit.value}">{/if}
+                                            {/if}
+                                        </li>
+                                    </ul>
+                                {else}
+                                    <ul class="col-lg-12 layered_filter_ul">
+                                        {foreach $filter.values as $v_id => $v}
+                                            <li class="nomargin hiddable col-lg-12">
+                                                <input autocomplete="off" type="checkbox" name="{$filter.code}[]" {if in_array($v_id, (array)$wa->get($filter.code, array()))}checked{/if} value="{$v_id}"> 
+                                                <label>
+                                                    {$v}
+                                                </label>
+                                            </li>
+                                        {/foreach}
+                                    </ul>
+                                {/if}
+
+
+                            {/if}
+                        </div>
+
+                    {/foreach}
+                    {if $wa->get('sort')}<input type="hidden" name="sort" value="{$wa->get('sort')|escape}">{/if}
+                    {if $wa->get('order')}<input type="hidden" name="order" value="{$wa->get('order')|escape}">{/if}
+                    <p></p>
+                    <input class="btn button" type="submit" value="[`Filter products`]">
+                </form>
+            </div>
+        </div>
+        <div id="layered_ajax_loader" style="display: none;">
+            <p>
+                <img src="{$wa_parent_theme_url}img/loader.gif" alt="" />
+                <br />Загрузка ...
+            </p>
+        </div>
+    </div>
+    <!-- /Block layered navigation module -->
+{/if}

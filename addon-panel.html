@@ -1,0 +1,43 @@
+<style>
+    .footer-container:before{
+        height: 120px;
+    }
+    .footer-container .container{
+        padding-bottom: 150px;
+    }
+</style>
+<div id="panel">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                {$wishlist = waRequest::cookie('shop_wishlist', array(), waRequest::TYPE_ARRAY_INT)}
+                <a class="wishlist btn" rel="nofollow" href="{$wa->getUrl('shop/frontend/search')}?list=wishlist" id="favorite-link" {if !$wishlist}disabled="disabled"{/if}>
+                    <i class="icon-heart"></i>
+                    <span class="text">[`Favorites products`]</span>(<span class="count">{count($wishlist)}</span>)
+                </a>
+            </div>
+            <div class="col-sm-3">
+                {$compare = waRequest::cookie('shop_compare', array(), waRequest::TYPE_ARRAY_INT)}
+                <a class="compare btn" rel="nofollow" href="{$wa->getUrl('shop/frontend/compare/', ['id' => implode(',', $compare) ])}" {if !$compare}disabled="disabled"{/if}>
+                    <i class="icon-bar-chart"></i>
+                    <span class="text">[`Compare products`]</span>(<span class="count">{count($compare)}</span>)
+                </a>
+            </div>
+            <div class="col-sm-3">
+                {$viewed_products = waRequest::cookie('viewed_products')}
+                {$viewed_products = explode(',', $viewed_products)}
+                <a class="btn" rel="nofollow" href="{$wa->getUrl('shop/frontend/search')}?list=viewed_products" id="lastview-link" {if !$viewed_products}disabled="disabled"{/if}>
+                    <i class="icon-eye-open"></i>
+                    <span class="text">[`Viewed products`]</span>(<span class="count">{count($viewed_products)}</span>)
+                </a>
+            </div>
+            <div class="col-sm-3">
+                {$cart_count = $wa->shop->cart->count()}
+                <a class="btn cart" href="{$wa->getUrl('shop/frontend/cart')}" {if !$cart_count}disabled="disabled"{/if}>
+                    <i class="icon-shopping-cart"></i>
+                    <span class="text">[s`Shopping cart`]</span>(<span class="count">{$cart_count}</span>)
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+{$available_blocks = [
+    'filter_block',
+    'information_block',
+    'catalog_block', 
+    'manufacturer_block', 
+    'bestsellers_block', 
+    'viewed_products_block', 
+    'tags_block',
+    'vk_block',
+    'facebook_block',
+    'news_block',
+    'photos_block']}
+{$sidebar_blocks = explode("\n", $theme_settings.sidebar_blocks)}
+
+{foreach $sidebar_blocks as $sidebar_block}
+    {$sidebar_block = trim($sidebar_block)}
+
+    {if in_array($sidebar_block, $available_blocks)}
+        {include file="sidebar.`$sidebar_block`.html"}        
+    {/if}
+{/foreach}

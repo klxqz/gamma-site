@@ -1,0 +1,31 @@
+{if $wa->shop && $wa->shop->tags() && !empty($theme_settings.sidebar_tags_block_count) && $theme_settings.sidebar_tags_block_type != 'none'}
+    <script type="text/javascript" src="{$wa_theme_url}js/jquery.tagcanvas.min.js"></script>
+    <script type="text/javascript">
+        var tagcanvas = 1; 
+    </script>
+
+    <div class="block tags_block">
+        <p class="title_block">
+            {$theme_settings.sidebar_tags_block_title}
+        </p>
+        <div class="block_content blockstore">
+            {if $theme_settings.sidebar_tags_block_type == '3d'}
+                <div id="tag-cloud-canvas">
+                    <canvas width="300" height="300" id="canvas"></canvas>
+                </div>
+            {/if}
+            <div id="tag-cloud">
+                <ul>
+                    {foreach $wa->shop->tags() as $tag}
+                        <li>
+                            <a href="{$wa->getUrl('shop/frontend/tag',['tag' => $tag.uri_name])}" style="font-size: {$tag.size}%; opacity: {$tag.opacity}">{$tag.name|escape}</a>
+                        </li>
+                        {if $tag@iteration >= $theme_settings.sidebar_tags_block_count}
+                            {break}
+                        {/if}
+                    {/foreach}
+                </ul>
+            </div>
+        </div>
+    </div>
+{/if}

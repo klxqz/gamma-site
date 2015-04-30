@@ -1,0 +1,18 @@
+{if $theme_settings.sidebar_information_block_source == 'shop_pages' && $wa->shop}
+    {$pages = $wa->shop->pages()}
+{elseif $theme_settings.sidebar_information_block_source == 'site_pages'}
+    {$pages = $wa->site->pages()}
+{/if}
+
+{if !empty($pages)}
+    <!-- Block pages -->
+    <section id="informations_block_left_1" class="block informations_block_left">
+        <p class="title_block">
+            {$theme_settings.sidebar_information_block_title}
+        </p>
+        <div class="block_content list-block">
+            {wa_print_tree tree=$pages unfolded=false elem ='<a href=":url" title=":name">:name</a>'}
+        </div>
+    </section>
+    <!-- /Block pages -->
+{/if}

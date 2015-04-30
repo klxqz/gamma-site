@@ -1,0 +1,464 @@
+{if $wa->get('content_only')}
+    {$content}
+{else}
+    <!DOCTYPE HTML>
+    <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 " lang="en"><![endif]-->
+    <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8 ie7" lang="en"><![endif]-->
+    <!--[if IE 8]><html class="no-js lt-ie9 ie8" lang="en"><![endif]-->
+    <!--[if gt IE 8]> <html class="no-js ie9" lang="en"><![endif]-->
+    <html lang="en">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+            <title>{$wa->title()|escape}</title>
+            <meta name="Keywords" content="{$wa->meta('keywords')|escape}" />
+            <meta name="Description" content="{$wa->meta('description')|escape}" />
+            <meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.6, initial-scale=1.0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+            {if !empty($canonical)}<link rel="canonical" href="{$canonical}"/>{/if}
+            <link rel="shortcut icon" href="/favicon.ico"/>
+            {if $wa->blog}
+                <!-- rss -->
+                {$rss=$wa->blog->rssUrl()}
+                {if $rss}<link rel="alternate" type="application/rss+xml" title="[s`RSS`] &mdash; {$wa->accountName()}" href="{$rss}">{/if}
+            {/if}
+
+
+            <link rel="stylesheet" href="{$wa_theme_url}bootstrap/css/bootstrap.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}font-awesome/css/font-awesome.min.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}global.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}highdpi.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}responsive-tables.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}uniform.default.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}fancyBox/jquery.fancybox.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}product_list.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockcart.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockcategories.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockcurrencies.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockphone.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockfacebook.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockcontact.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blocknewsletter.css"  media="all"/>
+
+            <link rel="stylesheet" href="{$wa_theme_url}blocksearch.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blocktags.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockuserinfo.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockviewed.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}homeslider.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}hooks.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockwishlist.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}productcomments.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockpermanentlinks.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blocktopmenu.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}superfish-modified.css"  media="all"/>
+            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600" media="all"/>
+            <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+
+            <link rel="stylesheet" href="{$wa_theme_url}custom.css"  media="all"/>
+            <!--[if IE 8]>
+                            <script src="{$wa_theme_url}html5shiv.js" ></script>
+                            <script src="{$wa_theme_url}respond.min.js" ></script>
+                            <![endif]-->
+
+            <!-- css -->
+
+            {if $theme_settings.ruble_symbol && $wa->shop && $wa->shop->currency() == 'RUB'} <link href="{$wa_url}wa-content/font/ruble/arial/fontface.css" rel="stylesheet" type="text/css">{/if}
+            {$wa->css()} {* links active plugins CSS *}
+
+            <!-- js -->
+            <script type="text/javascript">
+                var shop_search_url = '{$wa->getUrl("shop/frontend/search")}';
+                var is_autocomplete = '{!empty($theme_settings.is_autocomplete) && $wa->shop}';
+                var is_floating_shopping_cart = '{$theme_settings.floating_shopping_cart}';
+                var cart_url = '{$wa->getUrl("shop/frontend/cart")}';
+            </script>
+            <script type="text/javascript" src="{$wa_url}wa-content/js/jquery/jquery-1.8.2.min.js"></script>  
+
+
+
+            {if !empty($theme_settings.is_autocomplete) && $wa->shop}
+                <link href="{$wa_url}wa-content/css/jquery-ui/base/jquery.ui.theme.css?v{$wa_theme_version}" rel="stylesheet" type="text/css">
+                <link href="{$wa_url}wa-content/css/jquery-ui/base/jquery.ui.autocomplete.css?v{$wa_theme_version}" rel="stylesheet" type="text/css">
+                <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.core.min.js?v{$wa_theme_version}"></script>
+                <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.widget.min.js?v{$wa_theme_version}"></script>
+                <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.position.min.js?v{$wa_theme_version}"></script>
+                <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.autocomplete.min.js?v{$wa_theme_version}"></script>
+            {/if}
+
+
+            <script type="text/javascript" src="{$wa_theme_url}custom.js?v{$wa_theme_version}"></script>    
+            {$wa->js()} {* links active plugins JS *}
+
+            {include file="`$wa_active_theme_path`/head.html" inline}
+
+            {$wa->headJs()} {* links Google Analytics tracking code and current site's custom JS (Site app) *}
+
+
+
+            {if !empty($theme_settings.color_scheme) && $theme_settings.color_scheme == 'custom_color_scheme'}
+                {include file="custom_color_scheme.html" inline}
+            {elseif !empty($theme_settings.color_scheme)}
+                <link rel="stylesheet" href="{$wa_theme_url}{$theme_settings.color_scheme}.css"  media="all"/>
+            {/if}
+
+            <style>
+                {if $theme_settings.bg_color != '#ffffff'}
+                    body {
+                        background-color: {$theme_settings.bg_color}; 
+                    }
+                    .container#columns{
+                        padding-left: 15px;
+                        padding-right: 15px;
+                    }
+                {/if}
+
+                {if $theme_settings.bg_image != 'img/bg/no_bg.png'}
+                    #page {
+                        background-image: url({$wa_theme_url}{$theme_settings.bg_image}); 
+                        {if !empty($theme_settings.fixed_bg_image)}
+                            background-attachment: fixed;
+                        {/if}
+                        {if !empty($theme_settings.size_bg_image)}
+                            background-size: cover;
+                        {/if}
+
+                        {if !empty($theme_settings.bg_position)}
+                            background-position: {$theme_settings.bg_position};
+                        {/if}
+                        background-repeat: {$theme_settings.repeat_bg_image};
+                    }
+                    .container#columns{
+                        padding-left: 15px;
+                        padding-right: 15px;
+                    }
+                {/if}
+                {if $theme_settings.bg_texture != 'img/bg/no_bg.png'}
+                    body {
+                        background-image: url({$wa_theme_url}{$theme_settings.bg_texture}); 
+                    }
+                    .container#columns{
+                        padding-left: 15px;
+                        padding-right: 15px;
+                    }
+                {/if}
+
+
+            </style>
+
+
+        </head>
+        <body>
+
+            <div id="page">
+                <div class="header-container">
+                    <header id="header">
+                        <div class="banner">
+                            <div class="container">
+                                <div class="row">
+                                    {$theme_settings.header_banner_text}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav">
+                            <div class="container">
+                                <div class="row">
+                                    <nav>
+                                        {if $wa->isAuthEnabled()}
+                                            <div class="header_user_info">
+                                                {if $wa->user()->isAuth()}
+                                                    <a class="login" href="?logout"  rel="nofollow" title="[s`Log out`]">
+                                                        <i class="icon-unlock"></i>
+                                                    </a>
+                                                {else}
+                                                    <a class="{if !empty($theme_settings.ajax_auth)}modal-dialog {/if}login" href="{$wa->loginUrl()}"  rel="nofollow" title="[s`Log in`]">
+                                                        <i class="icon-lock"></i>
+                                                    </a>
+                                                {/if}
+                                            </div>
+                                        {/if}
+
+
+
+
+                                        {if $wa->shop && !empty($currencies) && count($currencies) > 1 }
+                                            {$currency = $wa->shop->currency(true)}
+                                            <div id="currencies-block-top">
+                                                <div class="current">
+                                                    <span class="cur-label">Currency :</span>
+                                                    <strong>
+                                                        {if $theme_settings.ruble_symbol && !empty($currency.sign_html)}
+                                                            {$currency.sign_html}
+                                                        {else}
+                                                            {$currency.sign}
+                                                        {/if}
+                                                    </strong> 
+                                                </div>
+                                                <ul id="first-currencies" class="currencies_ul toogle_content">
+                                                    {foreach $currencies as $c_code => $c}
+                                                        <li{if $c_code == $currency} class="selected"{/if} >
+                                                            <a data-code="{$c_code}" href="#" rel="nofollow" title="{$c.title}">
+                                                                {$c.title}
+                                                            </a>
+                                                        </li>
+                                                    {/foreach}
+                                                </ul>
+                                            </div>
+                                        {/if}
+
+                                        <div class="phone-block" id="phone-block-top">
+                                            <div class="phone">
+                                                <span>{$wa->shop->settings('phone')}</span>
+                                            </div>
+                                        </div>
+
+                                        {include file="block-header-links.html"}
+
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="container">
+                                <div class="row">
+                                    <div id="header_logo">
+                                        <a href="{$wa_url}">
+                                            <img class="logo img-responsive" src="{$wa_theme_url}{$theme_settings.logo}"  alt="{$wa->accountName()}"/>                                        
+                                        </a>
+                                    </div>
+
+                                    {if $wa->shop}
+                                        <div id="search_block_top" class="col-sm-4 clearfix">
+                                            <form id="searchbox" method="get" action="{$wa->getUrl('shop/frontend/search')}">
+                                                <input id="search_query_top" class="search_query form-control" type="search" name="query" {if !empty($query)}value="{$query}"{/if} id="search" placeholder="[`Find products`]">
+                                                <button type="submit" class="btn btn-default button-search">
+                                                    <span>[`Search`]</span>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    {/if}
+
+
+
+                                    <div class="col-sm-4 clearfix">
+                                        {if $wa->shop}
+                                            {$cart = $wa->shop->cart()}
+                                            {$cart_total = $wa->shop->cart->total()}
+                                            {$cart_count = $wa->shop->cart->count()} 
+                                            {$cart_discount = $wa->shop->cart->total(false) - $wa->shop->cart->total(true)}
+                                            <div class="shopping_cart">
+                                                <a href="{$wa->getUrl('shop/frontend/cart')}" rel="nofollow">
+                                                    <b>[s`Shopping cart`]</b>
+                                                    <span class="ajax_cart_product_txt{if !$cart_count} unvisible{/if}">[`Goods`]:</span>
+                                                    <span class="ajax_cart_quantity{if !$cart_count} unvisible{/if}">{$cart_count}</span>
+                                                    <span class="ajax_cart_total unvisible">{wa_currency_html($cart_total, $wa->shop->currency())}</span>
+                                                    <span class="ajax_cart_no_product {if $cart_count} unvisible{/if}">[`(empty)`]</span>
+                                                </a>
+                                                <div class="cart_block block exclusive">
+                                                    <div class="block_content">
+
+                                                        <div class="cart_block_list">
+                                                            <dl class="products">
+                                                                {$cart_items = $cart->items()}
+                                                                {foreach $cart_items as $item}
+                                                                    <dt data-id="{$item.id}">
+                                                                    <a title="{$item.name|escape}" href="{$wa->shop->productUrl($item.product)}" class="cart-images">
+                                                                        {if class_exists(shopImgresizePlugin)}
+                                                                            <img src="{shopImgresizePlugin::getImgUrlByProduct($item.product,'80x80')}" />
+                                                                        {else}
+                                                                            {$wa->shop->productImgHtml($item.product, '80x80', ['alt' => $item.name, 'default' => "`$wa_theme_url`img/dummy200.png"])}
+                                                                        {/if}
+                                                                    </a>
+                                                                    <div class="cart-info">
+                                                                        <div class="product-name">
+                                                                            <span class="quantity-formated">
+                                                                                <span class="quantity">{$item.quantity}</span>&nbsp;x&nbsp;
+                                                                            </span>
+                                                                            <a title="{$item.name|escape}" href="{$wa->shop->productUrl($item.product)}" class="cart_block_product_name">
+                                                                                {$item.name}
+                                                                            </a>
+                                                                        </div>
+                                                                        <span class="price">
+                                                                            {if $theme_settings.ruble_symbol}
+                                                                                {wa_currency_html($item.price, $wa->shop->currency())}
+                                                                            {else}
+                                                                                {wa_currency($item.price, $wa->shop->currency())}
+                                                                            {/if}
+                                                                        </span>
+                                                                    </div>
+                                                                    <span class="remove_link">
+                                                                        <a rel="nofollow" href="#" class="ajax_cart_block_remove_link">&nbsp;</a>
+                                                                    </span>
+                                                                    </dt>
+                                                                {/foreach}
+                                                                <!-- Customizable datas -->
+                                                            </dl>
+                                                            <p class="cart_block_no_products" {if $cart_items}style="display: none"{/if}>
+                                                                [`No products`]
+                                                            </p>
+                                                            <div class="cart-prices">
+                                                                <div class="cart-prices-line first-line">
+                                                                    <span class="price cart_block_discount ajax_cart_discount">
+                                                                        {if $theme_settings.ruble_symbol}
+                                                                            {wa_currency_html($cart_discount, $wa->shop->currency())}
+                                                                        {else}
+                                                                            {wa_currency($cart_discount, $wa->shop->currency())}
+                                                                        {/if}
+                                                                    </span>
+                                                                    <span>
+                                                                        [`Discount`]
+                                                                    </span>
+                                                                </div>
+                                                                <div class="cart-prices-line last-line">
+                                                                    <span class="price cart_block_total ajax_block_cart_total">
+                                                                        {if $theme_settings.ruble_symbol}
+                                                                            {wa_currency_html($cart_total, $wa->shop->currency())}
+                                                                        {else}
+                                                                            {wa_currency($cart_total, $wa->shop->currency())}
+                                                                        {/if}
+
+                                                                    </span>
+                                                                    <span>[`Total`]</span>
+                                                                </div>
+                                                            </div>
+                                                            <p class="cart-buttons">
+                                                                <a rel="nofollow" href="{$wa->getUrl('shop/frontend/cart')}" class="btn btn-default button button-small" id="button_order_cart">
+                                                                    <span>
+                                                                        [`Checkout`]
+                                                                        <i class="icon-chevron-right right"></i>
+                                                                    </span>
+                                                                </a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        {/if}
+                                    </div>
+
+
+                                    <div id="block_top_menu" class="sf-contener clearfix col-lg-12">
+                                        {include file="block-top-menu.html"}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                <div class="columns-container">
+                    <div id="columns" class="container">        
+                        {include file="`$wa_active_theme_path`/content.html" inline}
+                    </div>
+                </div>
+
+
+                <div class="footer-container">
+                    <footer id="footer" class="container">
+                        <div class="row">
+                            {include file="footer.html"}
+
+                        </div>
+                    </footer>
+                </div> 
+            </div> 
+            <script type="text/javascript">
+                var CUSTOMIZE_TEXTFIELD = 1;
+                var FancyboxI18nClose = 'Close';
+                var FancyboxI18nNext = 'Next';
+                var FancyboxI18nPrev = 'Previous';
+                var added_to_wishlist = 'Added to your wishlist.';
+                var ajaxsearch = true;
+                var baseDir = 'index.htm';
+                var baseUri = '#';
+                var blocksearch_type = 'top';
+                var comparator_max_item = 2;
+                var comparedProductsIds = [];
+                var contentOnly = false;
+                var customizationIdMessage = 'Customization #';
+                var delete_txt = 'Delete';
+                var freeProductTranslation = 'Free!';
+                var freeShippingTranslation = 'Free shipping!';
+                var generated_date = 1423652649;
+                var homeslider_loop = true;
+                var homeslider_pause = '3000';
+                var homeslider_speed = '500';
+                var homeslider_width = '780';
+                var id_lang = 1;
+                var img_dir = '#';
+                var instantsearch = true;
+                var isGuest = 0;
+                var isLogged = 0;
+                var loggin_required = 'You must be logged in to manage your wishlist.';
+                var max_item = 'You cannot add more than 2 product(s) to the product comparison';
+                var min_item = 'Please select at least one product';
+                var mywishlist_url = '#';
+                
+                var page_name = 'index';
+                var placeholder_blocknewsletter = 'Enter your e-mail';
+                var priceDisplayMethod = 1;
+                var priceDisplayPrecision = 2;
+                var quickView = true;
+                var removingLinkText = 'remove this product from my cart';
+                var roundMode = 2;
+                var search_url = '#';
+                var static_token = 'e7c9cea3b7e2312c7993bb42fc33064e';
+                var token = '867fa477c09b64db9b98d78e166bbe0e';
+                var usingSecureMode = false;
+                var wishlistProductsIds = false;
+            </script>
+            {literal}
+                <script type="text/javascript">
+                    var blocklayeredSliderName = {"price": "price", "weight": "weight"};
+
+                    var delete_txt = 'Удалить';
+
+       
+                    var page_name = 'category';
+
+
+                </script>
+            {/literal}
+            <script type="text/javascript" src="{$wa_theme_url}jquery.easing.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}tools.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}global.js" ></script>
+
+            <script type="text/javascript" src="{$wa_theme_url}bootstrap/js/bootstrap.min.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}15-jquery.total-storage.min.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}15-jquery.uniform-modified.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}fancyBox/jquery.fancybox.pack.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}jquery.scrollTo.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}jquery.serialScroll.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}jquery.bxslider.min.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}treeManagement.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}blocknewsletter.js" ></script>
+
+
+            <script type="text/javascript" src="{$wa_theme_url}homeslider.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}hoverIntent.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}superfish-modified.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}blocktopmenu.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}ajax-cart.js" ></script>
+
+            {if !empty($theme_settings.addon_panel) && $wa->shop}
+                {include file="addon-panel.html" inline}
+            {/if}
+
+            {if !empty($theme_settings.scroll_up)}
+                <div id="back-top">
+                    <a href="#"><i class="icon-arrow-up"></i></a>
+                </div>
+            {/if}
+
+            <div id="dialog" class="dialog">
+                <div class="dialog-background"></div>
+                <div class="dialog-window">
+                    <!-- common part -->
+                    <div class="cart">
+
+                    </div>
+                    <!-- /common part -->
+
+                </div>
+            </div>
+        </body>
+    </html>
+{/if}

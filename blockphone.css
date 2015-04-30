@@ -1,0 +1,25 @@
+
+#phone-block-top {
+    float: right;
+    position: relative; }
+
+#phone-block-top div.phone {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 15px 30px 0 0;
+    text-transform: capitalize;
+    padding: 0 0 10px 10px;
+    color: #fff;
+}
+@media (max-width: 479px) {
+    #phone-block-top div.phone {
+        text-align: center;
+        padding: 9px 5px 10px;
+        font-size: 14px; } }
+#phone-block-top div.phone strong {
+    color: #777777; }
+#phone-block-top div.phone:hover, #phone-block-top div.phone.active {
+    color: #3498db; }
+#phone-block-top div.phone:hover:after {
+    color: #3498db; }
+

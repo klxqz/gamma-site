@@ -1,0 +1,52 @@
+{if !empty($breadcrumbs)}
+    <!-- Breadcrumb -->
+    <div class="breadcrumb clearfix">
+        <a title="Вернуться на главную" href="{$wa_app_url}" class="home">
+            <i class="icon-home"></i>
+        </a>
+        <span class="navigation-pipe">&gt;</span>
+        {foreach $breadcrumbs as $breadcrumb}
+            <a href="{$breadcrumb.url}">{$breadcrumb.name}</a>
+            <span class="navigation-pipe">&gt;</span>
+        {/foreach}
+        {if !empty($page)}
+            {$page.name}
+        {/if}
+    </div>
+    <!-- /Breadcrumb -->
+{/if}
+
+<div class="row">
+    <div class="center_column col-xs-12" id="top_column"></div>
+</div>
+
+
+<div class="row">
+    {if $theme_settings.sidebar_position == 'left_sidebar'}
+        <div id="left_column" class="column col-xs-12 col-sm-3">
+            {include file="`$wa_active_theme_path`/sidebar.html" inline}
+        </div>
+        <div id="center_column" class="center_column col-xs-12 col-sm-9">
+            {$content}
+        </div>
+    {elseif $theme_settings.sidebar_position == 'right_sidebar'}
+        <div id="center_column" class="center_column col-xs-12 col-sm-9">
+            {$content}
+        </div>
+        <div id="right_column" class="column col-xs-12 col-sm-3">
+            {include file="`$wa_active_theme_path`/sidebar.html" inline}
+        </div>
+    {elseif $theme_settings.sidebar_position == 'none'}
+        <div class="center_column col-xs-12 col-sm-12" id="center_column">
+            {if $wa->currentUrl() == $wa_app_url && !empty($error_code) && $error_code == 404}
+                <div class="welcome">
+                    <h1 class="page-heading">[`Welcome to your new site!`]</h1>
+                    <p>{sprintf('[`Start by <a href="%s">creating a page</a> in your site backend.`]', $wa_backend_url|cat:'site/#/pages/')}</p>
+                </div>
+            {else}
+                {$content}
+            {/if}
+        </div>
+    {/if}
+</div>
+

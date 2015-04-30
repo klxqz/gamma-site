@@ -1,0 +1,86 @@
+{if $theme_settings.source_header_links == 'apps'}
+    <ul id="header_links">
+        {foreach $wa->apps() as $a}
+            <li{if $a.url==$wa_app_url} class="selected"{/if}>
+                <a href="{$a.url}">
+                    {if $a.url == $wa->getUrl('blog/frontend')}
+                        <i class="icon-edit"></i> 
+                    {elseif $a.url == $wa->getUrl('shop/frontend')}
+                        <i class="icon-shopping-cart"></i>
+                    {elseif $a.url == $wa->getUrl('photos/frontend')}
+                        <i class="icon-camera"></i>
+                    {elseif $a.url == $wa->getUrl('helpdesk/frontend')}
+                        <i class="icon-user"></i>
+                    {elseif $a.url == $wa_url}
+                        <i class="icon-home"></i>
+                    {else}
+                        <i class="icon-globe"></i>
+                    {/if}
+
+                    {$a.name}
+                </a>
+            </li>
+        {/foreach}
+    </ul>
+{elseif $theme_settings.source_header_links == 'site_pages'}
+    {if isset($page.id)}
+        {$selected_page=$page.id}
+    {else}
+        {$selected_page=null}
+    {/if}
+    <ul id="header_links">
+        {foreach $wa->site->pages() as $a}
+            <li{if $a.id==$selected_page} class="selected"{/if}>
+                <a href="{$a.url}">{$a.name}</a>
+            </li>
+        {/foreach}
+    </ul>
+
+{elseif $theme_settings.source_header_links == 'shop_pages' && $wa->shop}
+    {if isset($page.id)}
+        {$selected_page=$page.id}
+    {else}
+        {$selected_page=null}
+    {/if}
+    <ul id="header_links">
+        {foreach $wa->shop->pages() as $a}
+            <li{if $a.id==$selected_page} class="selected"{/if}>
+                <a href="{$a.url}">{$a.name}</a>
+            </li>
+        {/foreach}
+    </ul>
+{elseif $theme_settings.source_header_links == 'shop_categories' && $wa->shop}
+    {if !empty($category)}
+        {$selected_category = $category.id}
+    {else}
+        {$selected_category = null}
+    {/if}
+    <ul id="header_links">
+        {foreach $wa->shop->categories(0, null, true) as $a}
+            <li{if $a.id==$selected_category} class="selected"{/if}>
+                <a href="{$a.url}">{$a.name}</a>
+            </li>
+        {/foreach}
+    </ul>
+{elseif $theme_settings.source_header_links == 'user_links'}
+    {$s_links = explode("\n", $theme_settings.header_links_user_links)}
+    {$user_links = array()}
+    {foreach $s_links as $s_link}
+        {if !empty($s_link)}
+            {$arr = explode(';', $s_link)}
+            {if !empty($arr[0]) && !empty($arr[1])}
+                {$user_link = ['url' => trim($arr[0]), 'name' => trim($arr[1])]}
+                {$num = array_push($user_links, $user_link)}
+            {/if}
+        {/if}
+    {/foreach}
+
+    <ul id="header_links">
+        {foreach $user_links as $a}
+            <li{if $a.url==$wa_app_url} class="selected"{/if}>
+                <a href="{$a.url}">{$a.name}</a>
+            </li>
+        {/foreach}
+    </ul>
+
+{/if}

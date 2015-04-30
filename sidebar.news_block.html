@@ -1,0 +1,41 @@
+{if $wa->blog && $wa->blog->posts() && !empty($theme_settings.sidebar_news_block_count)}
+    {$latest_posts = $wa->blog->posts()}
+    <div class="block">
+        <p class="title_block">
+            <a href="{$wa->blog->url()}">
+                {$theme_settings.sidebar_news_block_title}
+            </a>
+        </p>
+        <div class="block_content">
+            <ul class="list-cms-info">
+                {foreach $latest_posts as $post}
+                    <li class="post">
+                        <h3>
+                            <a href="{$post.link}">{$post.title}</a>
+                            {* @event prepare_posts_frontend.%plugin_id%.post_title *}
+                            {if !empty($post.plugins.post_title)}
+                                {foreach $post.plugins.post_title as $plugin => $output}
+                                    {$output}
+                                {/foreach}
+                            {/if}
+                        </h3>
+                        <div class="credentials">
+                            {if $post.user.posts_link}
+                                <a href="{$post.user.posts_link}" class="username">{$post.user.name}</a>
+                            {else}
+                                <span class="username">{$post.user.name}</span>
+                            {/if}
+                            {$post.datetime|wa_datetime:"humandate"}
+                        </div>
+                        <p>
+                            {$post.text|strip_tags|truncate:$theme_settings.sidebar_news_block_length}
+                        </p>
+                        {if $post@iteration >= $theme_settings.sidebar_news_block_count}
+                            {break}
+                        {/if}
+                    </li>
+                {/foreach}
+            </ul>
+        </div>
+    </div>
+{/if}
