@@ -20,71 +20,39 @@
             {if $wa->blog}
                 <!-- rss -->
                 {$rss=$wa->blog->rssUrl()}
-                {if $rss}<link rel="alternate" type="application/rss+xml" title="[s`RSS`] &mdash; {$wa->accountName()}" href="{$rss}">{/if}
+                {if $rss}
+                    <link rel="alternate" type="application/rss+xml" title="[s`RSS`] &mdash; {$wa->accountName()}" href="{$rss}">
+                {/if}
             {/if}
 
-
-            {*<link rel="stylesheet" href="{$wa_theme_url}bootstrap/css/bootstrap.css"  media="all"/>*}
             <link rel="stylesheet" href="{$wa_theme_url}font-awesome/css/font-awesome.min.css"  media="all"/>
             <link rel="stylesheet" href="{$wa_theme_url}global.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}highdpi.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}responsive-tables.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}uniform.default.css"  media="all"/>
+            {if $theme_settings.use_uniform}<link rel="stylesheet" href="{$wa_theme_url}css/uniform/{$theme_settings.uniform_theme}/css/uniform.{$theme_settings.uniform_theme}.min.css"  media="all"/>{/if}
             <link rel="stylesheet" href="{$wa_theme_url}fancyBox/jquery.fancybox.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}product_list.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blockcart.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blockcategories.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blockcurrencies.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blockphone.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blockfacebook.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blockcontact.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blocknewsletter.css"  media="all"/>
-
-            <link rel="stylesheet" href="{$wa_theme_url}blocksearch.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blocktags.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blockuserinfo.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blockviewed.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}homeslider.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}hooks.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blockwishlist.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}productcomments.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blockpermanentlinks.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blocktopmenu.css"  media="all"/>
             <link rel="stylesheet" href="{$wa_theme_url}superfish-modified.css"  media="all"/>
             <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600" media="all"/>
             <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
-
-            <link rel="stylesheet" href="{$wa_theme_url}custom.css"  media="all"/>
             <!--[if IE 8]>
-                            <script src="{$wa_theme_url}html5shiv.js" ></script>
-                            <script src="{$wa_theme_url}respond.min.js" ></script>
-                            <![endif]-->
+                <script src="{$wa_theme_url}js/html5shiv.js" ></script>
+                <script src="{$wa_theme_url}js/respond.min.js" ></script>
+            <![endif]-->
 
             <!-- css -->
-
-            {if $theme_settings.ruble_symbol && $wa->shop && $wa->shop->currency() == 'RUB'} <link href="{$wa_url}wa-content/font/ruble/arial/fontface.css" rel="stylesheet" type="text/css">{/if}
+            {if $theme_settings.ruble_symbol && $wa->shop && $wa->shop->currency() == 'RUB'} 
+                <link href="{$wa_url}wa-content/font/ruble/arial/fontface.css" rel="stylesheet" type="text/css">
+            {/if}
             {$wa->css()} {* links active plugins CSS *}
 
             <!-- js -->
             <script type="text/javascript">
+                var use_uniform = '{$theme_settings.use_uniform}';
                 var shop_search_url = '{$wa->getUrl("shop/frontend/search")}';
                 var is_autocomplete = '{!empty($theme_settings.is_autocomplete) && $wa->shop}';
                 var is_floating_shopping_cart = '{$theme_settings.floating_shopping_cart}';
                 var cart_url = '{$wa->getUrl("shop/frontend/cart")}';
+                var show_all_text = '[`Show all`]';
             </script>
             <script type="text/javascript" src="{$wa_url}wa-content/js/jquery/jquery-1.8.2.min.js"></script>  
-
-
-
-            {if !empty($theme_settings.is_autocomplete) && $wa->shop}
-                <link href="{$wa_url}wa-content/css/jquery-ui/base/jquery.ui.theme.css?v{$wa_theme_version}" rel="stylesheet" type="text/css">
-                <link href="{$wa_url}wa-content/css/jquery-ui/base/jquery.ui.autocomplete.css?v{$wa_theme_version}" rel="stylesheet" type="text/css">
-                <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.core.min.js?v{$wa_theme_version}"></script>
-                <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.widget.min.js?v{$wa_theme_version}"></script>
-                <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.position.min.js?v{$wa_theme_version}"></script>
-                <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.autocomplete.min.js?v{$wa_theme_version}"></script>
-            {/if}
-
 
             <script type="text/javascript" src="{$wa_theme_url}custom.js?v{$wa_theme_version}"></script>    
             {$wa->js()} {* links active plugins JS *}
@@ -96,55 +64,11 @@
 
 
             {if !empty($theme_settings.color_scheme) && $theme_settings.color_scheme == 'custom_color_scheme'}
-                {include file="custom_color_scheme.html" inline}
+                {include file="custom.color_scheme.html" inline}
             {elseif !empty($theme_settings.color_scheme)}
                 <link rel="stylesheet" href="{$wa_theme_url}{$theme_settings.color_scheme}.css"  media="all"/>
             {/if}
-
-            <style>
-                {if $theme_settings.bg_color != '#ffffff'}
-                    body {
-                        background-color: {$theme_settings.bg_color}; 
-                    }
-                    .container#columns{
-                        padding-left: 15px;
-                        padding-right: 15px;
-                    }
-                {/if}
-
-                {if $theme_settings.bg_image != 'img/bg/no_bg.png'}
-                    #page {
-                        background-image: url({$wa_theme_url}{$theme_settings.bg_image}); 
-                        {if !empty($theme_settings.fixed_bg_image)}
-                            background-attachment: fixed;
-                        {/if}
-                        {if !empty($theme_settings.size_bg_image)}
-                            background-size: cover;
-                        {/if}
-
-                        {if !empty($theme_settings.bg_position)}
-                            background-position: {$theme_settings.bg_position};
-                        {/if}
-                        background-repeat: {$theme_settings.repeat_bg_image};
-                    }
-                    .container#columns{
-                        padding-left: 15px;
-                        padding-right: 15px;
-                    }
-                {/if}
-                {if $theme_settings.bg_texture != 'img/bg/no_bg.png'}
-                    body {
-                        background-image: url({$wa_theme_url}{$theme_settings.bg_texture}); 
-                    }
-                    .container#columns{
-                        padding-left: 15px;
-                        padding-right: 15px;
-                    }
-                {/if}
-
-
-            </style>
-
+            {include file="custom.bg.html" inline}
 
         </head>
         <body>
@@ -262,11 +186,7 @@
                                                                 {foreach $cart_items as $item}
                                                                     <dt data-id="{$item.id}">
                                                                     <a title="{$item.name|escape}" href="{$wa->shop->productUrl($item.product)}" class="cart-images">
-                                                                        {if class_exists(shopImgresizePlugin)}
-                                                                            <img src="{shopImgresizePlugin::getImgUrlByProduct($item.product,'80x80')}" />
-                                                                        {else}
-                                                                            {$wa->shop->productImgHtml($item.product, '80x80', ['alt' => $item.name, 'default' => "`$wa_theme_url`img/dummy200.png"])}
-                                                                        {/if}
+                                                                        {$wa->shop->productImgHtml($item.product, '80x80', ['alt' => $item.name, 'default' => "`$wa_theme_url`img/dummy200.png"])}
                                                                     </a>
                                                                     <div class="cart-info">
                                                                         <div class="product-name">
@@ -335,7 +255,6 @@
                                         {/if}
                                     </div>
 
-
                                     <div id="block_top_menu" class="sf-contener clearfix col-lg-12">
                                         {include file="block-top-menu.html"}
                                     </div>
@@ -355,88 +274,32 @@
                     <footer id="footer" class="container">
                         <div class="row">
                             {include file="footer.html"}
-
                         </div>
                     </footer>
                 </div> 
             </div> 
-            <script type="text/javascript">
-                var CUSTOMIZE_TEXTFIELD = 1;
-                var FancyboxI18nClose = 'Close';
-                var FancyboxI18nNext = 'Next';
-                var FancyboxI18nPrev = 'Previous';
-                var added_to_wishlist = 'Added to your wishlist.';
-                var ajaxsearch = true;
-                var baseDir = 'index.htm';
-                var baseUri = '#';
-                var blocksearch_type = 'top';
-                var comparator_max_item = 2;
-                var comparedProductsIds = [];
-                var contentOnly = false;
-                var customizationIdMessage = 'Customization #';
-                var delete_txt = 'Delete';
-                var freeProductTranslation = 'Free!';
-                var freeShippingTranslation = 'Free shipping!';
-                var generated_date = 1423652649;
-                var homeslider_loop = true;
-                var homeslider_pause = '3000';
-                var homeslider_speed = '500';
-                var homeslider_width = '780';
-                var id_lang = 1;
-                var img_dir = '#';
-                var instantsearch = true;
-                var isGuest = 0;
-                var isLogged = 0;
-                var loggin_required = 'You must be logged in to manage your wishlist.';
-                var max_item = 'You cannot add more than 2 product(s) to the product comparison';
-                var min_item = 'Please select at least one product';
-                var mywishlist_url = '#';
-                
-                var page_name = 'index';
-                var placeholder_blocknewsletter = 'Enter your e-mail';
-                var priceDisplayMethod = 1;
-                var priceDisplayPrecision = 2;
-                var quickView = true;
-                var removingLinkText = 'remove this product from my cart';
-                var roundMode = 2;
-                var search_url = '#';
-                var static_token = 'e7c9cea3b7e2312c7993bb42fc33064e';
-                var token = '867fa477c09b64db9b98d78e166bbe0e';
-                var usingSecureMode = false;
-                var wishlistProductsIds = false;
-            </script>
-            {literal}
-                <script type="text/javascript">
-                    var blocklayeredSliderName = {"price": "price", "weight": "weight"};
 
-                    var delete_txt = 'Удалить';
-
-       
-                    var page_name = 'category';
+            {if !empty($theme_settings.is_autocomplete) && $wa->shop}
+                <link href="{$wa_url}wa-content/css/jquery-ui/base/jquery.ui.theme.css?v{$wa_theme_version}" rel="stylesheet" type="text/css">
+                <link href="{$wa_url}wa-content/css/jquery-ui/base/jquery.ui.autocomplete.css?v{$wa_theme_version}" rel="stylesheet" type="text/css">
+                <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.core.min.js?v{$wa_theme_version}"></script>
+                <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.widget.min.js?v{$wa_theme_version}"></script>
+                <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.position.min.js?v{$wa_theme_version}"></script>
+                <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.autocomplete.min.js?v{$wa_theme_version}"></script>
+            {/if}
 
 
-                </script>
-            {/literal}
-            <script type="text/javascript" src="{$wa_theme_url}jquery.easing.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}tools.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}global.js" ></script>
-
+            <script type="text/javascript" src="{$wa_theme_url}js/jquery.easing.min.js" ></script>
             <script type="text/javascript" src="{$wa_theme_url}bootstrap/js/bootstrap.min.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}15-jquery.total-storage.min.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}15-jquery.uniform-modified.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}js/jquery.total-storage.min.js" ></script>
             <script type="text/javascript" src="{$wa_theme_url}fancyBox/jquery.fancybox.pack.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}jquery.scrollTo.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}jquery.serialScroll.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}jquery.bxslider.min.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}treeManagement.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}blocknewsletter.js" ></script>
-
-
-            <script type="text/javascript" src="{$wa_theme_url}homeslider.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}hoverIntent.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}js/jquery.scrollTo.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}js/jquery.serialScroll.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}js/jquery.bxslider.min.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}js/hoverIntent.js" ></script>
             <script type="text/javascript" src="{$wa_theme_url}superfish-modified.js" ></script>
             <script type="text/javascript" src="{$wa_theme_url}blocktopmenu.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}ajax-cart.js" ></script>
+            {if $theme_settings.use_uniform}<script type="text/javascript" src="{$wa_theme_url}js/jquery.uniform.min.js"></script>{/if}
 
             {if !empty($theme_settings.addon_panel) && $wa->shop}
                 {include file="addon-panel.html" inline}

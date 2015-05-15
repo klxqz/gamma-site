@@ -1,0 +1,41 @@
+<style>
+    {if $theme_settings.bg_color != '#ffffff'}
+        body {
+            background-color: {$theme_settings.bg_color}; 
+        }
+        .container#columns{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    {/if}
+
+    {if $theme_settings.bg_image != 'img/bg/no_bg.png'}
+        #page {
+            background-image: url({$wa_theme_url}{$theme_settings.bg_image}); 
+            {if !empty($theme_settings.fixed_bg_image)}
+                background-attachment: fixed;
+            {/if}
+            {if !empty($theme_settings.size_bg_image)}
+                background-size: cover;
+            {/if}
+
+            {if !empty($theme_settings.bg_position)}
+                background-position: {$theme_settings.bg_position};
+            {/if}
+            background-repeat: {$theme_settings.repeat_bg_image};
+        }
+        .container#columns{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    {/if}
+    {if $theme_settings.bg_texture != 'img/bg/no_bg.png'}
+        body {
+            background-image: url({$wa_theme_url}{$theme_settings.bg_texture}); 
+        }
+        .container#columns{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    {/if}
+</style>

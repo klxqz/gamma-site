@@ -219,8 +219,6 @@
                     <name locale="en_US">Custom color scheme</name>
                     <name locale="ru_RU">Пользовательская цветовая схема</name>
                 </option>
-                
-                
             </options>
         </setting>
         
@@ -248,6 +246,8 @@
                 <hr />	
                 ]]>
             </name>
+            <description locale="en_US">Select the option «Custom Color Scheme» in the «Color scheme» to use these settings</description>
+            <description locale="ru_RU">Выбирите опцию «Пользовательская цветовая схема» в настройке «Цветовая схема», чтобы использовать данные настройки</description>
         </setting>
         
         
@@ -388,6 +388,38 @@
             <name locale="ru_RU">Положение фонового изображения. Формат: Значение по X, Значение по Y. Возможные значения: [left | center | right], [top | center | bottom]</name>
         </setting>
         
+        <setting var="use_uniform" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">Use styling form elements «uniform»</name>
+            <name locale="ru_RU">Использовать стилизацию элементов форм «uniform»</name>
+        </setting>
+        <setting var="uniform_theme" control_type="select">
+            <value>default2</value>
+            <name locale="en_US">Theme «uniform»</name>
+            <name locale="ru_RU">Тема оформления «uniform»</name>
+            <options>
+                <option value="default">
+                    <name locale="en_US">default</name>
+                    <name locale="ru_RU">default</name>
+                </option>
+                <option value="default2">
+                    <name locale="en_US">default2</name>
+                    <name locale="ru_RU">default2</name>
+                </option>
+                <option value="aristo">
+                    <name locale="en_US">aristo</name>
+                    <name locale="ru_RU">aristo</name>
+                </option>
+                <option value="agent">
+                    <name locale="en_US">agent</name>
+                    <name locale="ru_RU">agent</name>
+                </option>
+                <option value="jeans">
+                    <name locale="en_US">jeans</name>
+                    <name locale="ru_RU">jeans</name>
+                </option>
+            </options>
+        </setting>        
 
         
         
@@ -408,7 +440,7 @@
         </setting> 
         
         <setting var="ruble_symbol" control_type="checkbox">
-            <value>1</value>
+            <value>0</value>
             <name locale="en_US">The symbol of the ruble</name>
             <name locale="ru_RU">Символ рубля. Необходимо приложение «Магазин»</name>
         </setting>
@@ -1366,6 +1398,14 @@ photos_block]]></value>
         <locale>
             <msgid>Photos</msgid>
             <msgstr locale="ru_RU">Фото</msgstr>
+        </locale>
+        <locale>
+            <msgid>Show all</msgid>
+            <msgstr locale="ru_RU">Показать все</msgstr>
+        </locale>
+        <locale>
+            <msgid>Loading ...</msgid>
+            <msgstr locale="ru_RU">Загрузка ...</msgstr>
         </locale>
     </locales>
 </theme>
