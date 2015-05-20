@@ -7,11 +7,11 @@
     <files>
         <file path="index.html">
             <description locale="en_US">Core layout of the CUSTOM theme family</description>
-            <description locale="ru_RU">Основной макет тем дизайна семейства CUSTOM</description>
+            <description locale="ru_RU">Основной макет тем дизайна семейства Гамма</description>
         </file>
-        <file path="custom.css">
+        <file path="gamma.css">
             <description locale="en_US">Core CSS of the CUSTOM theme family</description>
-            <description locale="ru_RU">Основной файл CSS-стилей семейства тем дизайна CUSTOM</description>
+            <description locale="ru_RU">Основной файл CSS-стилей семейства тем дизайна Гамма</description>
         </file>
         <file path="content.html" custom="0">
             <description locale="en_US">Main layout for the Site app content</description>
@@ -49,10 +49,152 @@
             <description locale="en_US">404 and other errors</description>
             <description locale="ru_RU">404 и другие ошибки</description>
         </file>
-        <file path="custom.js" custom="0">
+        <file path="gamma.js" custom="0">
             <description locale="en_US">JS</description>
             <description locale="ru_RU">JS</description>
         </file>
+        <file path="addon-panel.html">
+            <description locale="en_US">Advanced panel at the bottom of the screen</description>
+            <description locale="ru_RU">Дополнительная панель внизу экрана</description>
+        </file>
+        <file path="block-header-links.html">
+            <description locale="en_US">Block of links in header the site</description>
+            <description locale="ru_RU">Блок ссылок в верхней части сайта</description>
+        </file>
+        <file path="block-top-menu.html">
+            <description locale="en_US">Block the top menu</description>
+            <description locale="ru_RU">Блок верхнего меню</description>
+        </file>
+        <file path="blocktopmenu.js" custom="0">
+            <description locale="en_US">JS</description>
+            <description locale="ru_RU">JS</description>
+        </file>
+        <file path="custom.bg.html">
+            <description locale="en_US">Customization. Background</description>
+            <description locale="ru_RU">Кастомизация. Фон</description>
+        </file>
+        <file path="custom.color_scheme.html">
+            <description locale="en_US">Customization. Custom color scheme</description>
+            <description locale="ru_RU">Кастомизация. Пользовательская цветовая схема</description>
+        </file>
+        <file path="footer.html">
+            <description locale="en_US">Footer</description>
+            <description locale="ru_RU">Нажняя часть страницы(Footer)</description>
+        </file>
+        <file path="list-thumbs-sidebar.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="sidebar.bestsellers_block.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="sidebar.blog_app_block.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="sidebar.catalog_block.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="sidebar.facebook_block.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="sidebar.filter_block.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="sidebar.helpdesk_app_block.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="sidebar.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="sidebar.information_block.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="sidebar.manufacturer_block.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="sidebar.news_block.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="sidebar.photos_app_block.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="sidebar.photos_block.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="sidebar.tags_block.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="sidebar.viewed_products_block.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="sidebar.vk_block.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="superfish-modified.css">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="superfish-modified.js">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        
+        <file path="theme2.css">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="theme3.css">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="theme4.css">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="theme5.css">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="theme6.css">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="theme7.css">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="theme8.css">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="theme9.css">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="widget.vk.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        <file path="widget.facebook.html">
+            <description locale="en_US"></description>
+            <description locale="ru_RU"></description>
+        </file>
+        
     </files>
     <about locale="en_US">
 <![CDATA[
@@ -264,36 +406,52 @@
             <name locale="ru_RU">Фоновая текстура</name>
             <options>
                 <option value="img/bg/no_bg.png"></option>
-                <option value="img/bg/water.jpg"></option>
-                <option value="img/bg/lava3.jpg"></option>
-                <option value="img/bg/lava2.jpg"></option>
-                <option value="img/bg/lava.jpg"></option>
-                <option value="img/bg/stars2.jpg"></option>
-                <option value="img/bg/stars.jpg"></option>
-                <option value="img/bg/gravel4.jpg"></option>
-                <option value="img/bg/gravel3.jpg"></option>
-                <option value="img/bg/gravel2.jpg"></option>
-                <option value="img/bg/gravel.jpg"></option>
-                <option value="img/bg/rose.jpg"></option>
-                <option value="img/bg/graffiti2.jpg"></option>
-                <option value="img/bg/graffiti.jpg"></option>
-                <option value="img/bg/protector.jpg"></option>
-                <option value="img/bg/parket.jpg"></option>
-                <option value="img/bg/wood.jpg"></option>
-                <option value="img/bg/carbon2.jpg"></option>
-                <option value="img/bg/carbon.jpg"></option>
-                <option value="img/bg/bg-style2.gif"></option>
-                <option value="img/bg/bg-style3.jpg"></option>
-                <option value="img/bg/bg-style4.jpg"></option>
-                <option value="img/bg/bg-style5.jpg"></option>
-                <option value="img/bg/cloth.jpg"></option>
-                <option value="img/bg/grey.jpg"></option>
-                <option value="img/bg/red.jpg"></option>
-                <option value="img/bg/blue.jpg"></option>
-                <option value="img/bg/green.jpg"></option>
-                <option value="img/bg/purple.jpg"></option>
-                <option value="img/bg/yellow.jpg"></option>
+                <option value="img/texture/water.jpg"></option>
+                <option value="img/texture/lava3.jpg"></option>
+                <option value="img/texture/lava2.jpg"></option>
+                <option value="img/texture/lava.jpg"></option>
+                <option value="img/texture/stars2.jpg"></option>
+                <option value="img/texture/stars.jpg"></option>
+                <option value="img/texture/gravel4.jpg"></option>
+                <option value="img/texture/gravel3.jpg"></option>
+                <option value="img/texture/gravel2.jpg"></option>
+                <option value="img/texture/gravel.jpg"></option>
+                <option value="img/texture/rose.jpg"></option>
+                <option value="img/texture/graffiti2.jpg"></option>
+                <option value="img/texture/graffiti.jpg"></option>
+                <option value="img/texture/protector.jpg"></option>
+                <option value="img/texture/parket.jpg"></option>
+                <option value="img/texture/wood.jpg"></option>
+                <option value="img/texture/carbon2.jpg"></option>
+                <option value="img/texture/carbon.jpg"></option>
+                <option value="img/texture/bg-style2.gif"></option>
+                <option value="img/texture/bg-style3.jpg"></option>
+                <option value="img/texture/bg-style4.jpg"></option>
+                <option value="img/texture/bg-style5.jpg"></option>
+                <option value="img/texture/9d75dau-m.jpg"></option>
+                <option value="img/texture/2475dau-m.jpg"></option>
+                <option value="img/texture/4275dau-m.jpg"></option>
+                <option value="img/texture/5875dau-m.jpg"></option>
+                <option value="img/texture/6175dau-m.jpg"></option>
+                <option value="img/texture/6375dau-m.jpg"></option>
+                <option value="img/texture/7675dau-m.jpg"></option>
+                <option value="img/texture/a1d44cu-m.jpg"></option>
+                <option value="img/texture/e4g4cu-m.jpg"></option>
+                <option value="img/texture/cloth.jpg"></option>
+                <option value="img/texture/grey.jpg"></option>
+                <option value="img/texture/red.jpg"></option>
+                <option value="img/texture/blue.jpg"></option>
+                <option value="img/texture/green.jpg"></option>
+                <option value="img/texture/purple.jpg"></option>
+                <option value="img/texture/yellow.jpg"></option>
             </options>
+        </setting>
+        
+        <setting var="custom_texture_image" control_type="image">
+            <value></value>
+            <filename>img/texture/*</filename>
+            <name locale="en_US">Custom background texture</name>
+            <name locale="ru_RU">Пользовательская текстура</name>
         </setting>
         
         
@@ -440,7 +598,7 @@
         </setting> 
         
         <setting var="ruble_symbol" control_type="checkbox">
-            <value>0</value>
+            <value>1</value>
             <name locale="en_US">The symbol of the ruble</name>
             <name locale="ru_RU">Символ рубля. Необходимо приложение «Магазин»</name>
         </setting>
@@ -728,6 +886,9 @@
         
         <setting var="sidebar_blocks" control_type="text">
             <value><![CDATA[
+blog_app_block
+photos_app_block
+helpdesk_app_block
 filter_block
 catalog_block
 information_block
@@ -747,6 +908,45 @@ photos_block]]></value>
             </name>
         </setting>
         
+        <setting var="sidebar_blog_app_block_title" control_type="text">
+            <value locale="en_US">Blog</value>
+            <value locale="ru_RU">Блог</value>
+            <name locale="en_US">
+                <![CDATA[
+                <b>blog_app_block</b>	
+                ]]>
+                - Block application Blog. Block title.</name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <b>blog_app_block</b>	
+                ]]> - Блок приложения Блог. Заголовок блока.</name>
+        </setting>
+        <setting var="sidebar_photos_app_block_title" control_type="text">
+            <value locale="en_US">Photos</value>
+            <value locale="ru_RU">Фотогалерея</value>
+            <name locale="en_US">
+                <![CDATA[
+                <b>photos_app_block</b>	
+                ]]>
+                - Block application Photos. Block title.</name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <b>photos_app_block</b>	
+                ]]> - Блок приложения Фото. Заголовок блока.</name>
+        </setting>
+        <setting var="sidebar_helpdesk_app_block_title" control_type="text">
+            <value locale="en_US">Helpdesk</value>
+            <value locale="ru_RU">Поддержка</value>
+            <name locale="en_US">
+                <![CDATA[
+                <b>helpdesk_app_block</b>	
+                ]]>
+                - Block application Helpdesk. Block title.</name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <b>helpdesk_app_block</b>	
+                ]]> - Блок приложения Поддержка. Заголовок блока.</name>
+        </setting>
         
         <setting var="sidebar_filter_block_title" control_type="text">
             <value locale="en_US">Filter</value>
@@ -810,6 +1010,12 @@ photos_block]]></value>
                 <![CDATA[
                 <b>manufacturer_block</b>	
                 ]]> - Блок производителей. Необходим плагин <![CDATA[<a href="http://www.webasyst.ru/store/plugin/shop/brands/">"Бренды"</a>]]>. Заголовок блока.</name>
+        </setting>
+        
+        <setting var="sidebar_manufacturer_block_count" control_type="text">
+            <value>3</value>
+            <name locale="en_US">The maximum number of display manufacturers</name>
+            <name locale="ru_RU">Максимальное количество отображаемых производителей</name>
         </setting>
         
         
@@ -1407,5 +1613,10 @@ photos_block]]></value>
             <msgid>Loading ...</msgid>
             <msgstr locale="ru_RU">Загрузка ...</msgstr>
         </locale>
+        <locale>
+            <msgid>Your account</msgid>
+            <msgstr locale="ru_RU">Личный кабинет</msgstr>
+        </locale>
+        
     </locales>
 </theme>

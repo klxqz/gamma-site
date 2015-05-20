@@ -1,8 +1,10 @@
 {if $wa->shop && $wa->shop->tags() && !empty($theme_settings.sidebar_tags_block_count) && $theme_settings.sidebar_tags_block_type != 'none'}
-    <script type="text/javascript" src="{$wa_theme_url}js/jquery.tagcanvas.min.js"></script>
-    <script type="text/javascript">
-        var tagcanvas = 1; 
-    </script>
+    {if $theme_settings.sidebar_tags_block_type == '3d'}
+        <script type="text/javascript" src="{$wa_theme_url}js/jquery.tagcanvas.min.js"></script>
+        <script type="text/javascript">
+            var tagcanvas = 1;
+        </script>
+    {/if}
 
     <div class="block tags_block">
         <p class="title_block">

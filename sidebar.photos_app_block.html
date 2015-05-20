@@ -1,0 +1,51 @@
+{if $wa_app == 'photos'}
+    <div id="photos_app_block_left" class="block">
+        <h2 class="title_block">
+            {$theme_settings.sidebar_photos_app_block_title}
+        </h2>
+        <div class="block_content">
+            <ul class="tree dhtml">
+                <!-- core filters -->
+                <li {if $wa->currentUrl() == $wa_app_url} class="selected"{/if}>
+                    <a href="{$wa_app_url}">[`Photostream`]</a>
+                </li>
+                <li {if $wa->param('action') neq 'page' && $wa->param('action') neq 'album' && $wa->param('hash') == 'favorites'} class="selected"{/if}>
+                    <a href="{$wa_app_url}favorites/">[`Editors’ choice`]</a>
+                </li>
+
+                <!-- plugins -->
+                {* @event frontend_sidebar.%plugin_id%.menu *}
+                {foreach $frontend_sidebar as $plugin_id => $item}
+                    {if !empty($item.menu)}
+                        <li>
+                            {$item.menu}
+                        </li>
+                    {/if}
+                {/foreach}
+
+                <!-- pages -->
+                {* static info page list *}
+                {if $photos_pages = $wa->photos->pages()}
+                    {$page_id = $wa->param('page_id')}
+                    {foreach $photos_pages as $p}
+                        <li {if $page_id eq $p.id} class="selected"{/if}>
+                            <a href="{$p.url}" title="{$p.title}">{$p.name}</a>
+                        </li>
+                    {/foreach}
+                {/if}
+
+
+                <!-- albums -->
+                {if $albums = $wa->photos->albums(0)}
+                    <li>
+                        <a href="#">
+                            [`Albums`]
+                        </a>
+                        {wa_print_tree tree=$albums elem ='<a href=":url">:name</a>'}
+                    </li>
+                {/if}
+            </ul>
+
+        </div>
+    </div>
+{/if}

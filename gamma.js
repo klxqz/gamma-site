@@ -50,14 +50,13 @@ function initDialogHendler(d, url) {
 function postDialogForm(d, f, url) {
     var c = d.find('.cart');
     $.post(url, f.serializeArray(), function (response) {
-        c.html(response);
-        if (c.find('ul.menu-h').length) {
-            document.location.href = url;
-            $(".dialog:visible").hide().find('.cart').empty();
-            return false;
+        if (!$(response).find('.wa-value .wa-error-msg').length) {
+            window.location.href = url;
+        } else {
+            c.html(response);
+            initFormControl();
+            initDialogHendler(d, url);
         }
-        initFormControl();
-        initDialogHendler(d, url);
     });
 }
 
@@ -149,9 +148,7 @@ $(document).ready(function () {
         var url = $(this).attr('href');
         if (url) {
             var d = $('#dialog');
-
             loadDialogContent(d, url);
-
             return false;
         }
         return false;

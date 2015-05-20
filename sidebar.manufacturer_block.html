@@ -6,7 +6,22 @@
         </p>
         <div class="block_content list-block">
             {$frontend_nav['brands-plugin']}
+            <a class="lnk_more-brand" href="#">Еще</a>
+            <div class="clear-both"></div>
         </div>
     </div>
     <!-- /Block brands plugin -->
+    <script type="text/javascript">
+        var manufacturer_block_count = {$theme_settings.sidebar_manufacturer_block_count}
+        $('#manufacturers_block_left ul li:gt(' + manufacturer_block_count + ')').addClass('hidden-items');
+        if ($('#manufacturers_block_left ul li.hidden-items').length) {
+            $('#manufacturers_block_left .lnk_more-brand').show();
+        }
+        $('#manufacturers_block_left .lnk_more-brand').click(function () {
+            $('#manufacturers_block_left ul li.hidden-items').show();
+            $(this).hide();
+            return false;
+        });
+
+    </script>
 {/if}

@@ -26,16 +26,12 @@
             {/if}
 
             <link rel="stylesheet" href="{$wa_theme_url}font-awesome/css/font-awesome.min.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}global.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}gamma.css"  media="all"/>
             {if $theme_settings.use_uniform}<link rel="stylesheet" href="{$wa_theme_url}css/uniform/{$theme_settings.uniform_theme}/css/uniform.{$theme_settings.uniform_theme}.min.css"  media="all"/>{/if}
-            <link rel="stylesheet" href="{$wa_theme_url}fancyBox/jquery.fancybox.css"  media="all"/>
             <link rel="stylesheet" href="{$wa_theme_url}superfish-modified.css"  media="all"/>
             <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600" media="all"/>
             <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
-            <!--[if IE 8]>
-                <script src="{$wa_theme_url}js/html5shiv.js" ></script>
-                <script src="{$wa_theme_url}js/respond.min.js" ></script>
-            <![endif]-->
+
 
             <!-- css -->
             {if $theme_settings.ruble_symbol && $wa->shop && $wa->shop->currency() == 'RUB'} 
@@ -44,17 +40,8 @@
             {$wa->css()} {* links active plugins CSS *}
 
             <!-- js -->
-            <script type="text/javascript">
-                var use_uniform = '{$theme_settings.use_uniform}';
-                var shop_search_url = '{$wa->getUrl("shop/frontend/search")}';
-                var is_autocomplete = '{!empty($theme_settings.is_autocomplete) && $wa->shop}';
-                var is_floating_shopping_cart = '{$theme_settings.floating_shopping_cart}';
-                var cart_url = '{$wa->getUrl("shop/frontend/cart")}';
-                var show_all_text = '[`Show all`]';
-            </script>
             <script type="text/javascript" src="{$wa_url}wa-content/js/jquery/jquery-1.8.2.min.js"></script>  
 
-            <script type="text/javascript" src="{$wa_theme_url}custom.js?v{$wa_theme_version}"></script>    
             {$wa->js()} {* links active plugins JS *}
 
             {include file="`$wa_active_theme_path`/head.html" inline}
@@ -90,6 +77,9 @@
                                         {if $wa->isAuthEnabled()}
                                             <div class="header_user_info">
                                                 {if $wa->user()->isAuth()}
+                                                    <a class="login" href="{$wa->getUrl('shop/frontend/my')}"  rel="nofollow" title="[`Your account`]">
+                                                        <i class="icon-user"></i>
+                                                    </a>
                                                     <a class="login" href="?logout"  rel="nofollow" title="[s`Log out`]">
                                                         <i class="icon-unlock"></i>
                                                     </a>
@@ -98,6 +88,7 @@
                                                         <i class="icon-lock"></i>
                                                     </a>
                                                 {/if}
+
                                             </div>
                                         {/if}
 
@@ -279,6 +270,10 @@
                 </div> 
             </div> 
 
+
+            <link rel="stylesheet" href="{$wa_theme_url}fancyBox/jquery.fancybox.css"  media="all"/>
+            <link rel="stylesheet" type="text/css" href="{$wa_theme_url}fancyBox/helpers/jquery.fancybox-buttons.css"  media="screen" />
+
             {if !empty($theme_settings.is_autocomplete) && $wa->shop}
                 <link href="{$wa_url}wa-content/css/jquery-ui/base/jquery.ui.theme.css?v{$wa_theme_version}" rel="stylesheet" type="text/css">
                 <link href="{$wa_url}wa-content/css/jquery-ui/base/jquery.ui.autocomplete.css?v{$wa_theme_version}" rel="stylesheet" type="text/css">
@@ -288,11 +283,11 @@
                 <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.autocomplete.min.js?v{$wa_theme_version}"></script>
             {/if}
 
-
             <script type="text/javascript" src="{$wa_theme_url}js/jquery.easing.min.js" ></script>
             <script type="text/javascript" src="{$wa_theme_url}bootstrap/js/bootstrap.min.js" ></script>
             <script type="text/javascript" src="{$wa_theme_url}js/jquery.total-storage.min.js" ></script>
             <script type="text/javascript" src="{$wa_theme_url}fancyBox/jquery.fancybox.pack.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}fancyBox/helpers/jquery.fancybox-buttons.js" ></script>
             <script type="text/javascript" src="{$wa_theme_url}js/jquery.scrollTo.js" ></script>
             <script type="text/javascript" src="{$wa_theme_url}js/jquery.serialScroll.js" ></script>
             <script type="text/javascript" src="{$wa_theme_url}js/jquery.bxslider.min.js" ></script>
@@ -300,6 +295,25 @@
             <script type="text/javascript" src="{$wa_theme_url}superfish-modified.js" ></script>
             <script type="text/javascript" src="{$wa_theme_url}blocktopmenu.js" ></script>
             {if $theme_settings.use_uniform}<script type="text/javascript" src="{$wa_theme_url}js/jquery.uniform.min.js"></script>{/if}
+            <!--[if IE 8]>
+                <script src="{$wa_theme_url}js/html5shiv.js" ></script>
+                <script src="{$wa_theme_url}js/respond.min.js" ></script>
+            <![endif]-->
+            <script type="text/javascript">
+                var use_uniform = '{$theme_settings.use_uniform}';
+                var shop_search_url = '{$wa->getUrl("shop/frontend/search")}';
+                var is_autocomplete = '{!empty($theme_settings.is_autocomplete) && $wa->shop}';
+                var is_floating_shopping_cart = '{$theme_settings.floating_shopping_cart}';
+                var cart_url = '{$wa->getUrl("shop/frontend/cart")}';
+                var show_all_text = '[`Show all`]';
+            </script>
+            <script type="text/javascript" src="{$wa_theme_url}gamma.js?v{$wa_theme_version}"></script>  
+
+            {if file_exists("`$wa_active_theme_path`/footer.include.html")}    
+                {include file="`$wa_active_theme_path`/footer.include.html"}
+            {/if}
+
+
 
             {if !empty($theme_settings.addon_panel) && $wa->shop}
                 {include file="addon-panel.html" inline}

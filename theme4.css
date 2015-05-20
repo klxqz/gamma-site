@@ -1,50 +1,32 @@
-/* ------- FONTS ------- */
-/* ------- BORDERS ------- */
-/* ------- BACKGROUNDS ------- */
-/* ------- COLORS ------- */
-/* ------- Indents ------- */
-/* ------- Product Elements ------- */
-/* ------- Buttons ------- */
-/* ------- Buttons +/- ------ */
-/* ------- Button Small ------- */
-/* ------- Button exclusive-medium ------- */
-/* ------- My Account List bg ------- */
-/* ------- Product Listing ------- */
-/* ------- Grid/List vars ------- */
-/* ------- Pagination vars ------- */
-/* ------- Product Info ------- */
-/* ------- Cart Steps ------- */
-/* ------- sub heading (h2,h3) define ------- */
-/* ------- Image vars ------- */
 header .nav .container {
-  background: #263248; }
+    background: #263248; }
 
 .nav ul#header_links li a {
-  color: #445a83; }
+    color: #445a83; }
 
 .shopping_cart > a:first-child:before,
 .header_user_info a {
-  background: #1763a6; }
+    background: #1763a6; }
 
 #header .shopping_cart > a:first-child:hover,
 #phone-block-top ul,
 #currencies-block-top ul {
-  background: #263248; }
+    background: #263248; }
 
 #htmlcontent_top ul.htmlcontent-home li,
 #phone-block-top ul li.selected,
 #phone-block-top ul li:hover a,
 #currencies-block-top ul li.selected,
 #currencies-block-top ul li:hover a {
-  background: #1763a6; }
+    background: #1763a6; }
 
 .footer-container:before,
 ul.product_list.grid > li .product-container .button-container a:hover,
 #htmlcontent_top ul.htmlcontent-home li + li {
-  background: #263248; }
+    background: #263248; }
 
 .header_user_info a:hover {
-  background: #445a83; }
+    background: #445a83; }
 
 .content_scene_cat span.category-name,
 .footer-container #footer .bottom-footer div a:hover,
@@ -65,16 +47,16 @@ ul.product_list.grid > li .product-container .button-container a:hover,
 #phone-block-top div.current:hover:after,
 #phone-block-top div.current:hover,
 #phone-block-top div.current.active {
-  color: #1763a6; }
+    color: #1763a6; }
 
 .footer-container #footer .bottom-footer div,
 .footer-container #footer .bottom-footer div a,
 #currencies-block-top div.current:after
 #phone-block-top div.current:after {
-  color: #445a83; }
+    color: #445a83; }
 
 #block_top_menu .sf-menu:before {
-  background: #263248; }
+    background: #263248; }
 
 .button.ajax_add_to_cart_button,
 #cmsinfo_block em,
@@ -84,64 +66,64 @@ ul.product_list.grid > li .product-container .button-container a,
 #block_top_menu .sf-menu > li.sfHover > a,
 #block_top_menu .sf-menu > li > a:hover,
 #block_top_menu .sf-menu > li.selected > a {
-  background: #1763a6; }
+    background: #1763a6; }
 
 #homepage-slider .homeslider-description .p1 span,
 #homepage-slider .homeslider-description h2 {
-  color: #1763a6; }
+    color: #1763a6; }
 
 .button.ajax_add_to_cart_button:hover,
 #home-page-tabs > li a,
 #center_column ul.htmlcontent-home li .item-html span,
 #homepage-slider .homeslider-description .a {
-  background: #263248; }
+    background: #263248; }
 
 .price-percent-reduction {
-  background: #263248;
-  border-color: #263248; }
+    background: #263248;
+    border-color: #263248; }
 
 .block .title_block, .block h4 {
-  border-color: #1763a6; }
+    border-color: #1763a6; }
 
 #category_description_short p strong {
-  color: #263248; }
+    color: #263248; }
 
 .content_scene_cat a.lnk_more {
-  color: #1763a6; }
+    color: #1763a6; }
 
 #header .cart_block {
-  background: #263248; }
-  #header .cart_block .cart-buttons {
+    background: #263248; }
+#header .cart_block .cart-buttons {
     background-color: #263248; }
-    #header .cart_block .cart-buttons a:hover {
-      background: #1763a6; }
-      #header .cart_block .cart-buttons a:hover span {
-        color: #fff; }
+#header .cart_block .cart-buttons a:hover {
+    background: #1763a6; }
+#header .cart_block .cart-buttons a:hover span {
+    color: #fff; }
 
 ul.product_list .functional-buttons div a,
 ul.product_list .functional-buttons div label {
-  color: #263248; }
-  ul.product_list .functional-buttons div a:hover,
-  ul.product_list .functional-buttons div label:hover {
+    color: #263248; }
+ul.product_list .functional-buttons div a:hover,
+ul.product_list .functional-buttons div label:hover {
     color: #1763a6; }
 
 #phone-block-top div.current:after,
 #currencies-block-top div.current:after {
-  color: #445a83; }
+    color: #445a83; }
 
 #block_top_menu .cat-title {
-  background: #263248;
-  border-color: #263248; }
-  #block_top_menu .cat-title:hover {
+    background: #263248;
+    border-color: #263248; }
+#block_top_menu .cat-title:hover {
     background: #1763a6; }
 
 #block_top_menu .sf-menu > li > ul > li > a:hover {
-  color: #1763a6; }
+    color: #1763a6; }
 
 #center_column #htmlcontent_home ul.htmlcontent-home a span {
-  background: #263248; }
+    background: #263248; }
 #center_column #htmlcontent_home ul.htmlcontent-home a:hover span {
-  background: #1763a6; }
+    background: #1763a6; }
 
 #block_top_menu .sf-menu > li:last-child:before {
-  background: #1763a6; }
+    background: #1763a6; }

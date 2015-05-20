@@ -1,0 +1,40 @@
+{if $wa_app == 'helpdesk'}
+    <div id="photos_app_block_left" class="block">
+        <h2 class="title_block">
+            {$theme_settings.sidebar_helpdesk_app_block_title}
+        </h2>
+        <div class="block_content">
+            <ul class="tree dhtml">
+                {if !empty($categories)}
+                    {foreach $categories as $_c}
+                        {$_url = "`$wa->getUrl('helpdesk/frontend/faq')``$_c.url`/"}
+                        <li data-category-id="{$_c.id}"{if $wa->currentUrl() == $_url} class="selected"{/if}>
+                            <a href="{$_url}">
+                                <span class="name">{$_c.name|escape}</span>
+                            </a>
+                        </li>
+                    {/foreach}
+                {/if}
+
+
+                {$_pages=$wa->helpdesk->pages()}
+                {if $_pages}
+                    {foreach $_pages as $p}
+                        <li class="float-right{if isset($page_id) and $page_id eq $p.id} selected{/if}">
+                            <a href="{$p.url}" title="{$p.title}">{$p.name}</a>
+                        </li>
+                    {/foreach}
+                {/if}
+            </ul>
+
+            <div class="helpdesk-search">
+                <!-- search -->
+                <form method="get" action="{$wa->getUrl('/frontend/search')}" class="float-right">
+                    <input type="text" id="search" name="query" value="{$wa->request('query')|escape}" placeholder="[`Find the answer`]">
+                </form>
+            </div>
+            <div class="clear-both"></div>
+
+        </div>
+    </div>
+{/if}
