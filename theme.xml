@@ -859,30 +859,7 @@
                 ]]>
             </name>
         </setting>
-        
-        <setting var="sidebar_position" control_type="select">
-            <value>left_sidebar</value>
-            <name locale="en_US">
-                Sidebar position
-            </name>
-            <name locale="ru_RU">
-                Положение sidebar
-            </name>
-            <options>
-                <option value="left_sidebar">
-                    <name locale="en_US">Left</name>
-                    <name locale="ru_RU">Левое</name>
-                </option>
-                <option value="right_sidebar">
-                    <name locale="en_US">right</name>
-                    <name locale="ru_RU">Правое</name>
-                </option>
-                <option value="none">
-                    <name locale="en_US">Do not show</name>
-                    <name locale="ru_RU">Не показывать</name>
-                </option>
-            </options>
-        </setting>
+
         
         <setting var="sidebar_blocks" control_type="text">
             <value><![CDATA[
@@ -901,7 +878,7 @@ facebook_block
 news_block
 photos_block]]></value>
             <name locale="en_US">
-                Добавляйте и перемещайте строки в этом списке, чтобы изменить набор блоков sidebar и их последовательность.
+                Add and move the line in this list to change the set of sidebar blocks and their sequence.
             </name>
             <name locale="ru_RU">
                 Добавляйте и перемещайте строки в этом списке, чтобы изменить набор блоков sidebar и их последовательность.

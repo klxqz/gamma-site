@@ -3816,7 +3816,6 @@ body {
     height: 100%;
     line-height: 18px;
     font-size: 12px;
-    color: #bababa;
     background: #fff; }
 body.content_only {
     background: none; }
@@ -3833,7 +3832,7 @@ textarea {
 
 /* ------- structure ------- */
 #header {
-    z-index: 5003; }
+    z-index: 100; }
 
 #columns {
     position: relative;
@@ -4498,7 +4497,7 @@ table.table_block td {
     .block h4:after {
         display: block;
         font-family: "FontAwesome";
-        content: "яБз";
+        content: "";
         position: absolute;
         right: 0;
         top: 15px;
@@ -4508,7 +4507,7 @@ table.table_block td {
         font-weight: normal; }
     .block .title_block.active:after,
     .block h4.active:after {
-        content: "яБи"; } }
+        content: ""; } }
 .block .title_block a,
 .block h4 a {
     color: #31353d; }
@@ -5231,7 +5230,6 @@ div.star a:hover {
 
 /* ------ FOOTER ------- */
 .footer-container {
-    background-color: #333333;
     position: relative; }
 .footer-container:before {
     content: '';
@@ -5241,15 +5239,16 @@ div.star a:hover {
     position: absolute;
     height: 68px;
     bottom: 0; }
-@media (min-width: 768px) {
-    .footer-container {
-        background: #f9f9fa; } }
+.footer-container #footer{
+        background: #f9f9fa; }
+
 .footer-container .container {
     padding-bottom: 100px; }
 .footer-container #footer {
     color: #959393;
     text-transform: uppercase; }
 .footer-container #footer .row {
+    padding: 0px 15px;
     position: relative; }
 .footer-container #footer .footer-block {
     margin-top: 45px; }
@@ -7911,4 +7910,9 @@ i.icon10 { background-repeat:no-repeat; height:10px; width:10px; display:inline-
 .helpdesk-search{
     float: right;
     margin-top: 10px;
+}
+
+.cart_block .cart_block_list .products{
+    overflow-y: scroll;
+    max-height: 200px;
 }

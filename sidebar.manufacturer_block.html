@@ -17,11 +17,10 @@
         if ($('#manufacturers_block_left ul li.hidden-items').length) {
             $('#manufacturers_block_left .lnk_more-brand').show();
         }
-        $('#manufacturers_block_left .lnk_more-brand').click(function () {
+        $(document).on('click', '#manufacturers_block_left .lnk_more-brand', function () {
             $('#manufacturers_block_left ul li.hidden-items').show();
             $(this).hide();
             return false;
         });
-
     </script>
 {/if}

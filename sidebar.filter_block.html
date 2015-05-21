@@ -42,15 +42,13 @@
                                     </script>
                                 {/if}
 
-
-
-
                             {else}
                                 <div class="layered_subtitle_heading">
                                     <span class="layered_subtitle">{$filter.name|escape}</span>
+                                    <i class="icon-plus"></i>
                                 </div>
                                 {if $filter.type == 'boolean'}
-                                    <ul class="col-lg-12 layered_filter_ul">
+                                    <ul class="col-lg-12 layered_filter_ul" style="display:none;">
 
                                         <li class="nomargin hiddable col-lg-12">
                                             <input autocomplete="off" type="radio" name="{$filter.code}"{if $wa->get($filter.code)} checked{/if} value="1"> 
@@ -74,7 +72,7 @@
                                     </ul>
                                 {elseif isset($filter.min)}
                                     {$_v = $wa->get($filter.code)}
-                                    <ul class="col-lg-12 layered_filter_ul">
+                                    <ul class="col-lg-12 layered_filter_ul" style="display:none;">
                                         <li class="nomargin hiddable col-lg-12">[`from`] <input autocomplete="off" type="text" name="{$filter.code}[min]" placeholder="{$filter.min}" {if !empty($_v.min)}value="{$_v.min}"{/if}></li>
                                         <li class="nomargin hiddable col-lg-12">
                                             [`to`] <input autocomplete="off" type="text" name="{$filter.code}[max]" placeholder="{$filter.max}" {if !empty($_v.max)}value="{$_v.max}"{/if}>
@@ -85,7 +83,7 @@
                                         </li>
                                     </ul>
                                 {else}
-                                    <ul class="col-lg-12 layered_filter_ul">
+                                    <ul class="col-lg-12 layered_filter_ul" style="display:none;">
                                         {foreach $filter.values as $v_id => $v}
                                             <li class="nomargin hiddable col-lg-12">
                                                 <input autocomplete="off" type="checkbox" name="{$filter.code}[]" {if in_array($v_id, (array)$wa->get($filter.code, array()))}checked{/if} value="{$v_id}"> 
