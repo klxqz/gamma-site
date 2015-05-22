@@ -1,0 +1,219 @@
+<div class="settings-panel">
+    <a class="settings-button" href="#"><span class="icon-cogs"></span></a>
+    <h3>Настройки</h3>
+    <form method="post">
+
+
+        <div class="settings-scroll">
+
+            <div>
+                <span>Цветовая схема:</span>
+                {$color_scheme = [
+'theme1' => '',   
+'theme2' => 'theme2',
+'theme3' => 'theme3',
+'theme4' => 'theme4',
+'theme5' => 'theme5',
+'theme6' => 'theme6',
+'theme7' => 'theme7',
+'theme8' => 'theme8',
+'theme9' => 'theme9',
+'Пользовательская схема' => 'custom_color_scheme']}
+                <select name="theme_settings[color_scheme]">
+                    {foreach $color_scheme as $name => $val}
+                        <option {if $theme_settings.color_scheme==$val}selected="selected"{/if} value="{$val}">{$name}</option>
+                    {/foreach}        
+                </select>
+            </div>
+            <hr />
+            <div>
+                <span>Фоновый цвет:</span>
+                <input name="theme_settings[bg_color]" value="{$theme_settings.bg_color|escape}" />
+            </div>
+            <hr />
+
+            <div>
+                <span>Фоновая текстура:</span>
+                <br/>
+                {$bg_texture = [
+'img/bg/no_bg.png',
+"img/texture/water.jpg",
+"img/texture/lava3.jpg",
+"img/texture/lava2.jpg",
+"img/texture/lava.jpg",
+"img/texture/stars2.jpg",
+"img/texture/stars.jpg",
+"img/texture/gravel4.jpg",
+"img/texture/gravel3.jpg",
+"img/texture/gravel2.jpg",
+"img/texture/gravel.jpg",
+"img/texture/rose.jpg",
+"img/texture/graffiti2.jpg",
+"img/texture/graffiti.jpg",
+"img/texture/protector.jpg",
+"img/texture/parket.jpg",
+"img/texture/wood.jpg",
+"img/texture/carbon2.jpg",
+"img/texture/carbon.jpg",
+"img/texture/bg-style2.gif",
+"img/texture/bg-style3.jpg",
+"img/texture/bg-style4.jpg",
+"img/texture/bg-style5.jpg",
+"img/texture/9d75dau-m.jpg",
+"img/texture/2475dau-m.jpg",
+"img/texture/4275dau-m.jpg",
+"img/texture/5875dau-m.jpg",
+"img/texture/6175dau-m.jpg",
+"img/texture/6375dau-m.jpg",
+"img/texture/7675dau-m.jpg",
+"img/texture/a1d44cu-m.jpg",
+"img/texture/e4g4cu-m.jpg",
+"img/texture/cloth.jpg",
+"img/texture/grey.jpg",
+"img/texture/red.jpg",
+"img/texture/blue.jpg",
+"img/texture/green.jpg",
+"img/texture/purple.jpg",
+"img/texture/yellow.jpg"
+]}
+                <input type="hidden" name="theme_settings[bg_texture]" value="{$theme_settings.bg_texture}" />
+                {foreach $bg_texture as $texture}
+                    <a href="#" data-name="theme_settings[bg_texture]" data-value="{$texture}" class="select-img{if $theme_settings.bg_texture == $texture} selected{/if}">
+                        <img src="{$wa_parent_theme_url}{$texture}" />
+                    </a>
+                {/foreach}
+            </div>
+            <hr />
+            <div>
+                <span>Фоновое изображение:</span>
+                <br/>
+                {$bg_image = [
+"img/bg/no_bg.png",
+"img/bg/winter.jpg",
+"img/bg/beautiful-blue.jpg",
+"img/bg/windows.jpg",
+"img/bg/sky.jpg",
+"img/bg/tulips.jpg",
+"img/bg/abstract-colors.jpg",
+"img/bg/rainbow_color_swirl.jpg",
+"img/bg/wwalls.ru-60950.jpg",
+"img/bg/maxresdefault13.jpg",
+"img/bg/anypics.ru-29910.jpg",
+"img/bg/look.com.ua-31155.jpg",
+"img/bg/bg3.jpg",
+"img/bg/motto.net.ua-9597.jpg",
+"img/bg/abstraction3d_14998.jpg",
+"img/bg/poverhnost_svetlyy_tekstura.jpg",
+"img/bg/1282497095_0037.jpg",
+"img/bg/reWalls.com-5145.jpg",
+"img/bg/niceimage.ru-11104.jpg",
+"img/bg/nastol.com.ua-2213.jpg",
+"img/bg/race-driver-grid.jpg",
+"img/bg/cartoon-design.jpg",
+"img/bg/motto.net.ua-8881.jpg",
+"img/bg/abstraction3d_60596.jpg",
+"img/bg/1306093318_E4EEF0EEE3E0.jpg",
+"img/bg/texture4.jpg",
+"img/bg/wwalls.ru-60245.jpg",
+"img/bg/1354035175_1-10.jpg",
+"img/bg/reWalls.com-25905.jpg",
+"img/bg/reWalls.com-8867.jpg",
+"img/bg/zwalls.ru-18631.jpg",
+"img/bg/1263279.jpg"
+]}
+                <input type="hidden" name="theme_settings[bg_image]" value="{$theme_settings.bg_image}" />
+                {foreach $bg_image as $image}
+                    <a href="#" data-name="theme_settings[bg_image]" data-value="{$image}" class="select-img{if $theme_settings.bg_image == $image} selected{/if}">
+                        <img src="{$wa_parent_theme_url}{$image}" />
+                    </a>
+                {/foreach}
+            </div>
+            <hr />
+
+
+
+        </div>
+        <input type="submit" value="Применить" />
+        <input type="submit" name="reset" value="По умолчанию" />
+    </form>
+
+
+    <script>
+        $('.settings-button').click(function () {
+            if ($(this).hasClass('active')) {
+                $('.settings-panel').animate({
+                    left: '-303px'
+                });
+                $(this).removeClass('active');
+            } else {
+                $('.settings-panel').animate({
+                    left: '0px'
+                });
+                $(this).addClass('active');
+            }
+            return false;
+        });
+        $('.select-img').click(function () {
+            var name = $(this).data('name');
+            var value = $(this).data('value');
+            $('input[name="' + name + '"]').val(value);
+            $(this).closest('form').submit();
+            return false;
+        });
+    </script>
+    <style>
+        .select-img{
+            display: inline-block;
+            border: 3px solid #fff;
+        }
+        .select-img.selected{
+            border: 3px solid #FDDA3B;
+        }
+        .select-img img{
+            width: 58px;
+            height: 58px;
+            max-width: 100%;
+        }
+        .settings-scroll{
+            border: 1px solid #000;
+            height: 500px;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+        .settings-scroll > *{
+            max-width: 200px;
+        }
+        .settings-panel{
+            position: fixed; z-index: 10000; left: -303px; top: 10%; width: 300px; background: #f4f4f4; box-shadow: 2px 0px 10px grey; border-width: 1px 1px 1px 0; 
+            border-style: solid; border-color: grey; border-radius: 0 0 3px 0; padding: 10px;
+        }
+        .settings-panel hr{
+            margin-bottom: 10px;
+            margin-top: 5px;
+        }
+        .settings-block{
+            margin: 10px 0px;
+        }
+        .settings-panel h3{
+            text-align: center;
+        }
+        a.settings-button{
+            background: #f4f4f4; box-shadow: 2px 0px 10px grey; border-width: 1px 1px 1px 1px; border-style: solid; border-color: grey; border-radius: 0 0 3px 0;
+            font-size: 46px; display: block; position: absolute; right: -54px; top: -1px;
+        }
+        @media only screen and (max-width:400px){
+            .settings-panel{
+                left: -303px;
+                width: 300px;
+            }
+        }
+
+        .settings-scroll{
+            /*height: 200px;*/
+
+        }
+
+
+
+    </style>
+</div>

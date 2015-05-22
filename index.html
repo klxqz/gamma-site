@@ -8,6 +8,20 @@
     <!--[if gt IE 8]> <html class="no-js ie9" lang="en"><![endif]-->
     <html lang="en">
         <head>
+
+            {if $wa->post('theme_settings') && !$wa->post('reset')}
+                {foreach $wa->post('theme_settings') as $theme_setting => $value}
+                    {$theme_settings[$theme_setting] = $value}
+                {/foreach}
+                {$wa->session('theme_settings', $theme_settings)}
+            {/if}
+            {if $wa->post('reset')}
+                {$wa->session('theme_settings', [])}
+            {/if}
+            {$storage = $wa->session('theme_settings')}
+            {foreach $storage as $key => $value}
+                {$theme_settings[$key] = $value}
+            {/foreach}
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
             <title>{$wa->title()|escape}</title>
             <meta name="Keywords" content="{$wa->meta('keywords')|escape}" />
@@ -59,6 +73,8 @@
 
         </head>
         <body>
+
+            {include file="settings-panel.html"}
 
             <div id="page">
                 <div class="header-container">
