@@ -456,7 +456,7 @@
         
         
         <setting var="bg_image" control_type="image_select">
-            <value>img/bg/no_bg.png</value>
+            <value>img/bg/abstract-colors_.jpg</value>
             <name locale="en_US">background image</name>
             <name locale="ru_RU">Фоновое изображение</name>
             <options>
@@ -468,14 +468,12 @@
                 <option value="img/bg/tulips.jpg"></option>
                 <option value="img/bg/abstract-colors.jpg"></option>
                 <option value="img/bg/rainbow_color_swirl.jpg"></option>
-                <option value="img/bg/wwalls.ru-60950.jpg"></option>
                 <option value="img/bg/maxresdefault13.jpg"></option>
                 <option value="img/bg/anypics.ru-29910.jpg"></option>
                 <option value="img/bg/look.com.ua-31155.jpg"></option>
                 <option value="img/bg/bg3.jpg"></option>
                 <option value="img/bg/motto.net.ua-9597.jpg"></option>
                 <option value="img/bg/abstraction3d_14998.jpg"></option>
-                <option value="img/bg/poverhnost_svetlyy_tekstura.jpg"></option>
                 <option value="img/bg/1282497095_0037.jpg"></option>
                 <option value="img/bg/reWalls.com-5145.jpg"></option>
                 <option value="img/bg/niceimage.ru-11104.jpg"></option>
@@ -488,7 +486,6 @@
                 <option value="img/bg/texture4.jpg"></option>
                 <option value="img/bg/wwalls.ru-60245.jpg"></option>
                 <option value="img/bg/1354035175_1-10.jpg"></option>
-                <option value="img/bg/reWalls.com-25905.jpg"></option>
                 <option value="img/bg/reWalls.com-8867.jpg"></option>
                 <option value="img/bg/zwalls.ru-18631.jpg"></option>
                 <option value="img/bg/1263279.jpg"></option>
