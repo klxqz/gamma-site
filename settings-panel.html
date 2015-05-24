@@ -123,8 +123,11 @@
 ]}
                 <input type="hidden" name="theme_settings[bg_image]" value="{$theme_settings.bg_image}" />
                 {foreach $bg_image as $image}
+                    {$file = basename($image)}
+                    {$dir = dirname($image)}
+                    {$f = "`$dir`/58x58-`$file`"}
                     <a href="#" data-name="theme_settings[bg_image]" data-value="{$image}" class="select-img{if $theme_settings.bg_image == $image} selected{/if}">
-                        <img src="{$wa_parent_theme_url}{$image}" />
+                        <img src="{$wa_parent_theme_url}{$f}" />
                     </a>
                 {/foreach}
             </div>
