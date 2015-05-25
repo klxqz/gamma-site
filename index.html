@@ -8,6 +8,10 @@
     <!--[if gt IE 8]> <html class="no-js ie9" lang="en"><![endif]-->
     <html lang="en">
         <head>
+            {$enable = true}
+            {if strpos($wa->server('HTTP_USER_AGENT'), 'Google Page Speed')}
+                {$google = 1}
+            {/if}
 
             {if $wa->post('theme_settings') && !$wa->post('reset')}
                 {foreach $wa->post('theme_settings') as $theme_setting => $value}
@@ -74,7 +78,9 @@
         </head>
         <body>
 
-            {include file="settings-panel.html"}
+            {if $enable && empty($google)}
+                {include file="settings-panel.html"}
+            {/if}
 
             <div id="page">
                 <div class="header-container">
@@ -352,6 +358,36 @@
 
                 </div>
             </div>
+
+            {if $enable && empty($google)}
+                {literal}
+                    <script type="text/javascript">
+                        var reformalOptions = {
+                            project_id: 892297,
+                            project_host: "gamma-theme.reformal.ru",
+                            tab_orientation: "right",
+                            tab_indent: "50%",
+                            tab_bg_color: "#F05A00",
+                            tab_border_color: "#FFFFFF",
+                            tab_image_url: "http://tab.reformal.ru/T9GC0LfRi9Cy0Ysg0Lgg0L%252FRgNC10LTQu9C%252B0LbQtdC90LjRjw==/FFFFFF/a08a7c60392f68cb33f77d4f56cf8c6f/right/1/tab.png",
+                            tab_border_width: 2
+                        };
+
+                        (function () {
+                            var script = document.createElement('script');
+                            script.type = 'text/javascript';
+                            script.async = true;
+                            script.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'media.reformal.ru/widgets/v3/reformal.js';
+                            document.getElementsByTagName('head')[0].appendChild(script);
+                        })();
+                    </script>
+                    <noscript>
+                    <a href="http://reformal.ru"><img src="http://media.reformal.ru/reformal.png" /></a><a href="http://gamma-theme.reformal.ru">Oтзывы и предложения для gamma</a>
+                    </noscript>
+                {/literal}   
+            {/if}
+
+
         </body>
     </html>
 {/if}

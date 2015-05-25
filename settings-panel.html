@@ -78,8 +78,11 @@
 ]}
                 <input type="hidden" name="theme_settings[bg_texture]" value="{$theme_settings.bg_texture}" />
                 {foreach $bg_texture as $texture}
+                    {$file = basename($texture)}
+                    {$dir = dirname($texture)}
+                    {$f = "`$dir`/min/58x58-`$file`"}
                     <a href="#" data-name="theme_settings[bg_texture]" data-value="{$texture}" class="select-img{if $theme_settings.bg_texture == $texture} selected{/if}">
-                        <img src="{$wa_parent_theme_url}{$texture}" />
+                        <img src="{$wa_parent_theme_url}{$f}" />
                     </a>
                 {/foreach}
             </div>
@@ -125,7 +128,7 @@
                 {foreach $bg_image as $image}
                     {$file = basename($image)}
                     {$dir = dirname($image)}
-                    {$f = "`$dir`/58x58-`$file`"}
+                    {$f = "`$dir`/min/58x58-`$file`"}
                     <a href="#" data-name="theme_settings[bg_image]" data-value="{$image}" class="select-img{if $theme_settings.bg_image == $image} selected{/if}">
                         <img src="{$wa_parent_theme_url}{$f}" />
                     </a>
