@@ -3868,8 +3868,6 @@ header .row {
     position: relative; }
 header .row > .container {
     position: relative; }
-header .row #header_logo {
-    margin-bottom: 27px; }
 @media (max-width: 767px) {
     header .row #header_logo {
         padding-top: 15px; }
@@ -5192,7 +5190,7 @@ div.star a:hover {
     display: inline-block;
     padding: 0 15px 0 15px;
     background: white;
-    margin-left: -10px;
+    margin-left: -15px;
     position: relative;
     z-index: 2;
     color: #31353d;
@@ -5286,8 +5284,6 @@ div.star a:hover {
     margin-bottom: 0; }
 .footer-container #footer ul li {
     padding-bottom: 8px; }
-.footer-container #footer ul li i {
-    display: none; }
 .footer-container #footer ul li:last-child i {
     display: block; }
 .footer-container #footer #block_contact_infos div ul li + li {
