@@ -7,7 +7,7 @@
             <div class="product-content">
                 <h5>
                     <a class="product-name" href="{$p.frontend_url}" title="{$p.name}">
-                        {$p.name}
+                        {$p.name|escape}
                     </a>
                 </h5>
                 {if $p.summary}

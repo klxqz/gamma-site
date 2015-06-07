@@ -17,8 +17,8 @@
 
 {foreach $sidebar_blocks as $sidebar_block}
     {$sidebar_block = trim($sidebar_block)}
-
+    
     {if in_array($sidebar_block, $available_blocks)}
-        {include file="`$wa_parent_theme_path`/sidebar.`$sidebar_block`.html"}        
+        {include file="sidebar.`$sidebar_block`.html"}        
     {/if}
 {/foreach}
