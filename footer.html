@@ -37,6 +37,10 @@
 
 {if $theme_settings.footer_newsletter && $wa->mailer}
     <div id="newsletter_block_left" class="footer-block col-xs-12 col-sm-3">
+
+        <a id="show-pop-newsletter" href="#" class="btn btn-danger  show-pop center-block" data-animation="pop" 
+           data-content="Необходимо приложение «Рассылки»" data-title="Блок «Подпишитесь»">+</a>
+
         <h4>[`Newsletter`]</h4>
         <div class="block_content toggle-footer">
             {$wa->mailer->form({$theme_settings.newsletter_form_number})}
@@ -47,6 +51,14 @@
 
 {if $theme_settings.source_footer_info != 'none'}
     <section class="footer-block col-xs-12 col-sm-3" id="block_various_links_footer">
+        <a id="show-pop-footer-information" href="#" class="btn btn-danger  show-pop center-block" data-animation="pop" 
+           data-content="Вы можете задать источник для блока «Информация» в нижней части страницы:
+           <ul>
+           <li>Приложение «Сайт» - страницы</li>
+           <li><b>Приложение «Магазин» - страницы (текущее значение)</b></li>
+           <li>Не показывать</li>
+           </ul>" data-title="Блока «Информация» в нижней части страницы">+</a>
+
         <h4>[`Information`]</h4>
         {if $theme_settings.source_footer_info == 'shop_pages' && $wa->shop}
             {$footer_pages = $wa->shop->pages()}
