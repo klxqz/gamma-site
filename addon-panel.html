@@ -24,8 +24,7 @@
                 </a>
             </div>
             <div class="col-sm-3">
-                {$viewed_products = waRequest::cookie('viewed_products')}
-                {$viewed_products = explode(',', $viewed_products)}
+                {$viewed_products = waRequest::cookie('viewed_products', array(), waRequest::TYPE_ARRAY_INT)}
                 <a class="btn" rel="nofollow" href="{$wa->getUrl('shop/frontend/search')}?list=viewed_products" id="lastview-link" {if !$viewed_products}disabled="disabled"{/if}>
                     <i class="icon-eye-open"></i>
                     <span class="text">[`Viewed products`]</span>(<span class="count">{count($viewed_products)}</span>)

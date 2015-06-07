@@ -448,7 +448,7 @@ function accordionFooter(status)
     }
 }
 
-//   TOGGLE COLUMNS
+//   TOGGLE COLUMNSF
 function accordion(status) {
     var leftColumnBlocks = $('#left_column');
     if (status == 'enable') {
@@ -517,10 +517,11 @@ function categoryReload() {
     $('.column ul.tree.dhtml').show();
 
     $('.column ul.tree.dhtml .selected').parents().each(function () {
-        if ($(this).is('ul'))
+        if ($(this).is('ul')) {
             toggleBranch($(this).prev().prev(), true);
+        }
     });
-    toggleBranch($('.column ul.tree.dhtml .selected').prev(), true);
+    toggleBranch($('.column ul.tree.dhtml .selected span'), true);
 
     $('.column ul.tree.dhtml span.grower').click(function () {
         toggleBranch($(this));
