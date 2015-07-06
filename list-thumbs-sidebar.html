@@ -2,12 +2,12 @@
     {foreach $products as $p}
         <li class="clearfix">
             <a class="products-block-image" href="{$p.frontend_url}">
-                {$wa->shop->productImgHtml($p, '98x98', ['class' => 'replace-2x img-responsive', 'alt' => $p.name, 'default' => "`$wa_theme_url`img/dummy98.png"])}
+                {$wa->shop->productImgHtml($p, '98', ['class' => 'replace-2x img-responsive', 'alt' => $p.name, 'default' => "`$wa_theme_url`img/dummy98.png"])}
             </a>
             <div class="product-content">
                 <h5>
                     <a class="product-name" href="{$p.frontend_url}" title="{$p.name}">
-                        {$p.name|escape}
+                        {$p.name}
                     </a>
                 </h5>
                 {if $p.summary}

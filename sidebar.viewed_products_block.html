@@ -4,6 +4,7 @@
     {$viewed_products = array()}
     {foreach $viewed_products_ids as $viewed_product_id}
         {$product = $wa->shop->product($viewed_product_id)}
+        {$product['frontend_url'] = $wa->shop->productUrl($product)}
         {$number = array_push($viewed_products, $product)}
         {if $number >= $theme_settings.sidebar_viewed_products_block_count}
             {break}

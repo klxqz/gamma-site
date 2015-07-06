@@ -287,7 +287,7 @@ img {
     vertical-align: middle; }
 
 .img-responsive {
-    display: block;
+/*    display: block;*/
     max-width: 100%;
     height: auto; }
 
@@ -4403,6 +4403,8 @@ table.table_block td {
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
 .product-box .product-image {
+    line-height: 178px;
+    text-align: center;
     border: 1px solid #d6d4d4;
     padding: 9px;
     position: relative;
@@ -4411,7 +4413,6 @@ table.table_block td {
     display: block;
     margin-bottom: 11px; }
 .product-box .product-image img {
-    margin: 0 auto;
     max-width: 100%;
     height: auto; }
 
@@ -4556,6 +4557,13 @@ table.table_block td {
     margin-bottom: 20px;
     border-bottom: 1px solid #d6d4d4; }
 .block .products-block li .products-block-image {
+    box-sizing: content-box;
+    display: block;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    line-height: 98px;
+    vertical-align: middle;
     border: 1px solid #d6d4d4;
     float: left;
     margin-right: 19px; }
@@ -6395,7 +6403,7 @@ div.star.star_hover:after {
 .accessories-block .block_content .bx-wrapper img,
 #productscategory_list .bx-wrapper img {
     max-width: 100%;
-    display: block; }
+}
 #crossselling_list .bx-wrapper .bx-pager,
 #crossselling_list .bx-wrapper .bx-controls-auto,
 .accessories-block .block_content .bx-wrapper .bx-pager,
@@ -7347,10 +7355,6 @@ ul.tree.dhtml li li a:before {
         font-size: 14px; } }
 #phone-block-top div.phone strong {
     color: #777777; }
-#phone-block-top div.phone:hover, #phone-block-top div.phone.active {
-    color: #3498db; }
-#phone-block-top div.phone:hover:after {
-    color: #3498db; }
 
 /*****************************************************************************
                                         facebook Block Css
@@ -7911,4 +7915,26 @@ i.icon10 { background-repeat:no-repeat; height:10px; width:10px; display:inline-
 .cart_block .cart_block_list .products{
     overflow-y: scroll;
     max-height: 200px;
+}
+
+.page-content table {
+    margin-bottom: 30px;
+    border: 1px solid #d6d4d4; }
+.page-content table > thead > tr > th,
+.page-content table > thead > tr > td,
+.page-content table > tbody > tr > th,
+.page-content table > tbody > tr > td,
+.page-content table > tfoot > tr > th,
+.page-content table > tfoot > tr > td {
+    border: 1px solid #d6d4d4; }
+.page-content table > thead > tr > th,
+.page-content table > thead > tr > td {
+    border-bottom-width: 2px; }
+
+.page-content a{
+    text-decoration: underline;
+}
+
+.page-menu{
+    font-weight: bold;
 }

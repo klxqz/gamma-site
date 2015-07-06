@@ -59,7 +59,6 @@
 
         </head>
         <body>
-
             <div id="page">
                 <div class="header-container">
                     <header id="header">
@@ -121,9 +120,19 @@
                                         {/if}
 
                                         <div class="phone-block" id="phone-block-top">
-                                            <div class="phone">
-                                                <span>{$wa->shop->settings('phone')}</span>
-                                            </div>
+                                            {if $theme_settings.source_header_phone == 'shop' && $wa->shop}
+                                                <div class="phone">
+                                                    <span>{$wa->shop->settings('phone')}</span>
+                                                </div>
+                                            {elseif $theme_settings.source_header_phone == 'manually'}
+                                                <div class="phone">
+                                                    <span>{$theme_settings.header_phone}</span>
+                                                    {if !empty($theme_settings.additional_header_phone)}
+                                                        <span>{$theme_settings.additional_header_phone}</span>
+                                                    {/if}
+                                                </div>
+                                            {/if}
+
                                         </div>
 
                                         {include file="block-header-links.html"}

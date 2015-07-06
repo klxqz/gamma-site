@@ -331,8 +331,6 @@ $(document).ready(function () {
     $(".tab-content ul>li.first-in-line").each(function () {
         $(this).before("<li class='clear'><span /></li>");
     })
-    $("#htmlcontent_home").prependTo("#center_column");
-
 
     responsiveResize();
     $(window).resize(responsiveResize);

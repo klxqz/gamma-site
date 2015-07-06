@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE theme PUBLIC "wa-app-theme" "http://www.webasyst.com/wa-content/xml/wa-app-theme.dtd">
-<theme id="gamma" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="1.0.0">
+<theme id="gamma" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="1.0.1">
     <name locale="en_US">Gamma</name>
     <name locale="ru_RU">Гамма</name>
     <description locale="ru_RU">Семейство адаптивных тем дизайна.</description>
@@ -596,67 +596,6 @@
             <name locale="ru_RU">Символ рубля. Необходимо приложение «Магазин»</name>
         </setting>
         
-        <setting var="header_banner_text" control_type="text">
-            <value></value>
-            <name locale="en_US">Text information banner at the top of the site(Header)</name>
-            <name locale="ru_RU">Текст информационного баннера в верхней части сайта(Header)</name>
-        </setting>
-        
-        
-        <setting var="source_header_links" control_type="select">
-            <value>apps</value>
-            <name locale="en_US">Source links for the top(Header)</name>
-            <name locale="ru_RU">Источник для ссылок сверху(Header)</name>
-            <options>
-                <option value="apps">
-                    <name locale="en_US">Links to applications</name>
-                    <name locale="ru_RU">Ссылки на приложения</name>
-                </option>
-                <option value="site_pages">
-                    <name locale="en_US">Application «Site» - pages</name>
-                    <name locale="ru_RU">Приложение «Сайт» - страницы</name>
-                </option>
-                <option value="shop_pages">
-                    <name locale="en_US">Application «Shop» - pages</name>
-                    <name locale="ru_RU">Приложение «Магазин» - страницы</name>
-                </option>
-                <option value="shop_categories">
-                    <name locale="en_US">Application «Shop» - categories</name>
-                    <name locale="ru_RU">Приложение «Магазин» - категории</name>
-                </option>
-                <option value="user_links">
-                    <name locale="en_US">User links</name>
-                    <name locale="ru_RU">Пользовательские ссылки</name>
-                </option>
-                <option value="none">
-                    <name locale="en_US">Do not show</name>
-                    <name locale="ru_RU">Не показывать</name>
-                </option>
-            </options>
-        </setting>
-        
-        <setting var="header_links_user_links" control_type="text">
-            <value><![CDATA[
-/ ; Главная
-/blog/ ; Блог
-/photos/ ; Фото
-                ]]>
-            </value>
-            <name locale="en_US">
-                User links for Header.
-            <![CDATA[
-                <hr />	
-                ]]>
-            </name>
-            <name locale="ru_RU">
-                Пользовательские ссылки для Header.
-            <![CDATA[
-                <hr />	
-                ]]>
-            </name>
-        </setting>
-        
-        
         <setting var="source_main_menu" control_type="select">
             <value>shop_categories</value>
             <name locale="en_US">Source for the main top menu</name>
@@ -837,6 +776,114 @@
         </setting>
         
         
+        <setting var="header_title" control_type="text">
+            <value></value>
+            <name locale="en_US">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Setting the top of the site(Header)</p>	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Настройка верхней части сайта(Header).</p>	
+                ]]>
+            </name>
+        </setting> 
+        
+        <setting var="header_banner_text" control_type="text">
+            <value></value>
+            <name locale="en_US">Text information banner at the top of the site(Header)</name>
+            <name locale="ru_RU">Текст информационного баннера в верхней части сайта(Header)</name>
+        </setting>
+        
+        
+        <setting var="source_header_links" control_type="select">
+            <value>apps</value>
+            <name locale="en_US">Source links for the top(Header)</name>
+            <name locale="ru_RU">Источник для ссылок сверху(Header)</name>
+            <options>
+                <option value="apps">
+                    <name locale="en_US">Links to applications</name>
+                    <name locale="ru_RU">Ссылки на приложения</name>
+                </option>
+                <option value="site_pages">
+                    <name locale="en_US">Application «Site» - pages</name>
+                    <name locale="ru_RU">Приложение «Сайт» - страницы</name>
+                </option>
+                <option value="shop_pages">
+                    <name locale="en_US">Application «Shop» - pages</name>
+                    <name locale="ru_RU">Приложение «Магазин» - страницы</name>
+                </option>
+                <option value="shop_categories">
+                    <name locale="en_US">Application «Shop» - categories</name>
+                    <name locale="ru_RU">Приложение «Магазин» - категории</name>
+                </option>
+                <option value="user_links">
+                    <name locale="en_US">User links</name>
+                    <name locale="ru_RU">Пользовательские ссылки</name>
+                </option>
+                <option value="none">
+                    <name locale="en_US">Do not show</name>
+                    <name locale="ru_RU">Не показывать</name>
+                </option>
+            </options>
+        </setting>
+        
+        <setting var="header_links_user_links" control_type="text">
+            <value><![CDATA[
+/ ; Главная
+/blog/ ; Блог
+/photos/ ; Фото
+                ]]>
+            </value>
+            <name locale="en_US">
+                User links for Header.
+            <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                Пользовательские ссылки для Header.
+            <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+        </setting>
+        
+        <setting var="source_header_phone" control_type="select">
+            <value>manually</value>
+            <name locale="en_US">Source the phone number</name>
+            <name locale="ru_RU">Источник для вывода номера телефона</name>
+            <options>
+                <option value="shop">
+                    <name locale="en_US">From the application settings "Shop"</name>
+                    <name locale="ru_RU">Из настроек приложения "Магазин"</name>
+                </option>
+                <option value="manually">
+                    <name locale="en_US">specified manually</name>
+                    <name locale="ru_RU">Указывается вручную</name>
+                </option>
+                <option value="none">
+                    <name locale="en_US">Do not show</name>
+                    <name locale="ru_RU">Не показывать</name>
+                </option>
+            </options>
+        </setting>
+        <setting var="header_phone" control_type="text">
+            <value>+7 999 999 99 99</value>
+            <name locale="en_US">Phone number</name>
+            <name locale="ru_RU">Номер телефона</name>
+        </setting>
+        
+        <setting var="additional_header_phone" control_type="text">
+            <value>+7 111 111 11 11</value>
+            <name locale="en_US">Additional phone number</name>
+            <name locale="ru_RU">Дополнительный номер телефона</name>
+        </setting>
+        
+
         <setting var="sidebar_settings_title" control_type="text">
             <value></value>
             <name locale="en_US">
@@ -1356,6 +1403,12 @@ photos_block]]></value>
             <value>+7 999 999 99 99</value>
             <name locale="en_US">Phone number</name>
             <name locale="ru_RU">Номер телефона</name>
+        </setting>
+        
+        <setting var="additional_footer_phone" control_type="text">
+            <value>+7 111 111 11 11</value>
+            <name locale="en_US">Additional phone number</name>
+            <name locale="ru_RU">Дополнительный номер телефона</name>
         </setting>
         
         <setting var="source_footer_email" control_type="select">
