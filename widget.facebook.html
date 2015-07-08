@@ -1,20 +1,22 @@
-<div id="fb-root"></div>
-<div class="fb-like-box" 
-     data-href="{$theme_settings.facebook_href}" 
-     data-colorscheme="{$theme_settings.facebook_colorscheme}" 
-     data-width="{$theme_settings.facebook_width}"
-     data-height="{$theme_settings.facebook_height}"
-     data-show-faces="{if empty($theme_settings.facebook_show_faces)}false{else}true{/if}" 
-     data-header="{if empty($theme_settings.facebook_header)}false{else}true{/if}" 
-     data-stream="{if empty($theme_settings.facebook_stream)}false{else}true{/if}" 
-     data-show-border="{if empty($theme_settings.facebook_show_border)}false{else}true{/if}"></div>
-<script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id))
-            return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.0";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
+{if !empty($theme_settings.facebook_href)}
+    <div id="fb-root"></div>
+    <div class="fb-like-box" 
+         data-href="{$theme_settings.facebook_href}" 
+         data-colorscheme="{$theme_settings.facebook_colorscheme}" 
+         data-width="{$theme_settings.facebook_width}"
+         data-height="{$theme_settings.facebook_height}"
+         data-show-faces="{if empty($theme_settings.facebook_show_faces)}false{else}true{/if}" 
+         data-header="{if empty($theme_settings.facebook_header)}false{else}true{/if}" 
+         data-stream="{if empty($theme_settings.facebook_stream)}false{else}true{/if}" 
+         data-show-border="{if empty($theme_settings.facebook_show_border)}false{else}true{/if}"></div>
+    <script>(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id))
+                return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+{/if}

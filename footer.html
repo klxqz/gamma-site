@@ -136,13 +136,24 @@
                     <li>
                         <i class="icon-phone"></i>
                         <span>{$wa->shop->settings('phone')}</span>
+                        {if !empty($theme_settings.additional_footer_phone)}
+                            <br/>
+                            <i class="icon-phone"></i>
+                            <span>{$theme_settings.additional_footer_phone}</span>
+                        {/if}
                     </li>
                 {elseif $theme_settings.source_footer_phone == 'manually'}
                     <li>
                         <i class="icon-phone"></i>
                         <span>{$theme_settings.footer_phone}</span>
+                        {if !empty($theme_settings.additional_footer_phone)}
+                            <br/>
+                            <i class="icon-phone"></i>
+                            <span>{$theme_settings.additional_footer_phone}</span>
+                        {/if}
                     </li>
                 {/if}
+
                 {if $theme_settings.source_footer_email == 'shop' && $wa->shop}
                     <li>
                         <i class="icon-envelope-alt"></i>
