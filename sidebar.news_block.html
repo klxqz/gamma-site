@@ -18,12 +18,7 @@
                             {/if}
                         </h3>
                         <div class="credentials">
-                            {if $post.user.posts_link}
-                                <a href="{$post.user.posts_link}" class="username">{$post.user.name}</a>
-                            {else}
-                                <span class="username">{$post.user.name}</span>
-                            {/if}
-                            {$post.datetime|wa_datetime:"humandate"}
+                            <strong>{$post.datetime|wa_datetime:"humandate"}</strong>
                         </div>
                         <p>
                             {$post.text|strip_tags|truncate:$theme_settings.sidebar_news_block_length}

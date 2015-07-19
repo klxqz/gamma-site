@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE theme PUBLIC "wa-app-theme" "http://www.webasyst.com/wa-content/xml/wa-app-theme.dtd">
-<theme id="gamma" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="1.0.1">
+<theme id="gamma" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="1.1.0">
     <name locale="en_US">Gamma</name>
     <name locale="ru_RU">Гамма</name>
     <description locale="ru_RU">Семейство адаптивных тем дизайна.</description>
@@ -274,6 +274,7 @@
                 }
                 </style>
                 <p class="p-title"></p>		
+                <p><a href="http://fontawesome.io/3.2.1/icons/" target="_blank">Иконки для темы дизайна</a></p>
                 ]]>
             </name>
         </setting>
@@ -883,6 +884,12 @@
             <name locale="ru_RU">Дополнительный номер телефона</name>
         </setting>
         
+        <setting var="show_currency" control_type="checkbox">
+            <value>1</value>
+            <name locale="ru_RU">Показывать валюту</name>
+            <name locale="en_US">Show currency</name>
+        </setting>
+        
 
         <setting var="sidebar_settings_title" control_type="text">
             <value></value>
@@ -916,7 +923,8 @@ tags_block
 vk_block
 facebook_block
 news_block
-photos_block]]></value>
+photos_block
+hook_block]]></value>
             <name locale="en_US">
                 Add and move the line in this list to change the set of sidebar blocks and their sequence.
             </name>
@@ -1246,7 +1254,7 @@ photos_block]]></value>
                 ]]> - блок вывода фотографий из приложения "ФОТО". Заголовок блока.</name>
         </setting>
         <setting var="sidebar_photos_block_count" control_type="text">
-            <value>3</value>
+            <value>9</value>
             <name locale="en_US">
                 photos_block. Specify the maximum number of photos.
             </name>
@@ -1255,6 +1263,18 @@ photos_block]]></value>
             </name>
         </setting>
         
+        <setting var="sidebar_hook_block_title" control_type="text">
+            <value locale="en_US">Hooks</value>
+            <value locale="ru_RU">Плагины</value>
+            <name locale="en_US">
+                <![CDATA[
+                <b>photos_block</b>	
+                ]]> - output block of plugins hooks: "frontend_nav" and "frontend_nav_aux".</name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <b>photos_block</b>	
+                ]]> - блок для вывода плагинов "frontend_nav" и "frontend_nav_aux".</name>
+        </setting>      
         
         
 
@@ -1274,6 +1294,12 @@ photos_block]]></value>
             </name>
         </setting> 
         
+        <setting var="wide_footer" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">Wide footer</name>
+            <name locale="ru_RU">Широкий футер</name>
+        </setting>
+                
         <setting var="social_block_footer" control_type="checkbox">
             <value>1</value>
             <name locale="en_US">social block footer</name>
@@ -1294,19 +1320,65 @@ photos_block]]></value>
             <value>http://vk.com/</value>
             <name locale="en_US">
                 Link to vk
+            </name>
+            <name locale="ru_RU">
+                Ссылка на ВКонтакте
+            </name>
+        </setting>
+        <setting var="footer_youtube" control_type="text">
+            <value>http://www.youtube.com/</value>
+            <name locale="en_US">
+                Link to youtube
+            </name>
+            <name locale="ru_RU">
+                Ссылка на youtube
+            </name>
+        </setting>
+        <setting var="footer_google_plus" control_type="text">
+            <value>https://plus.google.com/</value>
+            <name locale="en_US">
+                Link to google plus
+            </name>
+            <name locale="ru_RU">
+                Ссылка на google plus
+            </name>
+        </setting>
+        <setting var="footer_pinterest" control_type="text">
+            <value>https://www.pinterest.com/</value>
+            <name locale="en_US">
+                Link to pinterest
+            </name>
+            <name locale="ru_RU">
+                Ссылка на pinterest
+            </name>
+        </setting>
+        <setting var="footer_pinterest" control_type="text">
+            <value>http://instagram.com/</value>
+            <name locale="en_US">
+                Link to instagram
+            </name>
+            <name locale="ru_RU">
+                Ссылка на instagram
+            </name>
+        </setting>
+        
+        <setting var="footer_rss" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">
+                RSS
                 <![CDATA[
                 <hr />	
                 ]]>
             </name>
             <name locale="ru_RU">
-                Ссылка на ВКонтакте
-            <![CDATA[
+                RSS - лента новостей
+                <![CDATA[
                 <hr />	
                 ]]>
             </name>
         </setting>
         
-        
+         
         <setting var="footer_newsletter" control_type="checkbox">
             <value>1</value>
             <name locale="en_US">
@@ -1530,6 +1602,22 @@ photos_block]]></value>
         <locale>
             <msgid>Twitter</msgid>
             <msgstr locale="ru_RU">Twitter</msgstr>
+        </locale> 
+        <locale>
+            <msgid>Youtube</msgid>
+            <msgstr locale="ru_RU">Youtube</msgstr>
+        </locale> 
+        <locale>
+            <msgid>Google plus</msgid>
+            <msgstr locale="ru_RU">Google plus</msgstr>
+        </locale> 
+        <locale>
+            <msgid>Pinterest</msgid>
+            <msgstr locale="ru_RU">Pinterest</msgstr>
+        </locale> 
+        <locale>
+            <msgid>Instagram</msgid>
+            <msgstr locale="ru_RU">Instagram</msgstr>
         </locale> 
         <locale>
             <msgid>Follow us</msgid>

@@ -1,6 +1,6 @@
 {if $wa->photos && $wa->photos->photos() && !empty($theme_settings.sidebar_photos_block_count)}
     {$photos = $wa->photos->photos()}
-    <div class="block">
+    <div class="photos_block block">
         <p class="title_block">
             {$theme_settings.sidebar_photos_block_title}
         </p>
@@ -10,23 +10,20 @@
                     <li{if $photo.stack_count > 0} class="stacked"{/if}>
                         <div class="image">
                             {if empty($photo.frontend_link)}
-                                {$wa->photos->getImgHtml($photo, "200x0", ["class"=>"shadowed"])}
+                                {$wa->photos->getImgHtml($photo, "80x80", ["class"=>"shadowed"])}
                             {else}
                                 <a href="{$photo.frontend_link|default:'#'}">
-                                    {$wa->photos->getImgHtml($photo, "200x0", ["class"=>"shadowed"])}
+                                    {$wa->photos->getImgHtml($photo, "80x80", ["class"=>"shadowed"])}
                                 </a>
                             {/if}
                         </div>
-                        <h5>{$photo.name}</h5>
-                        {if $photo.description}
-                            <p>{$photo.description}</p>
-                        {/if}
                         {if $photo@iteration >= $theme_settings.sidebar_photos_block_count}
                             {break}
                         {/if}
                     </li>
                 {/foreach}
             </ul>
+            <div class="clear-both"></div>
         </div>
     </div>
 {/if}
