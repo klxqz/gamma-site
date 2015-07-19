@@ -23,7 +23,35 @@
                     </a>
                 </li>
             {/if}
-            {if $wa->blog}
+            {if !empty($theme_settings.footer_youtube)}
+                <li class="youtube">
+                    <a target="_blank" href="{$wa->getUrl('blog/frontend/rss')}"  title="[`Youtube`]">
+                        <span>[`Youtube`]</span>
+                    </a>
+                </li>
+            {/if}
+            {if !empty($theme_settings.footer_google_plus)}
+                <li class="google-plus">
+                    <a target="_blank" href="{$wa->getUrl('blog/frontend/rss')}"  title="[`Google plus`]">
+                        <span>[`Google plus`]</span>
+                    </a>
+                </li>
+            {/if}
+            {if !empty($theme_settings.footer_pinterest)}
+                <li class="pinterest">
+                    <a target="_blank" href="{$wa->getUrl('blog/frontend/rss')}"  title="[`Pinterest`]">
+                        <span>[`Pinterest`]</span>
+                    </a>
+                </li>
+            {/if}
+            {if !empty($theme_settings.footer_instagram)}
+                <li class="instagram">
+                    <a target="_blank" href="{$wa->getUrl('blog/frontend/rss')}"  title="[`Instagram`]">
+                        <span>[`Instagram`]</span>
+                    </a>
+                </li>
+            {/if}
+            {if !empty($theme_settings.footer_rss) && $wa->blog}
                 <li class="rss">
                     <a target="_blank" href="{$wa->getUrl('blog/frontend/rss')}"  title="RSS">
                         <span>RSS</span>
