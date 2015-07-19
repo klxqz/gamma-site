@@ -8,6 +8,24 @@
     <!--[if gt IE 8]> <html class="no-js ie9" lang="en"><![endif]-->
     <html lang="en">
         <head>
+            {$enable = true}
+            {if strpos($wa->server('HTTP_USER_AGENT'), 'Google Page Speed')}
+                {$google = 1}
+            {/if}
+
+            {if $wa->post('theme_settings') && !$wa->post('reset')}
+                {foreach $wa->post('theme_settings') as $theme_setting => $value}
+                    {$theme_settings[$theme_setting] = $value}
+                {/foreach}
+                {$wa->session('theme_settings', $theme_settings)}
+            {/if}
+            {if $wa->post('reset')}
+                {$wa->session('theme_settings', [])}
+            {/if}
+            {$storage = $wa->session('theme_settings')}
+            {foreach $storage as $key => $value}
+                {$theme_settings[$key] = $value}
+            {/foreach}
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
             <title>{$wa->title()|escape}</title>
             <meta name="Keywords" content="{$wa->meta('keywords')|escape}" />
@@ -58,6 +76,150 @@
             {include file="custom.bg.html" inline}
         </head>
         <body>
+
+            {if $enable && empty($google)}
+                <link rel="stylesheet" href="{$wa_theme_url}webui-popover/dist/jquery.webui-popover.min.css"  media="all"/>
+                <script type="text/javascript" src="{$wa_theme_url}webui-popover/dist/jquery.webui-popover.min.js"></script>  
+                {include file="settings-panel.html"}
+
+                <style>
+                    #panel{
+                        z-index: 10001;
+                    }
+                    .show-pop {
+                        border-radius: 25px;
+                        height: 35px;
+                        line-height: 35px;
+                        margin: 0;
+                        min-width: 35px;
+                        padding: 0;
+                        width: 35px;
+                        z-index: 10001;
+                        color: #fff  !important;
+                    }
+                    .webui-popover{
+                        z-index: 10001;
+                    }
+                    .webui-popover-content ul{
+                        list-style: disc;
+                    }
+                    .webui-popover-content a{
+                        text-decoration: underline;
+                        font-weight: bold;
+                    }
+                    #show-pop-background{
+                        position: absolute;
+                    }
+                    #show-pop-block-header-links{
+                        position: absolute;
+                        left: -3px;
+                        top:6px;
+                    }
+                    #show-pop-logo{
+                        position: absolute;
+                        top: 0px;
+                    }
+                    #show-pop-search{
+                        position: absolute;
+                    }
+                    #show-pop-top-menu{
+                        position: absolute;
+                        top: 12px;
+                        left: 0px;
+                    }
+                    #show-pop-sidebar{
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                    }
+                    #show-pop-slider{
+                        position: absolute;
+                        left: -2px;
+                        top: -17px;
+                    }
+                    #show-pop-banner1, #show-pop-banner2, #show-pop-banner3, #show-pop-banner4{
+                        position: absolute !important;
+                        top: -17px;
+                        left: -17px;
+                    }
+                    #show-pop-banner4{
+                        left: -2px;
+                    }
+                    #show-pop-products-list{
+                        position: absolute;
+                        top: 232px;
+                        left: 0px;
+                    }
+                    #show-pop-photos-news{
+                        position: absolute;
+                        left: -2px;
+                        top: -17px;
+                    }
+                    #show-pop-vk-widget{
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                    }
+                    #show-pop-custom-block1{
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                    }
+                    #show-pop-custom-block2{
+                        position: absolute;
+                        top: 0px;
+                        left: 29px;
+                    }
+                    #show-pop-newsletter, #show-pop-footer-information{
+                        position: absolute;
+                        top: -38px;
+                        left: 0px;
+                    }
+                    #show-pop-product-section{
+                        margin-left: -17px;
+                    }
+                    #show-pop-product-payments{
+                        position: absolute;
+                        right: 20px;
+                    }
+                </style>
+                <script type="text/javascript">
+                    (function () {
+                        $(document).ready(function () {
+                            var settings = {
+                                trigger: 'click',
+                                multi: false,
+                                closeable: false,
+                                delay: 300,
+                                padding: true
+                            };
+
+
+                            function initPopover() {
+                                $('a.show-pop').webuiPopover('destroy').webuiPopover(settings);
+                            }
+
+                            initPopover();
+                        });
+
+
+                    })();
+                </script>
+            {else}
+                <style>
+                    .show-pop{
+                        display: none;
+                    }
+                </style>
+            {/if}
+
+            {if $enable && empty($google)}
+                <a id="show-pop-background" href="#" class="btn btn-danger  show-pop center-block" data-animation="pop" 
+                   data-content="Вы можете выбрать цвет фона, 
+                   выбрать фон из 28 предложенных фоновых изображений и 38 фоновых текстур 
+                   или же загрузите свое изображение" data-title="Фоновый рисунок или текстура">+</a>
+            {/if}
+
             <div id="page">
                 <div class="header-container">
                     <header id="header">
@@ -135,6 +297,18 @@
                                         </div>
 
                                         {include file="block-header-links.html"}
+                                        {if $enable && empty($google)}
+                                            <a id="show-pop-block-header-links" href="#" class="btn btn-danger  show-pop center-block" data-animation="pop" 
+                                               data-content="Вы можете задать источник для ссылок сверху(Header):
+                                               <ul>
+                                               <li><b>Ссылки на приложения (текущее значение)</b></li>
+                                               <li>Приложение «Сайт» - страницы</li>
+                                               <li>Приложение «Магазин» - страницы</li>
+                                               <li>Приложение «Магазин» - категории</li>
+                                               <li>Пользовательские ссылки</li>
+                                               <li>Не показывать</li>
+                                               </ul>" data-title="Ссылки сверху(Header)">+</a>
+                                        {/if}
 
                                     </nav>
                                 </div>
@@ -147,6 +321,11 @@
                                         <a href="{$wa_url}">
                                             <img class="logo img-responsive" src="{$wa_theme_url}{$theme_settings.logo}"  alt="{$wa->accountName()}"/>                                        
                                         </a>
+                                        {if $enable && empty($google)}
+                                            <a id="show-pop-logo" href="#" class="btn btn-danger  show-pop center-block" data-animation="pop" 
+                                               data-content="Вы можете загрузить свой собственный логотип" data-title="Настройки логотипа">+</a>
+                                        {/if}
+
                                     </div>
 
                                     {if $wa->shop}
@@ -157,6 +336,10 @@
                                                     <span>[`Search`]</span>
                                                 </button>
                                             </form>
+                                            {if $enable && empty($google)}
+                                                <a id="show-pop-search" href="#" class="btn btn-danger  show-pop center-block" data-animation="pop" 
+                                                   data-content="Выпадающий список товаров появляется при вводе первых символов. Необходимо приложение «Магазин»" data-title="Автопоиск товаров">+</a>
+                                            {/if}   
                                         </div>
                                     {/if}
 
@@ -256,6 +439,16 @@
 
                                     <div id="block_top_menu" class="sf-contener clearfix col-lg-12">
                                         {include file="block-top-menu.html"}
+                                        {if $enable && empty($google)}
+                                            <a id="show-pop-top-menu" href="#" class="btn btn-danger  show-pop center-block" data-animation="pop" 
+                                               data-content="Вы можете задать источник для главного верхнего меню:
+                                               <ul>
+                                               <li>Приложение «Сайт» - страницы</li>
+                                               <li>Приложение «Магазин» - страницы</li>
+                                               <li><b>Приложение «Магазин» - категории (текущее значение)</b></li>
+                                               <li>Пользовательские ссылки</li>
+                                               </ul>" data-title="Источник для главного верхнего меню">+</a>
+                                        {/if} 
                                     </div>
                                 </div>
                             </div>
@@ -270,6 +463,10 @@
 
 
                 <div class="footer-container">
+                    {if $enable && empty($google)}
+                        <a id="show-pop-wide-footer" href="#" class="btn btn-danger  show-pop center-block" data-animation="pop" 
+                           data-content="Вы можете выбрать ширину футера. Как сейчас на всю ширину страницы или узкий футер" data-title="Ширина футера">+</a>
+                    {/if} 
                     <footer id="footer" class="container">
                         <div class="row">
                             {include file="footer.html"}
@@ -344,6 +541,35 @@
 
                 </div>
             </div>
+
+            {if $enable && empty($google)}
+                {literal}
+                    <script type="text/javascript">
+                        var reformalOptions = {
+                            project_id: 892297,
+                            project_host: "gamma-theme.reformal.ru",
+                            tab_orientation: "right",
+                            tab_indent: "50%",
+                            tab_bg_color: "#F05A00",
+                            tab_border_color: "#FFFFFF",
+                            tab_image_url: "http://tab.reformal.ru/T9GC0LfRi9Cy0Ysg0Lgg0L%252FRgNC10LTQu9C%252B0LbQtdC90LjRjw==/FFFFFF/a08a7c60392f68cb33f77d4f56cf8c6f/right/1/tab.png",
+                            tab_border_width: 2
+                        };
+                        (function () {
+                            var script = document.createElement('script');
+                            script.type = 'text/javascript';
+                            script.async = true;
+                            script.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'media.reformal.ru/widgets/v3/reformal.js';
+                            document.getElementsByTagName('head')[0].appendChild(script);
+                        })();
+                    </script>
+                    <noscript>
+                    <a href="http://reformal.ru"><img src="http://media.reformal.ru/reformal.png" /></a><a href="http://gamma-theme.reformal.ru">Oтзывы и предложения для gamma</a>
+                    </noscript>
+                {/literal}   
+            {/if}
+
+
         </body>
     </html>
 {/if}
