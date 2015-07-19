@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE theme PUBLIC "wa-app-theme" "http://www.webasyst.com/wa-content/xml/wa-app-theme.dtd">
-<theme id="gamma" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="1.0.1">
+<theme id="gamma" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="1.1.0">
     <name locale="en_US">Gamma</name>
     <name locale="ru_RU">Гамма</name>
     <description locale="ru_RU">Семейство адаптивных тем дизайна.</description>
@@ -274,6 +274,7 @@
                 }
                 </style>
                 <p class="p-title"></p>		
+                <p><a href="http://fontawesome.io/3.2.1/icons/" target="_blank">Иконки для темы дизайна</a></p>
                 ]]>
             </name>
         </setting>
