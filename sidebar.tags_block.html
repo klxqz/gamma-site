@@ -19,11 +19,13 @@
             <div id="tag-cloud">
                 <ul>
                     {foreach $wa->shop->tags() as $tag}
-                        <li>
-                            <a href="{$wa->getUrl('shop/frontend/tag',['tag' => $tag.uri_name])}" style="font-size: {$tag.size}%; opacity: {$tag.opacity}">{$tag.name|escape}</a>
-                        </li>
-                        {if $tag@iteration >= $theme_settings.sidebar_tags_block_count}
-                            {break}
+                        {if trim($tag.name)}
+                            <li>
+                                <a href="{$wa->getUrl('shop/frontend/tag',['tag' => $tag.uri_name])}" style="font-size: {$tag.size}%; opacity: {$tag.opacity}">{$tag.name|escape}</a>
+                            </li>
+                            {if $tag@iteration >= $theme_settings.sidebar_tags_block_count}
+                                {break}
+                            {/if}
                         {/if}
                     {/foreach}
                 </ul>

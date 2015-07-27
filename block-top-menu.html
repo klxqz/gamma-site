@@ -16,7 +16,7 @@
     {else}
         {$selected_page=null}
     {/if}
-    {wa_print_tree tree=$wa->site->pages() selected=$selected_page unfolded=true class="sf-menu clearfix menu-content" elem ='<a href=":url" title=":name">:name</a>'}
+    {wa_print_tree tree=$wa->shop->pages() selected=$selected_page unfolded=true class="sf-menu clearfix menu-content" elem ='<a href=":url" title=":name">:name</a>'}
 {elseif $theme_settings.source_main_menu == 'user_links'}
     {$s_links = explode("\n", $theme_settings.main_menu_user_links)}
     {$user_links = array()}
